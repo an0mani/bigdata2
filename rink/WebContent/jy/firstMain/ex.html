@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+a {
+	text-shadow: -1px 0 #f00, 0 1px #f00, 1px 0 #f00, 0 -1px #f00;
+	-moz-text-shadow: -1px 0 #f00, 0 1px #f00, 1px 0 #f00, 0 -1px #f00;
+	-webkit-text-shadow: -1px 0 #f00, 0 1px #f00, 1px 0 #f00, 0 -1px #f00;
+}
+
+.text_border {
+	text-shadow: 0 0 2px #f00;
+	-moz-text-shadow: 0 0 2px #f00;
+	-webkit-text-shadow: 0 0 2px #f00;
+}
+</style>
+
+
+
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+	<a>안녕하세요</a>
+
+
+	<div class='text_border'>안녕 친구들!</div>
+	
+	
+	<script type="text/javascript">
+    function chkword(obj, maxByte) {
+ 
+        var strValue = obj.value;
+        var strLen = strValue.length;
+        var totalByte = 0;
+        var len = 0;
+        var oneChar = "";
+        var str2 = "";
+ 
+        for (var i = 0; i < strLen; i++) {
+            oneChar = strValue.charAt(i);
+            if (escape(oneChar).length > 4) {
+                totalByte += 2;
+            } else {
+                totalByte++;
+            }
+ 
+            // 입력한 문자 길이보다 넘치면 잘라내기 위해 저장
+            if (totalByte <= maxByte) {
+                len = i + 1;
+            }
+        }
+ 
+        // 넘어가는 글자는 자른다.
+        if (totalByte > maxByte) {
+            alert(maxByte + "자를 초과 입력 할 수 없습니다.");
+            str2 = strValue.substr(0, len);
+            obj.value = str2;
+            chkword(obj, 4000);
+        }
+    }
+</script>
+	
+	
+	
+
+</body>
+</html>
