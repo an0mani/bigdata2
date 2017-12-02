@@ -145,6 +145,7 @@ tr {
             </ul>
       </section> -->
 
+
       <%
          ServletContext context = getServletContext();
          String saveDir = context.getRealPath("supload");
@@ -160,6 +161,7 @@ tr {
       <div class="row">
          <%            
             ArrayList<ym_FileVO> vo = (ArrayList<ym_FileVO>) session.getAttribute("list");
+
 
             request.setAttribute("totalPage", vo.size() % 9 == 0 ? vo.size() / 9 : vo.size() / 9 + 1);
             request.setAttribute("last", vo.size() % 9);

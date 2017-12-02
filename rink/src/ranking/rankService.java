@@ -30,7 +30,6 @@ public class rankService extends HttpServlet {
 			
 			if(list != null) {
 			session.setAttribute("rank", list);
-			System.out.println("¼º°ø");
 			}
 
 			response.sendRedirect("jy/DaycareCenter/jy_DaycareCenter.jsp");
