@@ -1,8 +1,8 @@
-<%@page import="ranking.rankVO"%>
 <%@page import="java.util.ArrayList"%>
+<%@page import="ranking.rankVO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix="c" %>
+	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 
 <html>
@@ -13,20 +13,20 @@
 </head>
 <body>
 	<div>
-	<form method="post" action="rankService">
-		<select name = "area">
-			<option value="gs">광산구</option>
-			<option value="e">동구</option>
-			<option value="w">서구</option>
-			<option value="s">남구</option0>
+		<form method="post" action="rankService">
+			<select name="area">
+				<option value="gs">광산구</option>
+				<option value="e">동구</option>
+				<option value="w">서구</option>
+				<option value="s">남구</option0>
 			<option value="n">북구</option>
-		</select> <input type="submit" value="검색" >
-	</form>
+			</select> <input type="submit" value="검색">
+		</form>
 	</div>
-	
+
 	<div id="map" style="width: 100%; height: 1000px;"></div>
 	<script type="text/javascript"
-		src="//dapi.kakao.com/v2/maps/sdk.js?appkey=0351a47886aeab5672a46c979aadfb78"></script>
+		src="//dapi.kakao.com/v2/maps/sdk.js?appkey=d8b949d1525c59d07f323947f039c694"></script>
 	<script>
 		var mapContainer = document.getElementById('map'), // 지도를 표시할 div  
 		mapOption = {
@@ -40,23 +40,16 @@
 		// 마커를 표시할 위치와 title 객체 배열입니다 
 		 
 			 var positions =[
-            <%
-               
-                ArrayList<rankVO> list = (ArrayList<rankVO>)session.getAttribute("rank");
-            	
+            <%ArrayList<rankVO> list = (ArrayList<rankVO>) session.getAttribute("rank");
 
-                if(list!=null){
-                for (int i = 0 ; i < list.size() ; i++) {
-                	
-                    String name = list.get(i).getName();
-                    String latitude = list.get(i).getLatitude();
-                    String longtude = list.get(i).getLongtude();
-                    String addr = list.get(i).getAddr();
-                    String tel = list.get(i).getTel();
-                    
-                    
-                    
-            %>
+			if (list != null) {
+				for (int i = 0; i < list.size(); i++) {
+
+					String name = list.get(i).getName();
+					String latitude = list.get(i).getLatitude();
+					String longtude = list.get(i).getLongtude();
+					String addr = list.get(i).getAddr();
+					String tel = list.get(i).getTel();%>
             
     			
   			  {
@@ -68,11 +61,8 @@
             
   		 
           
-            <%
-                }
-                }
-                
-            %>   ]    
+            <%}
+			}%>   ]    
 			// 마커 이미지의 이미지 주소입니다
 				var imageSrc = "http://t1.daumcdn.net/localimg/localimages/07/mapapidoc/markerStar.png";
 				

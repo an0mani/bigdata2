@@ -10,7 +10,7 @@ public class memberDAO {
 
 	String url = "jdbc:oracle:thin:@127.0.0.1:1521:xe";
 	String dbid = "system";
-	String dbpw = "1234";
+	String dbpw = "yoon5786";
 	String className = "oracle.jdbc.driver.OracleDriver";
 	Connection conn = null;
 	PreparedStatement pst = null;

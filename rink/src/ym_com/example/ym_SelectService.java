@@ -11,7 +11,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import jdk.nashorn.internal.runtime.arrays.ArrayLikeIterator;
 import ym_com.DAO.ym_FileDAO;
 import ym_com.DAO.ym_FileVO;
 @WebServlet("/ym_SelectService")
@@ -32,8 +31,9 @@ public class ym_SelectService extends HttpServlet {
 			session.setAttribute("list", list);
 			}
 
+
 			response.sendRedirect("vaccinService");
-			
+
 			
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
