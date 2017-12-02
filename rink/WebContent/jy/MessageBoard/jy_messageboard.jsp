@@ -1,118 +1,133 @@
 <%@page import="java.util.ArrayList"%>
-<%@page import="jy_com.DAO.FileVO"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
 	pageEncoding="EUC-KR"%>
-<%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <style type="text/css">
-	.number{
-	text-align: left;
-	color : black;
-	}
-	#top {
-	background-image: url('images/center.png') !important;
+#top {
+	background-image: url('images/backgroundsakura2.png') !important;
+	background-repeat: no-repeat;
+	background-position: right top;
+	background-attachment: fixed;
 	font-family: 'a고래야놀자' !important;
-	
-	}
-	#tag{
+}
+
+#tag {
 	margin-top: 40%;
-	
-	}
-	#back{
-	background-image: url('images/test.png') !important;
-	 
-	}
-	tr{
+}
+
+#back {
+	background-image: url('images/main2.png') !important;
+}
+
+tr {
 	color: black;
 	align-self: center;
-	}
-	#two{
-	width:110%;
-	}
-	.poptrox-popup {
-		width: 85% !important;
-		height: 85% important;
-	}
-	.caption {
-		height: 40% !important;
-		opacity: 0.5 important;
-	}
-	.pic {
-		height: 60% !important;
-	}
-	
+}
+
+#two {
+	width: 110%;
+}
+
+.poptrox-popup {
+	width: 85% !important;
+	height: 85% important;
+}
+
+.caption {
+	height: 40% !important;
+	opacity: 0.5 important;
+}
+
+.pic {
+	height: 60% !important;
+}
+
+.inner {
+	background-image: url('images/childnotice6.jpg') !important;
+	color: black;
+}
 </style>
 <title>to baby from mom, message board</title>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<link rel="stylesheet" href="http://fonts.googleapis.com/earlyaccess/nanumpenscript.css">
+<link rel="stylesheet"
+	href="http://fonts.googleapis.com/earlyaccess/nanumpenscript.css">
 <link rel="stylesheet" href="assets/css/main.css" />
 <link rel="stylesheet" href="assets/css/main2.css" />
 </head>
-<body id="top" class="homepage" style="text-align: center;">
-<%
-	ServletContext context = getServletContext();
-	String saveDir = context.getRealPath("upload");
-	request.setAttribute("save", saveDir);
-	System.out.print(saveDir);
-%>
-<div id = "back">
-	<header id="header1">
-				<div class="inner1" >
-					
-					<a href="#" class="image avatar" style="margin-right: 40px;"><img src="back_image/baby.jpg" alt="" /></a>
-					<p align="center">${Login_name }의 Mom</p>
-						<input type = "button" name = "write" value = "글쓰기" onclick="location.href='jy_writing.jsp'" style="width: 50px; height: 50px; min-width: 6em !important; font-size: 15px; text-align: center; color: black !important; margin-right: 0px; font-family: 'a고래야놀자'">	
-						<input type = "button" name = "menu" value = "목  록" onclick="location.href='jy_messageboard.jsp'" style="width: 50px; height: 50px; min-width: 6em !important; font-size: 15px; text-align: center; color: black !important; margin-right: 0px; font-family: 'a고래야놀자'">					<!-- <h1><strong>I am Strata</strong>, a super simple<br />
+<body id="top" class="homepage">
+	<%
+		ServletContext context = getServletContext();
+		String saveDir = context.getRealPath("upload");
+		request.setAttribute("save", saveDir);
+		System.out.print(saveDir);
+	%>
+
+	<div id="back">
+		<header id="header1">
+		<div class="inner1">
+			<a href="#" class="image avatar" style="margin-right: 100px;"> <img
+				src="back_image/baby.jpg" alt=""
+				style="width: 200px; height: 200px;"></a>
+			<p align="center" style="font-size: 35px; color: #000000;">??맘</p>
+			<div style="margin-right: 50px;">
+				<input type="button" name="write" value="글쓰기"
+					onclick="location.href='jy_writing.jsp'"
+					style="width: 50px; height: 50px; min-width: 6em !important; font-size: 20px; text-align: center; color: black !important; margin-right: 0px; font-family: 'a고래야놀자'">
+				<input type="button" name="menu" value="목  록"
+					onclick="location.href='jy_messageboard.jsp'"
+					style="width: 50px; height: 50px; min-width: 6em !important; font-size: 20px; text-align: center; color: black !important; margin-right: 0px; font-family: 'a고래야놀자'">
+			</div>
+			<!-- <h1><strong>I am Strata</strong>, a super simple<br />
 					responsive site template freebie<br />
 					crafted by <a href="http://html5up.net">HTML5 UP</a>.</h1> -->
-			
-				<p style="color: black;" >${sessionScope.month} 주사를 맞아야합니다. 자세한 내용은 예방접종 메뉴를 참고해주세요</p>
-				</div>
-			</header>
 		</div>
+		</header>
+	</div>
 	<!-- Header -->
-		<!-- Menu -->
+	<!-- Menu -->
 	<div id="wrapper">
-		
-				<!-- Header -->
-					<header id="header">
-						<div class="inner">
-					
-							<!-- Logo -->
-							
-							<!-- Nav -->
-								<nav>
-									<ul>
-										<li><a href="#menu">Menu</a></li>
-									</ul>
-								</nav>
 
-						</div>
-					</header>
-					<nav id="menu">
-						<h2>Menu</h2>
-						<ul>
-								<li><a href="../firstMain/jh_main.jsp">Home</a></li>
+		<!-- Header -->
+		<header id="header">
+		<div class="inner">
+
+			<!-- Logo -->
+
+			<!-- Nav -->
+			<nav>
+			<ul>
+				<li><a href="#menu">Menu</a></li>
+			</ul>
+			</nav>
+
+		</div>
+		</header>
+		<nav id="menu">
+		<h2>Menu</h2>
+		<ul>
+			<li><a href="../firstMain/jh_main.jsp">Home</a></li>
 			<li><a href="../../ym_SelectService">아기 용품 공간</a></li>
 			<li><a href="../../DiarySelectService">나만의 육아일기</a></li>
 			<li><a href="../../SelectService">이야기해요</a></li>
 			<li><a href="../BabyInfo/jy_BabyInfo.jsp">나의 아기정보</a></li>
 			<li><a href="../MessageBoard/logout.jsp">로그아웃</a></li>
-						</ul>
-					</nav>
+		</ul>
+		</nav>
 
-			</div>
+	</div>
 	<!-- Logo -->
-	
+
 	<!-- Main -->
-	
-	<div id="main" style="margin-left: 400px;margin-right : 100px; padding-top: 20px; padding-bottom: 20px; padding-left: 50px; padding-right: 0px; border-bottom-width: 100px;">
+
+	<div id="main"
+		style="margin-left: 400px; margin-right: 100px; padding-top: 20px; padding-bottom: 20px; padding-left: 50px; padding-right: 0px; border-bottom-width: 100px;">
 
 		<!-- One -->
-	<!-- 	<section id="one">
+		<!-- 	<section id="one">
 			<header class="major">
 				<h2>To Baby From Mom.</h2>
 			</header>
@@ -125,174 +140,46 @@
 
 		<!-- Two -->
 		<section id="two">
-		<%				
-				ArrayList<FileVO> vo = (ArrayList<FileVO>) session.getAttribute("list");
-				request.setAttribute("totalPage", vo.size() % 9 == 0 ? vo.size() / 9 : vo.size() / 9 + 1);
-				request.setAttribute("last", vo.size() % 9);
-				request.setAttribute("vosize", vo.size());
-				
-				
-			%>
-			
 		<h2>게시판/소통해요</h2>
-		
-<%-- 		<%
+
+		<%-- 		<%
 			String a = (String)session.getAttribute("list");
 		%>
 		<%=a %> --%>
 
 		<div class="row">
 			<c:choose>
-	
+
 				<c:when test="${not empty sessionScope.list}">
-							<c:set var="list" value="${sessionScope.list}" scope="request"></c:set>
-					<c:choose>
-					<c:when test="${(empty param.page) or param.page==0} ">
-					<c:choose>
-					<c:when test="${last ==  1 or last == 0}">
-					<article class="6u 12u$(xsmall) work-item"> <a
-								href="../../mupload/${list[0].filename}" class="image fit thumb"
-								style="max-width: 300px; max-height: 300px;"><img
-								src="../../mupload/${list[0].filename}" alt=""
-								style="width: 300px; height: 300px;" /></a>
+					<c:forEach items="${sessionScope.list}" var="list">
+						<article class="6u 12u$(xsmall) work-item"> <a
+							href="../../mupload/${list.filename}" class="image fit thumb"
+							style="max-width: 300px; max-height: 300px;"><img
+							src="../../mupload/${list.filename}" alt=""
+							style="width: 300px; height: 300px;" /></a>
 
-							<h3 style="font-size: 0px;">${list[0].text}</h3>
-							<h2>${list[0].title}</h2>
-							<p>
-							<h3>${list[0].num}.
-								${list[0].wdate}<a
-									href='../../numService?num=${list[0].num }'> 수정</a><a
-									href='../../deleteService?num=${list[0].num}'> 삭제</a>
-							</h3>
-							</p>
-							</article>
-					</c:when>
-					<c:otherwise>
-					
-					<c:forEach begin="0" end="${last-1}" var="i">
-							
-							<article class="6u 12u$(xsmall) work-item"> <a
-								href="../../mupload/${list[i].filename}" class="image fit thumb"
-								style="max-width: 300px; max-height: 300px;"><img
-								src="../../mupload/${list[i].filename}" alt=""
-								style="width: 300px; height: 300px;" /></a>
+						<h3 style="font-size: 0px;">${list.text}</h3>
+						<h2>${list.title}</h2>
+						<p>
+						<h3>${list.num}.
+							${list.wdate}<a href='../../numService?num=${list.num }'> 수정</a><a
+								href='../../deleteService?num=${list.num}'> 삭제</a>
+						</h3>
+						</p>
+						</article>
+					</c:forEach>
+				</c:when>
 
-							<h3 style="font-size: 0px;">${list[i].text}</h3>
-							<h2>${list[i].title}</h2>
-							<p>
-							<h3>${list[i].num}.
-								${list[i].wdate}<a
-									href='../../numService?num=${list[i].num }'> 수정</a><a
-									href='../../deleteService?num=${list[i].num}'> 삭제</a>
-							</h3>
-							</p>
-							</article>
-						</c:forEach>
-					</c:otherwise>
-					</c:choose>
-					</c:when>
-					<c:otherwise>
-					<c:choose>
-					<c:when test="${param.page != totalPage-1}">
-					
-					<c:forEach begin="${param.page*9}" end="${param.page*9+8}" var="i">
-							
-							<article class="6u 12u$(xsmall) work-item"> <a
-								href="../../mupload/${list[i].filename}" class="image fit thumb"
-								style="max-width: 300px; max-height: 300px;"><img
-								src="../../mupload/${list[i].filename}" alt=""
-								style="width: 300px; height: 300px;" /></a>
-
-							<h3 style="font-size: 0px;">${list[i].text}</h3>
-							<h2>${list[i].title}</h2>
-							<p>
-							<h3>${list[i].num}.
-								${list[i].wdate}<a
-									href='../../numService?num=${list[i].num }'> 수정</a><a
-									href='../../deleteService?num=${list[i].num}'> 삭제</a>
-							</h3>
-							</p>
-							</article>
-						</c:forEach>
-					</c:when>
-					<c:when test="${param.page == totalPage-1}">
-					<c:choose>
-					<c:when test="${last != 1}">
-					<c:forEach begin="${param.page*9}" end="${param.page*9+last-1}" var="i">
-							
-							<article class="6u 12u$(xsmall) work-item"> <a
-								href="../../mupload/${list[i].filename}" class="image fit thumb"
-								style="max-width: 300px; max-height: 300px;"><img
-								src="../../mupload/${list[i].filename}" alt=""
-								style="width: 300px; height: 300px;" /></a>
-
-							<h3 style="font-size: 0px;">${list[i].text}</h3>
-							<h2>${list[i].title}</h2>
-							<p>
-							<h3>${list[i].num}.
-								${list[i].wdate}<a
-									href='../../numService?num=${list[i].num}'> 수정</a><a
-									href='../../deleteService?num=${list[i].num}'> 삭제</a>
-							</h3>
-							</p>
-							</article>
-						</c:forEach>
-						</c:when>
-						<c:otherwise>
-						
-							
-							<article class="6u 12u$(xsmall) work-item"> <a
-								href="../../mupload/${list[param.page*9].filename}" class="image fit thumb"
-								style="max-width: 300px; max-height: 300px;"><img
-								src="../../mupload/${list[param.page*9].filename}" alt=""
-								style="width: 300px; height: 300px;" /></a>
-
-							<h3 style="font-size: 0px;">${list[param.page*9].text}</h3>
-							<h2>${list[param.page*9].title}</h2>
-							<p>
-							<h3>${list[param.page*9].num}.
-								${list[param.page*9].wdate}<a
-									href='../../numService?num=${list[param.page*9].num }'> 수정</a><a
-									href='../../deleteService?num=${list[param.page*9].num}'> 삭제</a>
-							</h3>
-							</p>
-							</article>
-						<
-						</c:otherwise>
-						</c:choose>
-					</c:when>
-					</c:choose>
-					</c:otherwise>
-					</c:choose>
-					</c:when>
-					</c:choose>
-					
-			
-		
-
-   
-		</div>
-		<c:choose>
-			<c:when test="${vosize==0 }">
-			
-			</c:when>
-			<c:when test="${vosize<9 and vosize != 0 }">
-			<a href="jy_messageboard.jsp?page=0" class="number"> 1</a>
-			</c:when>
-			<c:otherwise>
-			<c:forEach begin="0" end="${totalPage-1}" var="i">
-				
-					<a href="jy_messageboard.jsp?page=${i}" class="number"> ${i+1} &nbsp&nbsp</a>
-				
-
-			</c:forEach>
-			</c:otherwise>
 			</c:choose>
+
+		</div>
+		<ul class="actions">
+			<!-- <li><a href="#" class="button">Full Portfolio</a></li> -->
+		</ul>
 		</section>
 		<!-- Three -->
-			<!--<section id="three">
-		
-					<h2>Get In Touch</h2>
+		<!-- <section id="three">
+						<h2>Get In Touch</h2>
 						<p>Accumsan pellentesque commodo blandit enim arcu non at amet id arcu magna. Accumsan orci faucibus id eu lorem semper nunc nisi lorem vulputate lorem neque lorem ipsum dolor.</p>
 						<div class="row">
 							<div class="8u 12u$(small)">
@@ -368,8 +255,8 @@ i++;
 }
 
 print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
-						</section> -->
-<!--
+						</section>
+
 						<section>
 							<h4>Lists</h4>
 							<div class="row">

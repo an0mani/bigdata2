@@ -2481,7 +2481,7 @@
 		justify-content: space-between;
 		background-color: #1f1815;
 		background-attachment: scroll,								fixed;
-		background-image: url("images/test.png"), url("../../images/test.png");
+		background-image: url('back_image/main2.png'), url('../../back_image/main2.png');
 		background-position: top left,							top left;
 		background-repeat: repeat,								no-repeat;
 		background-size: auto,								auto 100%;
@@ -2950,7 +2950,7 @@
 			#footer {
 				background-attachment: scroll;
 				background-color: #1f1815;
-				background-image: url("images/test.png"), url("../../images/test.png");
+				background-image: url('back_image/main2.png'), url('../../back_image/main2.png');
 				background-position: top left,						bottom center;
 				background-repeat: repeat,							no-repeat;
 				background-size: auto,							cover;
