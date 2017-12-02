@@ -32,7 +32,7 @@ public class ym_SelectService extends HttpServlet {
 			session.setAttribute("list", list);
 			}
 
-			response.sendRedirect("jy/usedArticle/ym_messageboard.jsp?page=0");
+			response.sendRedirect("vaccinService");
 			
 			
 		} catch (Exception e) {

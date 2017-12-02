@@ -1,3 +1,4 @@
+<%@page import="java.util.Calendar"%>
 <%@page import="ym_com.DAO.ym_FileVO"%>
 <%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
@@ -57,13 +58,16 @@ tr {
 <link rel="stylesheet" href="assets/css/main2.css" />
 </head>
 <body id="top" class="homepage" style="text-align: center;">
+
+			
+			
 	<div id="back">
 		<header id="header1">
 		<div class="inner1">
 
 			<a href="#" class="image avatar" style="margin-right: 40px;"><img
 				src="back_image/baby.jpg" alt="" /></a>
-			<p align="center">??맘</p>
+			<p align="center">${Login_name }의 Mom</p>
 			<input type="button" name="write" value="글쓰기"
 				onclick="location.href='ym_writing.jsp'"
 				style="width: 50px; height: 50px; min-width: 6em !important; font-size: 15px; text-align: center; color: black !important; margin-right: 0px; font-family: 'a고래야놀자'">
@@ -73,6 +77,7 @@ tr {
 			<!-- <h1><strong>I am Strata</strong>, a super simple<br />
 					responsive site template freebie<br />
 					crafted by <a href="http://html5up.net">HTML5 UP</a>.</h1> -->
+			<p style="color: black;" >${sessionScope.month} 주사를 맞아야합니다. 자세한 내용은 예방접종 메뉴를 참고해주세요</p>
 		</div>
 		</header>
 	</div>
