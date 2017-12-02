@@ -36,6 +36,8 @@ public class UpdateCon extends HttpServlet {
 
 			if (cnt > 0) {
 				
+				
+				
 				session.setAttribute("Login_name", name);
 				session.setAttribute("Login_sex", sex);
 				session.setAttribute("Login_blood", blood);
