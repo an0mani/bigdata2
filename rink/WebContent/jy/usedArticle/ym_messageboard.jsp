@@ -1,12 +1,27 @@
 <%@page import="ym_com.DAO.ym_FileVO"%>
 <%@page import="java.util.ArrayList"%>
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-	pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=EUC-KR" pageEncoding="EUC-KR"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<html style = "height: 0px;">
 <head>
+
+<script type="text/javascript">
+function changeIframeUrl(url) { 
+	document.getElementById("main_frame").src = url;
+	document.getElementById("main_frame1").src = url;
+	
+}
+</script>
 <style type="text/css">
+.inner{
+	background-image: url(back_image/childnotice6.jpg) !important;
+	color:black;
+	text-align: left;
+}
+#header1{
+	background-image: url(back_image/main2.png) !important;
+}
 .number{
 	text-align: left;
 	color : black;
@@ -27,7 +42,7 @@
 }
 
 #top {
-	background-image: url(images/center.png) !important;
+	background-image: url(back_image/main1.png) !important;
 	font-family: 'a고래야놀자' !important;
 }
 
@@ -61,8 +76,7 @@ tr {
 		<header id="header1">
 		<div class="inner1">
 
-			<a href="#" class="image avatar" style="margin-right: 40px;"><img
-				src="back_image/baby.jpg" alt="" /></a>
+			<a href="#" class="image avatar" style = "margin-right: 70px;"> <img src="back_image/baby.jpg" alt="" style = "width:250px; height:250px;"/></a>
 			<p align="center">??맘</p>
 			<input type="button" name="write" value="글쓰기"
 				onclick="location.href='ym_writing.jsp'"
@@ -73,6 +87,10 @@ tr {
 			<!-- <h1><strong>I am Strata</strong>, a super simple<br />
 					responsive site template freebie<br />
 					crafted by <a href="http://html5up.net">HTML5 UP</a>.</h1> -->
+		<input type="button" value='유모차' onclick = "changeIframeUrl('babywalker.jsp')"></input>
+		<input type="button" value='보행기' onclick = "changeIframeUrl('stroller.jsp')"></input>
+		<input type="button" value='아기침대' onclick = "changeIframeUrl('babybed.jsp')"></input>
+		<input type="button" value='기타' onclick = "changeIframeUrl('etc.jsp')"></input>
 		</div>
 		</header>
 	</div>
@@ -81,7 +99,7 @@ tr {
 	<div id="wrapper">
 
 		<!-- Header -->
-		<header id="header">
+		<header id="header" style = "padding-top: 0px; padding-bottom: 0px;">
 		<div class="inner">
 
 			<!-- Logo -->
@@ -113,7 +131,7 @@ tr {
 	<!-- Main -->
 
 	<div id="main"
-		style="margin-left: 400px; margin-right: 100px; padding-top: 20px; padding-bottom: 20px; padding-left: 50px; padding-right: 0px; border-bottom-width: 100px;">
+		style="margin-left: 384px;margin-right: 100px;padding-top: 0px;padding-bottom: 0px;padding-left: 0px;padding-right: 0px;border-bottom-width: 100px;">
 
 		<!-- One -->
 		<!-- 	<section id="one">
@@ -134,9 +152,11 @@ tr {
 			System.out.print(saveDir);
 		%>
 		<!-- Two -->
+		
 		<section id="two"
-			style="border-top-width: 0px; margin-top: 0px; padding-top: 50px;">
-		<h2>중고품 판매</h2>
+			style="border-top-width: 0px; margin-top: 0px; padding-top: 0px;">
+		<iframe width = "1535px" height = "970px" frameborder="0" border="0" scrolling="auto" bgcolor=#EEEEEE bordercolor="#FF000000" marginwidth="0" marginheight="0" name="main_frame" id="main_frame">
+		<!-- <h2>중고품 판매</h2> -->
 		<div class="row">
 			<%				
 				ArrayList<ym_FileVO> vo = (ArrayList<ym_FileVO>) session.getAttribute("list");
@@ -260,7 +280,7 @@ tr {
 							</h3>
 							</p>
 							</article>
-						<
+						
 						</c:otherwise>
 						</c:choose>
 					</c:when>
@@ -287,7 +307,7 @@ tr {
 			</c:otherwise>
 			</c:choose>
 		
-
+		</iframe>
 		</div>
 		<ul class="actions">
 			<!-- <li><a href="#" class="button">Full Portfolio</a></li> -->

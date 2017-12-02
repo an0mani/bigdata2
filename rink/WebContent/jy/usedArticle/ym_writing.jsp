@@ -6,7 +6,7 @@
 <head>
 <style type="text/css">
 	#top {
-		background-image: url("sunflower4.jpg");
+		background-image: url("back_image/back.png");
 		background-repeat: inherit;
 		background-size:cover;
 		font-family: 'a고래야놀자';
@@ -28,6 +28,7 @@
 				<c:when test="${not empty sessionScope.set}">
 				<c:forEach items = "${sessionScope.set}" var="set" >
 				<form method="post" action="../../ym_updateService" enctype="multipart/form-data">
+				
 				<div class="row uniform 50%">
 				
 					<div class="6u 12u$(xsmall)">
@@ -35,13 +36,19 @@
 					</div>
 					<div class="6u$ 12u$(xsmall)">
 						<input type="file" name="file" id="file" value="${set.filename }" placeholder="file"  style="font-family: 'a고래야놀자';color:black;"/>
-					</div>					
+					</div>
+					
 					<div class="12u$">
 						<textarea name="text" id="text" placeholder="text" value="${set.text }" rows="8" style="font-family: 'a고래야놀자';color:black;" ></textarea>
 					</div>
 					<div class="12u$">
-						<input type="submit" value="Send Message" style="font-family: 'a고래야놀자';color:black;" />
-						<input type="button" value="Previous page" style="font-family: 'a고래야놀자';color:black;" />
+					<select>
+						<option>가</option>
+						<option>가</option>
+						<option>가</option>
+						<option>가</option>
+					</select>
+						<input type="submit" value="Send Message" style="font-family: 'a고래야놀자';color:black;" />				
 					</div>
 				</div>
 				
@@ -62,7 +69,13 @@
 						<textarea name="text" id="text" placeholder="text" rows="8" style="font-family: 'a고래야놀자';color:black;" ></textarea>
 					</div>
 					<div class="12u$">
-						<input type="submit" value="Send Message" style="font-family: 'a고래야놀자';color:black;" />
+						<select style="width: 211px";>
+						<option value = "">카테고리 선택</option>
+						<option value = "유모차">유모차</option>
+						<option value = "보행기">보행기</option>
+						<option value = "아기침대">아기침대</option>
+						<option value = "기타">기타</option>
+					</select>
 						<input type="button" value="Previous page" style="font-family: 'a고래야놀자';color:black;" />
 					</div>
 				</div>

@@ -5,7 +5,7 @@
 <head>
 <style type="text/css">
 	#top {
-		background-image: url("back_image/sunflower6.jpg");
+		background-image: url("back_image/back.png");
 		background-size: cover;
 		font-family: 'a고래야놀자';
 	}
