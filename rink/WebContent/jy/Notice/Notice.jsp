@@ -41,6 +41,9 @@ function changeIframeUrl(url) {
 #top {
 	background-image: url('back_image/main1.png') !important;
 	font-family: 'a고래야놀자' !important;
+	background-repeat:no-repeat;
+    background-position: right top;
+    background-attachment: fixed;
 }
 
 #tag {
