@@ -12,6 +12,7 @@ public class fortune {
       Process ps = null;
       String[] cmd = new String[] {"py", "C:/Users/User/Desktop/fortune.py", "print"};
       String str = null;
+     
       ArrayList<String> list = new ArrayList<>();
       try {
          

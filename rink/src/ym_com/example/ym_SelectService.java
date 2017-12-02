@@ -31,8 +31,9 @@ public class ym_SelectService extends HttpServlet {
 			session.setAttribute("list", list);
 			}
 
-			response.sendRedirect("jy/usedArticle/ym_messageboard.jsp");
-			
+
+			response.sendRedirect("vaccinService");
+
 			
 		} catch (Exception e) {
 			// TODO Auto-generated catch block

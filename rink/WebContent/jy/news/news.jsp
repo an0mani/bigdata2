@@ -70,11 +70,13 @@ tr {
 </head>
 <body id="top">
 	<header id="header1">
+
 	<div class="inner1" style="margin-top: 40px">
+
 
 		<a href="#" class="image avatar" style="margin-right: 70px;"><img
 			src="back_image/baby.jpg" alt="" style="width: 250px; height: 250px;" /></a>
-		<p align="center">??맘</p>
+		<p align="center">${Login_name }의 Mom</p>
 
 
 		<input type="button" value='간디라니다'

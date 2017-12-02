@@ -74,7 +74,7 @@ tr {
 	<div class="inner1" style="margin-top: 40px">
 
 		<a href="#" class="image avatar" style = "margin-right: 70px;"><img src="back_image/baby.jpg" alt="" style = "width:250px; height:250px;"/></a>
-		<p align="center">??맘</p>
+		<p align="center">${Login_name }의 Mom</p>
 		<input type="button" name="write" value="글쓰기"
 			onclick="location.href='writing.jsp'"
 			style="width: 50px; height: 50px; min-width: 6em !important; font-size: 15px; text-align: center; color: black !important; margin-right: 0px; font-family: 'a고래야놀자'">
@@ -86,7 +86,7 @@ tr {
 					responsive site template freebie<br />
 					crafted by <a href="http://html5up.net">HTML5 UP</a>.</h1> -->
 		
-		
+		<p style="color: black;" >${sessionScope.month} 주사를 맞아야합니다. 자세한 내용은 예방접종 메뉴를 참고해주세요</p>
 		
 		<input type="button" value='별자리' onclick = "changeIframeUrl('writing.jsp')"></input>
 		<input type="button" value='날씨' onclick = "changeIframeUrl('README.txt')"></input>

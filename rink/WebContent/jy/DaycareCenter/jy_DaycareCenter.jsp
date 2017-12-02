@@ -71,11 +71,12 @@ tr {
 </head>
 <body id="top">
 	<header id="header1">
+
 	<div class="inner1" style="margin-top: 40px">
 
 		<a href="#" class="image avatar"><img src="back_image/baby.jpg"
 			alt="" /></a>
-		<p align="center">??맘</p>
+		<p align="center">${Login_name }의 Mom</p>
 		<input type="button" name="menu" value="목  록"
 			onclick="location.href='ym_messageboard.jsp'"
 			style="width: 50px; height: 50px; min-width: 6em !important; font-size: 15px; text-align: center; color: black !important; margin-right: 0px; font-family: 'a고래야놀자'">
@@ -94,8 +95,9 @@ tr {
 		<input type="button" name="menu" value="목  록"
 			onclick="location.href='ym_messageboard.jsp'"
 			style="width: 50px; height: 50px; min-width: 6em !important; font-size: 15px; text-align: center; color: black !important; margin-right: 0px; font-family: 'a고래야놀자'">
-
+<p style="color: black;" >${sessionScope.month} 주사를 맞아야합니다. 자세한 내용은 예방접종 메뉴를 참고해주세요</p>
 		<!-- <h1><strong>I am Strata</strong>, a super simple<br />
+
 					responsive site template freebie<br />
 					crafted by <a href="http://html5up.net">HTML5 UP</a>.</h1> -->
 	</div>

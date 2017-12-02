@@ -32,7 +32,7 @@ public class NoticeSelectService extends HttpServlet {
          session.setAttribute("list", list);
          }
          
-         response.sendRedirect("jt/Notice/Notice.jsp");
+         response.sendRedirect("jy/Notice/Notice.jsp");
          
          
       } catch (Exception e) {

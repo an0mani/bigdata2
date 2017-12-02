@@ -1,3 +1,4 @@
+<%@page import="java.util.Calendar"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
 	pageEncoding="EUC-KR"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -513,6 +514,58 @@ a#login_pop:hover, a#join_pop:hover {
 
 		<!-- Banner -->
 		<section>
+		<% String bir = (String)session.getAttribute("Login_birth"); 
+			String[] birth = bir.split("-");
+			
+				int year = Integer.parseInt(birth[0]);
+				int month = Integer.parseInt(birth[1]);
+				
+				Calendar cal = Calendar.getInstance();
+			    int thisyear = cal.get(Calendar.YEAR) ;
+			    int thismonth = cal.get(Calendar.MONTH);
+				
+			    int months = (thisyear - year)*12 + (thismonth - month);
+			    
+			    if(months >= 144){
+			    	session.setAttribute("vaccin", "Y_TWELVE");
+			    }else if (months >= 132){
+			    	session.setAttribute("vaccin", "Y_ELEVEN");
+			    }else if (months >= 72){
+			    	session.setAttribute("vaccin", "Y_SIX");
+			    
+			    }else if (months >= 48){
+			    	session.setAttribute("vaccin", "Y_FOUR");
+			    
+			    }else if (months >= 36){
+			    	session.setAttribute("vaccin", "M_THIRTYSIX");
+			    
+			    }else if (months >= 24){
+			    	
+			    	session.setAttribute("vaccin", "M_TWENTYFOUR");
+			    }else if (months >= 18){
+			    	session.setAttribute("vaccin", "M_EIGHTEEN");
+			    
+			    }else if (months >= 15){
+			    	
+			    	session.setAttribute("vaccin", "M_FIFTEEN");
+			    }else if (months >= 12){
+			    	
+			    	session.setAttribute("vaccin", "M_TWELVE");
+			    }else if (months >= 6){
+			    	
+			    	session.setAttribute("vaccin", "M_SIX");
+			    }else if (months >= 4){
+			    	session.setAttribute("vaccin", "M_FOUR");
+			    
+			    }else if (months >= 2){
+			    	session.setAttribute("vaccin", "M_TWO");
+			    
+			    }else if (months == 1){
+			    	session.setAttribute("vaccin", "M_ONE");
+			    }else if (months == 0){
+			    	session.setAttribute("vaccin", "M_ZERO");
+			    }
+			%>
 		<div id="banner"
 			style="padding-top: 0px; display: none; position: relative;">
 			<header> <img class="mySlides"

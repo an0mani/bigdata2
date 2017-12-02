@@ -67,6 +67,7 @@ tr {
                               <!-- <h1><strong>I am Strata</strong>, a super simple<br />
                responsive site template freebie<br />
                crafted by <a href="http://html5up.net">HTML5 UP</a>.</h1> -->
+               <p style="color: black;" >${sessionScope.month} 주사를 맞아야합니다. 자세한 내용은 예방접종 메뉴를 참고해주세요</p>
    </div>
    </header>
    <!-- Header -->

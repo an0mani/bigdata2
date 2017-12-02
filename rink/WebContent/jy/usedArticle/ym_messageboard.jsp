@@ -1,3 +1,4 @@
+<%@page import="java.util.Calendar"%>
 <%@page import="ym_com.DAO.ym_FileVO"%>
 <%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR" pageEncoding="EUC-KR"%>
@@ -72,12 +73,13 @@ tr {
 <link rel="stylesheet" href="assets/css/main2.css" />
 </head>
 <body id="top" class="homepage" style="text-align: center;">
+
    <div id="back">
       <header id="header1">
       <div class="inner1">
 
          <a href="#" class="image avatar" style = "margin-right: 70px;"> <img src="back_image/baby.jpg" alt="" style = "width:250px; height:250px;"/></a>
-         <p align="center">??맘</p>
+         <p align="center">${Login_name }의 Mom</p>
          <input type="button" name="write" value="글쓰기"
             onclick="location.href='ym_writing.jsp'"
             style="width: 50px; height: 50px; min-width: 6em !important; font-size: 15px; text-align: center; color: black !important; margin-right: 0px; font-family: 'a고래야놀자'">
@@ -91,12 +93,14 @@ tr {
       <input type="button" value='보행기' onclick = "changeIframeUrl('stroller.jsp')"></input>
       <input type="button" value='아기침대' onclick = "changeIframeUrl('babybed.jsp')"></input>
       <input type="button" value='기타' onclick = "changeIframeUrl('etc.jsp')"></input>
+      <p style="color: black;" >${sessionScope.month} 주사를 맞아야합니다. 자세한 내용은 예방접종 메뉴를 참고해주세요</p>
       </div>
       </header>
    </div>
    <!-- Header -->
    <!-- Menu -->
    <div id="wrapper">
+
 
       <!-- Header -->
       <header id="header" style = "padding-top: 0px; padding-bottom: 0px;">
