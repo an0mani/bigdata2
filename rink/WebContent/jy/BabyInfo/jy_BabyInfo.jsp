@@ -4,6 +4,11 @@
 <html>
 <head>
 <style type="text/css">
+
+.inner{
+	background-image: url('../Notice/back_image/childnotice6.jpg') !important;
+	color:black;
+	}
 #top {
 	background-image: url("babyimage.png");
 	background-repeat: no-repeat;

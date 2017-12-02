@@ -42,8 +42,8 @@ article {
 }
 
 #art_pic img {
-	width: 70px;
-	height: 70px;
+	width: 150px;
+	height: 150px;
 }
 
 .carousel {
@@ -652,8 +652,8 @@ a#login_pop:hover, a#join_pop:hover {
 				<p>날씨, 운세, 공지사항 확인하는 공간</p>
 				</article>
 
-				<article id="art_pic"> <a href="#" class="image featured"><img
-					src="images/sun_icon1.png" alt="" /></a> </article>
+				<article id="art_pic"> <a href="#" class="image featured"  style = "margin-bottom: 0px";><img
+					src="images/flower11.jpg" alt="" /></a> </article>
 
 				<article> <a href="#" class="image featured"></a> <header>
 				<h2>
@@ -663,8 +663,8 @@ a#login_pop:hover, a#join_pop:hover {
 				<p>각 지역의 어린이집 평점 Top10</p>
 				</article>
 
-				<article id="art_pic"> <a href="#" class="image featured"><img
-					src="images/sun_icon1.png" alt="" /></a> </article>
+				<article id="art_pic"> <a href="#" class="image featured"  style = "margin-bottom: 0px";><img
+					src="images/flower11.jpg" alt="" /></a> </article>
 
 				<article> <a href="#" class="image featured"></a> <header>
 				
@@ -675,8 +675,8 @@ a#login_pop:hover, a#join_pop:hover {
 				<p>육아에 필요한 정보, Hot한 Issue</p>
 				</article>
 
-				<article id="art_pic"> <a href="#" class="image featured"><img
-					src="images/sun_icon1.png" alt="" /></a> </article>
+				<article id="art_pic"> <a href="#" class="image featured" style = "margin-bottom: 0px";><img
+					src="images/flower11.jpg" alt="" /></a> </article>
 
 				<article> <a href="#" class="image featured"></a> <header>
 				<h2>
@@ -686,8 +686,8 @@ a#login_pop:hover, a#join_pop:hover {
 				<p>영*유아들이 잘 걸리는 질병을 알고 미리 예방하자!</p>
 				</article>
 
-				<article id="art_pic"> <a href="#" class="image featured"><img
-					src="images/sun_icon1.png" alt="" /></a> </article>
+				<article id="art_pic"> <a href="#" class="image featured" style = "margin-bottom: 0px";>
+				<img src="images/flower11.jpg" alt="" /></a> </article>
 
 				<article> <a href="#" class="image featured"></a> <header>
 				<h2>
