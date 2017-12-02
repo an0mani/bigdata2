@@ -6,7 +6,7 @@
 <head>
 <style type="text/css">
 #top {
-	background-image: url("sunflower4.jpg");
+	background-image: url("images/back.png");
 	background-repeat: inherit;
 	background-size: cover;
 	font-family: 'a°í·¡¾ß³îÀÚ';
@@ -21,13 +21,13 @@
 <body id="top">
 	<section id="three">
 	<p></p>
+	
 	<h1 align="center">
 		<img src="writingicon.png" width="500px" height="200px">
 	</h1>
 	<p align="center"></p>
 	<div class="row" style="padding-left: 500px; padding-right: 0px">
-		<div class="8u 12u$(small)">
-			
+		<div class="8u 12u$(small)">		
 			<c:choose>
 				<c:when test="${not empty sessionScope.set}">
 				<c:forEach items = "${sessionScope.set}" var="set" >
@@ -37,17 +37,17 @@
 							<div class="6u 12u$(xsmall)">
 								<input type="text" name="title" id="title" placeholder="title"
 									value="${set.title }"
-									style="font-family: 'a°í·¡¾ß³îÀÚ'; color: black;" />
+									style="font-family: 'a°í·¡¾ß³îÀÚ'; color: black; border:1px solid #A6A6A6; border-width:3px 3px 3px 3px;" />
 							</div>
 							<div class="6u$ 12u$(xsmall)">
 								<input type="text" name="name" id="name" placeholder="name"
 									value="${set.name }"
-									style="font-family: 'a°í·¡¾ß³îÀÚ'; color: black;" />
+									style="font-family: 'a°í·¡¾ß³îÀÚ'; color: black; border:1px solid #A6A6A6; border-width:3px 3px 3px 3px;" />
 							</div>
 							<div class="6u$ 12u$(xsmall)">
 								<input type="date" name="date" id="date"
 									value="${set.wdate }"
-									style="font-family: 'a°í·¡¾ß³îÀÚ'; color: black;" />
+									style="font-family: 'a°í·¡¾ß³îÀÚ'; color: black; border:1px solid #A6A6A6; border-width:3px 3px 3px 3px;" />
 							</div>
 							<div class="6u$ 12u$(xsmall)">
 								<input type="file" name="file" id="file" placeholder="file"
@@ -57,13 +57,13 @@
 							<div class="12u$">
 								<textarea name="message" id="message" placeholder="Message" rows="8" 
 								value="${set.text }"
-									style="font-family: 'a°í·¡¾ß³îÀÚ'; color: black;"></textarea>
+									style="font-family: 'a°í·¡¾ß³îÀÚ'; color: black; border:1px solid #A6A6A6; border-width:3px 3px 3px 3px;"></textarea>
 							</div>
 							<div class="12u$">
 								<input type="submit" value="Send Message"
-									style="font-family: 'a°í·¡¾ß³îÀÚ'; color: black;" />
+									style="font-family: 'a°í·¡¾ß³îÀÚ'; color: black; border:1px solid #A6A6A6; border-width:3px 3px 3px 3px;" />
 									<input type="button" value="Previous page"
-									style="font-family: 'a°í·¡¾ß³îÀÚ'; color: black;" />
+									style="font-family: 'a°í·¡¾ß³îÀÚ'; color: black; border:1px solid #A6A6A6; border-width:3px 3px 3px 3px;" />
 							</div>
 						</div>
 					</form>
@@ -75,15 +75,15 @@
 						<div class="row uniform 50%">
 							<div class="6u 12u$(xsmall)">
 								<input type="text" name="title" id="title" placeholder="title"
-									style="font-family: 'a°í·¡¾ß³îÀÚ'; color: black;" />
+									style="font-family: 'a°í·¡¾ß³îÀÚ'; color: black; border:1px solid #A6A6A6; border-width:3px 3px 3px 3px;" />
 							</div>
 							<div class="6u$ 12u$(xsmall)">
 								<input type="text" name="name" id="name" placeholder="name"
-									style="font-family: 'a°í·¡¾ß³îÀÚ'; color: black;" />
+									style="font-family: 'a°í·¡¾ß³îÀÚ'; color: black; border:1px solid #A6A6A6; border-width:3px 3px 3px 3px;" />
 							</div>
 							<div class="6u$ 12u$(xsmall)">
 								<input type="date" name="date" id="date"
-									style="font-family: 'a°í·¡¾ß³îÀÚ'; color: black;" />
+									style="font-family: 'a°í·¡¾ß³îÀÚ'; color: black; border:1px solid #A6A6A6; border-width:3px 3px 3px 3px;" />
 							</div>
 							<div class="6u$ 12u$(xsmall)">
 								<input type="file" name="file" id="file" placeholder="file"
@@ -91,13 +91,13 @@
 							</div>
 							<div class="12u$">
 								<textarea name="message" id="message" placeholder="Message"
-									rows="8" style="font-family: 'a°í·¡¾ß³îÀÚ'; color: black;"></textarea>
+									rows="8" style="font-family: 'a°í·¡¾ß³îÀÚ'; color: black; border:1px solid #A6A6A6; border-width:3px 3px 3px 3px;"></textarea>
 							</div>
 							<div class="12u$">
 								<input type="submit" value="Send Message"
-									style="font-family: 'a°í·¡¾ß³îÀÚ'; color: black;" /> <input
-									type="button" value="Previous page"
-									style="font-family: 'a°í·¡¾ß³îÀÚ'; color: black;" />
+									style="font-family: 'a°í·¡¾ß³îÀÚ'; color: black; border:1px solid #A6A6A6; border-width:3px 3px 3px 3px;" />
+									<input type="button" value="Previous page"
+									style="font-family: 'a°í·¡¾ß³îÀÚ'; color: black; border:1px solid #A6A6A6; border-width:3px 3px 3px 3px;" />
 							</div>
 						</div>
 					</form>

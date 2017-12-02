@@ -1,66 +1,39 @@
-<%@page import="ranking.rankVO"%>
 <%@page import="java.util.ArrayList"%>
+<%@page import="ranking.rankVO"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
 	pageEncoding="EUC-KR"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <style type="text/css">
-select {
-    width: 200px !important;
-    height: 30px !important;
-    padding-left: 10px !important;
-    font-size: 18px !important;
-    color: #006fff !important;
-    border: 1px solid #006fff !important;
-    border-radius: 3px !important;
-    width: 300px !important;
-    height: 50px !important;
-}
-
-select::-ms-expand {
-	display: none; /* 화살표 없애기 for IE10, 11*/
-}
-
-#submitbutton>input {
-	background: #2e8ce3;
-	padding: 7px 30px 7px 30px;
-	font-size: 15px;
-	font-weight: bold;
-	color: #000000;
-	text-align: center;
-	border: solid 1px #73c8f0;
-	background: -moz-linear-gradient(0%, 100%, 90deg, #2e8ce3, #ffffff);
-	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#ffffff),
-		to(#2e8ce3));
-	border-radius: 5px;
-	-moz-border-radius: 5px;
-	-webkit-border-radius: 5px;
-	border-bottom-color: #196ebb;
-	text-shadow: 0 -1px 0 #196ebb;
-	width: 216px;
-}
-
-#top {
-	background-image: url('images/center.png') !important;
-	font-family: 'a고래야놀자' !important;
-}
-
-#tag {
-	margin-top: 40%;
-}
-
-#back {
-	background-image: url('images/test.png') !important;
-}
-
-tr {
+	#top {
+		background-image: url('images/backgroundsakura2.png') !important;
+		background-repeat:no-repeat;
+    	background-position: right top;
+    	background-attachment: fixed;
+		font-family: 'a고래야놀자' !important;
+	
+	}
+	#tag{
+		margin-top: 40%;
+	
+	}
+	#back{
+	
+		background-image: url('images/main2.png') !important;
+	 
+	}
+	tr{
+		color: black;
+		align-self: center;
+	}
+	#two{
+		width:110%;
+	}
+	
+	.inner {
+	background-image: url('images/childnotice6.jpg') !important;
 	color: black;
-	align-self: center;
-}
-
-#two {
-	width: 110%;
 }
 </style>
 <title></title>
@@ -71,112 +44,96 @@ tr {
 </head>
 <body id="top">
 	<header id="header1">
+				<div class="inner1" style="margin-top: 40px">
+				
+					<a href="#" class="image avatar" style="margin-right: 100px;"> <img
+					src="back_image/baby.jpg" alt=""
+					style="width: 200px; height: 200px;"></a>
+					<p align="center" style="font-size: 35px; color: #000000;">??맘</p>
+						<input type = "button" name = "menu" value = "목  록" onclick="location.href='ym_messageboard.jsp'" style="width: 50px; height: 50px; min-width: 6em !important; font-size: 15px; text-align: center; color: black !important; margin-right: 0px; font-family: 'a고래야놀자'">
+						<input type = "button" name = "menu" value = "광산구" onclick="location.href='ym_messageboard.jsp'" style="width: 50px; height: 50px; min-width: 6em !important; font-size: 15px; text-align: center; color: black !important; margin-right: 0px; font-family: 'a고래야놀자'">
+						<input type = "button" name = "menu" value = "목  록" onclick="location.href='ym_messageboard.jsp'" style="width: 50px; height: 50px; min-width: 6em !important; font-size: 15px; text-align: center; color: black !important; margin-right: 0px; font-family: 'a고래야놀자'">
+						<input type = "button" name = "menu" value = "목  록" onclick="location.href='ym_messageboard.jsp'" style="width: 50px; height: 50px; min-width: 6em !important; font-size: 15px; text-align: center; color: black !important; margin-right: 0px; font-family: 'a고래야놀자'">
+						<input type = "button" name = "menu" value = "목  록" onclick="location.href='ym_messageboard.jsp'" style="width: 50px; height: 50px; min-width: 6em !important; font-size: 15px; text-align: center; color: black !important; margin-right: 0px; font-family: 'a고래야놀자'">
+						<input type = "button" name = "menu" value = "목  록" onclick="location.href='ym_messageboard.jsp'" style="width: 50px; height: 50px; min-width: 6em !important; font-size: 15px; text-align: center; color: black !important; margin-right: 0px; font-family: 'a고래야놀자'">
 
-	<div class="inner1" style="margin-top: 40px">
-
-		<a href="#" class="image avatar"><img src="back_image/baby.jpg"
-			alt="" /></a>
-		<p align="center">${Login_name }의 Mom</p>
-		<input type="button" name="menu" value="목  록"
-			onclick="location.href='ym_messageboard.jsp'"
-			style="width: 50px; height: 50px; min-width: 6em !important; font-size: 15px; text-align: center; color: black !important; margin-right: 0px; font-family: 'a고래야놀자'">
-		<input type="button" name="menu" value="광산구"
-			onclick="location.href='ym_messageboard.jsp'"
-			style="width: 50px; height: 50px; min-width: 6em !important; font-size: 15px; text-align: center; color: black !important; margin-right: 0px; font-family: 'a고래야놀자'">
-		<input type="button" name="menu" value="목  록"
-			onclick="location.href='ym_messageboard.jsp'"
-			style="width: 50px; height: 50px; min-width: 6em !important; font-size: 15px; text-align: center; color: black !important; margin-right: 0px; font-family: 'a고래야놀자'">
-		<input type="button" name="menu" value="목  록"
-			onclick="location.href='ym_messageboard.jsp'"
-			style="width: 50px; height: 50px; min-width: 6em !important; font-size: 15px; text-align: center; color: black !important; margin-right: 0px; font-family: 'a고래야놀자'">
-		<input type="button" name="menu" value="목  록"
-			onclick="location.href='ym_messageboard.jsp'"
-			style="width: 50px; height: 50px; min-width: 6em !important; font-size: 15px; text-align: center; color: black !important; margin-right: 0px; font-family: 'a고래야놀자'">
-		<input type="button" name="menu" value="목  록"
-			onclick="location.href='ym_messageboard.jsp'"
-			style="width: 50px; height: 50px; min-width: 6em !important; font-size: 15px; text-align: center; color: black !important; margin-right: 0px; font-family: 'a고래야놀자'">
-<p style="color: black;" >${sessionScope.month} 주사를 맞아야합니다. 자세한 내용은 예방접종 메뉴를 참고해주세요</p>
-		<!-- <h1><strong>I am Strata</strong>, a super simple<br />
-
+					<!-- <h1><strong>I am Strata</strong>, a super simple<br />
 					responsive site template freebie<br />
 					crafted by <a href="http://html5up.net">HTML5 UP</a>.</h1> -->
-	</div>
-	</header>
+				</div>
+			</header>
 	<!-- Header -->
-	<!-- Menu -->
+		<!-- Menu -->
 	<div id="wrapper">
+		
+				<!-- Header -->
+					<header id="header" style="padding-top: 0px;padding-bottom: 0px;height: 0px;width: 1800px;">
+						<div class="inner">
+					
+							<!-- Logo -->
+							
+							<!-- Nav -->
+								<nav>
+									<ul>
+										<li><a href="#menu">Menu</a></li>
+									</ul>
+								</nav>
 
-		<!-- Header -->
-		<header id="header"
-			style="padding-top: 0px;padding-bottom: 0px;height: 0px;width: 1800px;">
-		<div class="inner">
-
-			<!-- Logo -->
-
-			<!-- Nav -->
-			<nav>
-			<ul>
-				<li><a href="#menu">Menu</a></li>
-			</ul>
-			</nav>
-
-		</div>
-		</header>
-		<nav id="menu">
-		<h2>Menu</h2>
-		<ul>
-			<li><a href="../firstMain/jh_main.jsp">Home</a></li>
+						</div>
+					</header>
+					<nav id="menu">
+						<h2>Menu</h2>
+						<ul>
+								<li><a href="../firstMain/jh_main.jsp">Home</a></li>
 			<li><a href="../../ym_SelectService">아기 용품 공간</a></li>
 			<li><a href="../../DiarySelectService">나만의 육아일기</a></li>
 			<li><a href="../../SelectService">이야기해요</a></li>
 			<li><a href="../BabyInfo/jy_BabyInfo.jsp">나의 아기정보</a></li>
 			<li><a href="../MessageBoard/logout.jsp">로그아웃</a></li>
-		</ul>
-		</nav>
+						</ul>
+					</nav>
 
-	</div>
-
+			</div>
+			
 	<!-- Logo -->
-
+	
 	<!-- Main -->
-	<div id="main"
-		style="margin-left: 380px; padding-top: 0px; padding-bottom: 50px; padding-left: 50px; padding-right: 0px; border-bottom-width: 100px;">
+	<div id="main" style="margin-left: 380px;padding-top: 0px;padding-bottom: 50px;padding-left: 50px;padding-right: 0px;border-bottom-width: 100px;">
 
 		<!-- One -->
-		<section id="one"> <!-- <header class="major">
+		<section id="one">
+			<!-- <header class="major">
 				<h2>To Baby From Mom.</h2>
 			</header>
 			<p>Accumsan orci faucibus id eu lorem semper. Eu ac iaculis ac nunc nisi lorem vulputate lorem neque cubilia ac in adipiscing in curae lobortis tortor primis integer massa adipiscing id nisi accumsan pellentesque commodo blandit enim arcu non at amet id arcu magna. Accumsan orci faucibus id eu lorem semper nunc nisi lorem vulputate lorem neque cubilia.</p>
 				<ul class="actions">
 					<li><a href="writing.jsp" class="button">Message Writing</a></li>
 					<li><a href="#" class="button">Logout</a></li>
-				</ul> --> </section>
+				</ul> -->
+		</section>
 
 		<!-- Two -->
-		<section id="two"
-			style="border-top-width: 0px; margin-top: 0px; padding-top: 50px;">
+		<section id="two" style = "border-top-width: 0px; margin-top: 0px; padding-top: 50px;">
 		<h1>어린이집 평점 순위별 표</h1>
 		<ul class="actions">
 			<!-- <li><a href="#" class="button">Full Portfolio</a></li> -->
 		</ul>
 		<div>
-			<form method="post" action="../../rankService">
-				<select name="area">
-					<option value="gs">광산구</option>
-					<option value="e">동구</option>
-					<option value="w">서구</option>
-					<option value="s">남구</option>
-					<option value="n">북구</option>
-				</select>
-				<div id="submitbutton">
-					<input type="submit" value="검 색" style="color: black !important;">
-				</div>
-			</form>
-		</div>
-		<div id="map" style="width: 100%; height: 1000px;"></div>
-		<script type="text/javascript"
-			src="//dapi.kakao.com/v2/maps/sdk.js?appkey=0351a47886aeab5672a46c979aadfb78"></script>
-		<script>
+	<form method="post" action="../../rankService">
+		<select name = "area">
+			<option value="gs">광산구</option>
+			<option value="e">동구</option>
+			<option value="w">서구</option>
+			<option value="s">남구</option0>
+			<option value="n">북구</option>
+		</select> <input type="submit" value="검색" >
+	</form>
+	</div>
+	
+	<div id="map" style="width: 100%; height: 1000px;"></div>
+	<script type="text/javascript"
+		src="//dapi.kakao.com/v2/maps/sdk.js?appkey=0351a47886aeab5672a46c979aadfb78"></script>
+	<script>
 		var mapContainer = document.getElementById('map'), // 지도를 표시할 div  
 		mapOption = {
 			center : new daum.maps.LatLng(35.15420004, 126.8847805), // 지도의 중심좌표
@@ -189,16 +146,23 @@ tr {
 		// 마커를 표시할 위치와 title 객체 배열입니다 
 		 
 			 var positions =[
-            <%ArrayList<rankVO> list = (ArrayList<rankVO>) session.getAttribute("rank");
+            <%
+               
+                ArrayList<rankVO> list = (ArrayList<rankVO>)session.getAttribute("rank");
+            	
 
-			if (list != null) {
-				for (int i = 0; i < list.size(); i++) {
-
-					String name = list.get(i).getName();
-					String latitude = list.get(i).getLatitude();
-					String longtude = list.get(i).getLongtude();
-					String addr = list.get(i).getAddr();
-					String tel = list.get(i).getTel();%>
+                if(list!=null){
+                for (int i = 0 ; i < list.size() ; i++) {
+                	
+                    String name = list.get(i).getName();
+                    String latitude = list.get(i).getLatitude();
+                    String longtude = list.get(i).getLongtude();
+                    String addr = list.get(i).getAddr();
+                    String tel = list.get(i).getTel();
+                    
+                    
+                    
+            %>
             
     			
   			  {
@@ -210,8 +174,11 @@ tr {
             
   		 
           
-            <%}
-			}%>   ]    
+            <%
+                }
+                }
+                
+            %>   ]    
 			// 마커 이미지의 이미지 주소입니다
 				var imageSrc = "http://t1.daumcdn.net/localimg/localimages/07/mapapidoc/markerStar.png";
 				
@@ -277,7 +244,8 @@ tr {
 		
 
 		
-	</script> </section>
+	</script>
+		</section>
 
 		<!-- Three -->
 		<!-- <section id="three">

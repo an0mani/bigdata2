@@ -61,6 +61,8 @@ tr {
 #two {
 	width: 110%;
 }
+
+
 </style>
 <title></title>
 <meta charset="utf-8" />
@@ -70,28 +72,51 @@ tr {
 </head>
 <body id="top">
 	<header id="header1">
-
 	<div class="inner1" style="margin-top: 40px">
 
+					<a href="#" class="image avatar" style="margin-right: 100px;"> <img
+					src="back_image/baby.jpg" alt=""
+					style="width: 200px; height: 200px;"></a>
+					<p align="center" style="font-size: 35px; color: #000000;">??맘</p>
 
-		<a href="#" class="image avatar" style="margin-right: 70px;"><img
-			src="back_image/baby.jpg" alt="" style="width: 250px; height: 250px;" /></a>
-		<p align="center">${Login_name }의 Mom</p>
-
-
-		<input type="button" value='간디라니다'
+		<input type="button" value='어린이뉴스'
 			onclick="changeIframeUrl('writing.jsp')"
-			style="width: 50px; height: 50px; min-width: 6em !important; font-size: 15px; text-align: center; color: black !important; margin-right: 0px; font-family: 'a고래야놀자'"></input><br>
-		<input type="button" value='어린이 뉴스'
-			onclick="changeIframeUrl('README.txt')"
-			style="width: 50px; height: 50px; min-width: 6em !important; font-size: 15px; text-align: center; color: black !important; margin-right: 0px; font-family: 'a고래야놀자'"></input>
-
-
-
-		<input type="button" value='발달시기별 '
-			onclick="changeIframeUrl('eatGPS.jsp')"></input>
-
-
+			style="width: 90px; height: 70px; min-width: 6em !important; font-size: 30px; text-align: center; color: black !important; margin-right: 0px; font-family: 'a고래야놀자'"></input><br>
+		<fieldset>
+			<legend style="color: black; font-size: 20px;">육아 상식</legend>
+				<input type="button" value='신생아'
+				onclick="changeIframeUrl('baby1.jsp')"
+				style="width: 20px; height: 35px; min-width: 6em !important; font-size: 13px; text-align: center; color: black !important; margin-right: 0px; font-family: 'a고래야놀자'"></input>			
+				
+				<input type="button" value='1개월'
+				onclick="changeIframeUrl('baby2.jsp')"
+				style="width: 20px; height: 35px; min-width: 6em !important; font-size: 13px; text-align: center; color: black !important; margin-right: 0px; font-family: 'a고래야놀자'"></input>		
+				
+				<input type="button" value='2~3개월'
+				onclick="changeIframeUrl('baby3.jsp')"
+				style="width: 20px; height: 35px; min-width: 6em !important; font-size: 13px; text-align: center; color: black !important; margin-right: 0px; font-family: 'a고래야놀자'"></input>
+				
+				<input type="button" value='4~5개월'
+				onclick="changeIframeUrl('baby4.jsp')"
+				style="width: 20px; height: 35px; min-width: 6em !important; font-size: 13px; text-align: center; color: black !important; margin-right: 0px; font-family: 'a고래야놀자'"></input>	
+				
+				<input type="button" value='6~8개월'
+				onclick="changeIframeUrl('baby5.jsp')"
+				style="width: 20px; height: 35px; min-width: 6em !important; font-size: 13px; text-align: center; color: black !important; margin-right: 0px; font-family: 'a고래야놀자'"></input>
+				
+				<input type="button" value='9~11개월'
+				onclick="changeIframeUrl('baby6.jsp')"
+				style="width: 20px; height: 35px; min-width: 6em !important; font-size: 13px; text-align: center; color: black !important; margin-right: 0px; font-family: 'a고래야놀자'"></input>
+				
+				<input type="button" value='12~17개월'
+				onclick="changeIframeUrl('baby7.jsp')"
+				style="width: 20px; height: 35px; min-width: 6em !important; font-size: 13px; text-align: center; color: black !important; margin-right: 0px; font-family: 'a고래야놀자'"></input>
+				
+				<input type="button" value='18개월'
+				onclick="changeIframeUrl('baby8.jsp')"
+				style="width: 20px; height: 35px; min-width: 6em !important; font-size: 13px; text-align: center; color: black !important; margin-right: 0px; font-family: 'a고래야놀자'"></input>																
+		
+		</fieldset>
 
 	</div>
 	</header>
@@ -100,13 +125,13 @@ tr {
 	<div id="wrapper">
 
 		<!-- Header -->
-		<header id="header"
+<!-- 		<header id="header"
 			style="padding-top: 0px;padding-bottom: 0px;height: 0px;width: 1800px;">
 		<div class="inner">
 
-			<!-- Logo -->
+			Logo
 
-			<!-- Nav -->
+			Nav
 			<nav>
 			<ul>
 				<li><a href="#menu">Menu</a></li>
@@ -128,7 +153,7 @@ tr {
 		</nav>
 
 	</div>
-
+ -->
 	<!-- Logo -->
 
 	<!-- Main -->
@@ -170,7 +195,7 @@ tr {
 											style="max-width: 1px; max-height: 1px;"> <img
 											src="back_image/white.png" alt=""
 											style="width: 1px; height: 0px;" />
-										<div style="position: relative;"></a>${list.title}<h3
+											<div style="position: relative;"></a>${list.title}<h3
 											style="font-size: 0px">${list.text}</h3>
 										</div>
 										<div style="position: relative; left: 10px; top: 60px;">

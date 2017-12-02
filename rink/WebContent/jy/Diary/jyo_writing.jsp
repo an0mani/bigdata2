@@ -6,7 +6,7 @@
 <head>
 <style type="text/css">
 	#top {
-		background-image: url("back_image/sunflower6.jpg");
+		background-image: url("images/back.png");
 		background-size: cover;
 		font-family: 'a°í·¡¾ß³îÀÚ';
 	}
@@ -30,20 +30,20 @@
 					<form method="post" action="../../DiaryupdateService" enctype="multipart/form-data">
 				<div class="row uniform 50%">
 					<div class="6u 12u$(xsmall)">
-						<input type="text" name="title" id="title" value="${set.title }" placeholder="title" style = "font-family: 'a°í·¡¾ß³îÀÚ'; color:black;"/>
+						<input type="text" name="title" id="title" value="${set.title }" placeholder="title" style = "font-family: 'a°í·¡¾ß³îÀÚ'; color:black; border:1px solid #A6A6A6; border-width:3px 3px 3px 3px;"/>
 					</div>
 					<div class="6u 12u$(xsmall)">
-						<input type="date" name="date" id="date" value="${set.date }" placeholder="date" style = "font-family: 'a°í·¡¾ß³îÀÚ'; color:black;"/><br>
+						<input type="date" name="date" id="date" value="${set.date }" placeholder="date" style = "font-family: 'a°í·¡¾ß³îÀÚ'; color:black;  border:1px solid #A6A6A6; border-width:3px 3px 3px 3px;"/><br>
 					</div>
 					<div class="6u$ 12u$(xsmall)">
 						<input type="file" name="file" id="file" value="${set.file }" placeholder="file" style = "font-family: 'a°í·¡¾ß³îÀÚ'; color:black;"/>
 					</div>
 					<div class="12u$">
-						<textarea name="message" id="message" value="${set.text }" placeholder="Message" rows="8" style = "font-family: 'a°í·¡¾ß³îÀÚ'; color:black;"></textarea>
+						<textarea name="message" id="message" value="${set.text }" placeholder="Message" rows="8" style = "font-family: 'a°í·¡¾ß³îÀÚ'; color:black; border:1px solid #A6A6A6; border-width:3px 3px 3px 3px;"></textarea>
 					</div>
 					<div class="12u$">
-						<input type="submit" value="Send Message" style = "font-family: 'a°í·¡¾ß³îÀÚ'";/>
-						<input type="submit" value="Cancel" style = "font-family: 'a°í·¡¾ß³îÀÚ'";/>
+						<input type="submit" value="Send Message" style = "font-family: 'a°í·¡¾ß³îÀÚ'; border:1px solid #A6A6A6; border-width:3px 3px 3px 3px;"/>
+						<input type="submit" value="Cancel" style = "font-family: 'a°í·¡¾ß³îÀÚ'; border:1px solid #A6A6A6; border-width:3px 3px 3px 3px;"/>
 					</div>
 				</div>
 			</form>
@@ -53,20 +53,20 @@
 				<form method="post" action="../../DiaryUploadService" enctype="multipart/form-data">
 				<div class="row uniform 50%">
 					<div class="6u 12u$(xsmall)">
-						<input type="text" name="title" id="title" placeholder="title" style = "font-family: 'a°í·¡¾ß³îÀÚ'; color:black;"/>
+						<input type="text" name="title" id="title" placeholder="title" style = "font-family: 'a°í·¡¾ß³îÀÚ'; color:black; border:1px solid #A6A6A6; border-width:3px 3px 3px 3px;"/>
 					</div>
 					<div class="6u 12u$(xsmall)">
-						<input type="date" name="date" id="date" placeholder="date" style = "font-family: 'a°í·¡¾ß³îÀÚ'; color:black;"/><br>
+						<input type="date" name="date" id="date" placeholder="date" style = "font-family: 'a°í·¡¾ß³îÀÚ'; color:black;  border:1px solid #A6A6A6; border-width:3px 3px 3px 3px;"/><br>
 					</div>
 					<div class="6u$ 12u$(xsmall)">
 						<input type="file" name="file" id="file" placeholder="file" style = "font-family: 'a°í·¡¾ß³îÀÚ'; color:black;"/>
 					</div>
 					<div class="12u$">
-						<textarea name="message" id="message" placeholder="Message" rows="8" style = "font-family: 'a°í·¡¾ß³îÀÚ'; color:black;"></textarea>
+						<textarea name="message" id="message" placeholder="Message" rows="8" style = "font-family: 'a°í·¡¾ß³îÀÚ'; color:black; border:1px solid #A6A6A6; border-width:3px 3px 3px 3px;"></textarea>
 					</div>
 					<div class="12u$">
-						<input type="submit" value="Send Message" style = "font-family: 'a°í·¡¾ß³îÀÚ'";/>
-						<input type="submit" value="Cancel" style = "font-family: 'a°í·¡¾ß³îÀÚ'";/>
+						<input type="submit" value="Send Message" style = "font-family: 'a°í·¡¾ß³îÀÚ'; border:1px solid #A6A6A6; border-width:3px 3px 3px 3px;"/>
+						<input type="submit" value="Cancel" style = "font-family: 'a°í·¡¾ß³îÀÚ'; border:1px solid #A6A6A6; border-width:3px 3px 3px 3px;"/>
 					</div>
 				</div>
 			</form>

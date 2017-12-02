@@ -1,6 +1,6 @@
+<%@page import="java.util.ArrayList"%>
 <%@page import="com.eatGPS.eatGPSVO"%>
 
-<%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
    pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
@@ -10,43 +10,7 @@
 <head>
 <meta charset="utf-8">
 <title>수유실 표시하기</title>
-<style>
 
-select {
-    width: 200px;
-    height: 30px;
-    padding-left: 10px;
-    font-size: 18px;
-    color: #006fff;
-    border: 1px solid #006fff;
-    border-radius: 3px;
-    -webkit-appearance: none; /* 화살표 없애기 for chrome*/
-   -moz-appearance: none;    /* 화살표 없애기 for firefox*/
-   appearance: none;         /* 화살표 없애기 공통*/
-}
-select::-ms-expand {
-   display: none;            /* 화살표 없애기 for IE10, 11*/
-}
-
-input{
-background: #2e8ce3;
-padding:7px 30px 7px 30px;
-font-size:15px;
-font-weight:bold;
-color:#000000;
-text-align:center;
-border:solid 1px #73c8f0;
-background: -moz-linear-gradient(0%, 100%, 90deg, #2e8ce3, #ffffff);
-background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#ffffff), to(#2e8ce3));
-border-radius:5px;
--moz-border-radius:5px;
--webkit-border-radius:5px;
-border-bottom-color:#196ebb;
-text-shadow:0 -1px 0 #196ebb;
-}
-
-
-</style>
 </head>
 <body>
 
@@ -54,16 +18,15 @@ text-shadow:0 -1px 0 #196ebb;
    <form method="post" action="../../eatGPSService">
    
 
-   
-      <select name = "area">
-         <option value="gs">광주 수유실 위치 표시</option>
-         	<br>
-         
-      </select> <input type="submit" value="검색" >
-   </form>
+	
+		<select name = "area">
+			<option value="gs">광주 수유실 위치 표시</option>
+			
+		</select> <input type="submit" value="검색" >
+	</form>
+	</div>
    </div>
-   </div>
-   
+	
 
 
    <div id="map" style="width: 100%; height: 1000px;"></div>
