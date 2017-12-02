@@ -157,7 +157,7 @@ a#login_pop:hover, a#join_pop:hover {
 .popup {
 	width: 35%;
 	height: 55%;
-	background-image: url("../baby_picture/heartTree.png");
+	background-image: url("../baby_picture/main3.png");
 	background-repeat: no-repeat;
 	background-size: cover;
 	border: 3px solid #fff;
@@ -371,7 +371,7 @@ a#login_pop:hover, a#join_pop:hover {
 
 
 							<input type="submit" value="·Î ±× ÀÎ"
-								style="border-radius: 100%; font-family: 'a°¢¼³ÅÁ'; margin-right: 301px; font-size: 26px;" />
+								style="border-radius: 100%;font-family: 'a°¢¼³ÅÁ';margin-right: 500px;font-size: 26px;margin-top: 10px;" />
 							<a class="close" href="#close"></a>
 						</div>
 					</div>
