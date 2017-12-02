@@ -208,7 +208,7 @@ tr {
 						고개를 돌리지 않을 때
 					</p> -->
 					<div class="t_lv_tit">
-						<h4 style="color: #980000;">응급상황 &amp; 안전에 주의할 점</h4>
+						<h4 style="color: #990085;">응급상황 &amp; 안전에 주의할 점</h4>
 					</div>
 					<p class="t_txt">
 						<strong><span style="color: #acacac;">·</span></strong> 반드시 카시트를
@@ -229,7 +229,7 @@ tr {
 							style="color: #acacac;">·</span></strong> 아기와 애완동물을 같은 방에 두면 안 됩니다.
 					</p>
 					<p class="t_txt">
-						<span style="color: #980000;">다음의 증상이 있으면 소아청소년과 의사의 진료를 받는
+						<span style="color: #990085;">다음의 증상이 있으면 소아청소년과 의사의 진료를 받는
 							것이 안전합니다.</span> <br> <strong><span
 							style="color: #acacac;">·</span></strong> 몸무게가 잘 늘지 않을 때 <br> <strong><span
 							style="color: #acacac;">·</span></strong> 열이 38도 이상일 때 <br> <strong><span

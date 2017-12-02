@@ -58,9 +58,10 @@
 	<header id="header1">
 				<div class="inner1" style="margin-top: 40px">
 				
-					<a href="#" class="image avatar" style = "margin-right: 80px;"><img src="back_image/baby.jpg" alt="" style = "width:250px; height:250px; margin-right:50px;"/></a>
-					<form action = "writing.jsp" style = "margin-left: 20px;">
-					<p align="center">??¸¾</p>
+					<a href="#" class="image avatar" style="margin-right: 100px;"> <img
+					src="back_image/baby.jpg" alt=""
+					style="width: 200px; height: 200px;"></a>
+					<p align="center" style="font-size: 35px; color: #000000;">??¸¾</p>
 						<input type = "button" name = "write" value = "±Û¾²±â" onclick="location.href='jyo_writing.jsp'" style="width: 50px; height: 50px; min-width: 6em !important; font-size: 15px; text-align: center; color: black !important; margin-right: 0px; font-family: 'a°í·¡¾ß³îÀÚ'">	
 						<input type = "button" name = "menu" value = "¸ñ  ·Ï" onclick="location.href='jyo_diary.jsp'" style="width: 50px; height: 50px; min-width: 6em !important; font-size: 15px; text-align: center; color: black !important; margin-right: 0px; font-family: 'a°í·¡¾ß³îÀÚ'">					
 						</form>

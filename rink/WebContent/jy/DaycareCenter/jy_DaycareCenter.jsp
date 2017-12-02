@@ -46,8 +46,10 @@
 	<header id="header1">
 				<div class="inner1" style="margin-top: 40px">
 				
-					<a href="#" class="image avatar"><img src="back_image/baby.jpg" alt="" /></a>
-					<p align="center">??¸¾</p>
+					<a href="#" class="image avatar" style="margin-right: 100px;"> <img
+					src="back_image/baby.jpg" alt=""
+					style="width: 200px; height: 200px;"></a>
+					<p align="center" style="font-size: 35px; color: #000000;">??¸¾</p>
 						<input type = "button" name = "menu" value = "¸ñ  ·Ï" onclick="location.href='ym_messageboard.jsp'" style="width: 50px; height: 50px; min-width: 6em !important; font-size: 15px; text-align: center; color: black !important; margin-right: 0px; font-family: 'a°í·¡¾ß³îÀÚ'">
 						<input type = "button" name = "menu" value = "±¤»ê±¸" onclick="location.href='ym_messageboard.jsp'" style="width: 50px; height: 50px; min-width: 6em !important; font-size: 15px; text-align: center; color: black !important; margin-right: 0px; font-family: 'a°í·¡¾ß³îÀÚ'">
 						<input type = "button" name = "menu" value = "¸ñ  ·Ï" onclick="location.href='ym_messageboard.jsp'" style="width: 50px; height: 50px; min-width: 6em !important; font-size: 15px; text-align: center; color: black !important; margin-right: 0px; font-family: 'a°í·¡¾ß³îÀÚ'">

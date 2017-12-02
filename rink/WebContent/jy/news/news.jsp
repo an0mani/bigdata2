@@ -74,9 +74,10 @@ tr {
 	<header id="header1">
 	<div class="inner1" style="margin-top: 40px">
 
-		<a href="#" class="image avatar" style="margin-right: 80px;"><img
-			src="back_image/baby.jpg" alt="" style="width: 250px; height: 250px;" /></a>
-		<p align="center">??¸¾</p>
+					<a href="#" class="image avatar" style="margin-right: 100px;"> <img
+					src="back_image/baby.jpg" alt=""
+					style="width: 200px; height: 200px;"></a>
+					<p align="center" style="font-size: 35px; color: #000000;">??¸¾</p>
 
 		<input type="button" value='¾î¸°ÀÌ´º½º'
 			onclick="changeIframeUrl('writing.jsp')"

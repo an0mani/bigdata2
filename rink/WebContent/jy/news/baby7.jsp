@@ -202,7 +202,7 @@ tr {
 						좋습니다.
 					</p> -->
 					<div class="t_lv_tit">
-						<h4 style="color: #980000;">응급상황 &amp; 안전에 주의할 점</h4>
+						<h4 style="color: #990085;">응급상황 &amp; 안전에 주의할 점</h4>
 					</div>
 					<p class="t_txt">
 						<strong><span style="color: #acacac;">·</span></strong> 카시트를 반드시

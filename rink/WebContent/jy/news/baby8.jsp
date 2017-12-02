@@ -206,7 +206,7 @@ tr {
 						믿지 마세요.
 					</p> -->
 					<div class="t_lv_tit">
-						<h4 style="color: #980000;"
+						<h4 style="color: #990085;"
 						>응급상황 &amp; 안전에 주의할 점</h4>
 					</div>
 					<p class="t_txt">

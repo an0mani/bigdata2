@@ -195,7 +195,7 @@ tr {
 						핸드폰이나 디지털카메라로 찍어두세요.
 					</p> -->
 					<p class="t_txt">
-						<span style="color: #980000;">다음의 경우는 소아청소년과 의사의 진료를 받는 것이
+						<span style="color: #990085;">다음의 경우는 소아청소년과 의사의 진료를 받는 것이
 							좋습니다.</span> <br> <strong><span style="color: #acacac;">·</span></strong>
 						사람을 보고 웃지 않을 때<br> <strong><span
 							style="color: #acacac;">·</span></strong> 옹알이를 못하거나 엄마 말을 따라 하려고 시도하지 않을 때<br>
@@ -204,7 +204,7 @@ tr {
 							style="color: #acacac;">·</span></strong> 고개를 잘 가누지 못할 때
 					</p>
 					<div class="t_lv_tit">
-						<h4 style="color: #980000;">응급상황 &amp; 안전에 주의할 점</h4>
+						<h4 style="color: #990085;">응급상황 &amp; 안전에 주의할 점</h4>
 					</div>
 					<p class="t_txt">
 						<strong><span style="color: #acacac;">·</span></strong> 카시트는 반드시
@@ -229,7 +229,7 @@ tr {
 						있고, 부루펜은 만 6개월부터 사용이 가능합니다.
 					</p>
 					<p class="t_txt">
-						<span style="color: #980000;">다음의 경우는 소아청소년과 의사의 진료를 받는 것이
+						<span style="color: #990085;">다음의 경우는 소아청소년과 의사의 진료를 받는 것이
 							안전합니다.</span> <br> <strong><span style="color: #acacac;">·</span></strong>
 						열이 날 때<br> <strong><span style="color: #acacac;">·</span></strong>
 						기침을 할 때 <br> <strong><span style="color: #acacac;">·</span></strong>

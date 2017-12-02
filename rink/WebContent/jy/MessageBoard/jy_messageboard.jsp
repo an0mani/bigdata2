@@ -72,7 +72,7 @@ tr {
 			<a href="#" class="image avatar" style="margin-right: 100px;"> <img
 				src="back_image/baby.jpg" alt=""
 				style="width: 200px; height: 200px;"></a>
-			<p align="center" style="font-size: 35px; color: #000000;">??¸¾</p>
+			<p align="center" style="font-size: 36px; color: #000000;">??¸¾</p>
 			<div style="margin-right: 50px;">
 				<input type="button" name="write" value="±Û¾²±â"
 					onclick="location.href='jy_writing.jsp'"

@@ -244,7 +244,7 @@ tr {
 								style="color: #acacac;">·</span></strong> 외출했다 돌아온 사람들은 반드시 손을 잘 씻어야 합니다.
 						</p> -->
 						<p class="t_txt">
-							<span style="color: #980000;">다음의 경우 소아청소년과 의사의 진료를 받는 것이
+							<span style="color: #990085;">다음의 경우 소아청소년과 의사의 진료를 받는 것이
 								좋습니다.</span><br> <strong><span style="color: #acacac;">·</span></strong>
 							몸무게가 잘 늘지 않을 때 <br> <strong><span
 								style="color: #acacac;">·</span></strong> 젖을 빠는 힘이 약할 때 <br> <strong><span
@@ -253,7 +253,7 @@ tr {
 								style="color: #acacac;">·</span></strong> 열이 날 때
 						</p>
 						<div class="t_lv_tit">
-							<h4 style="color: #980000;">응급상황 &amp; 안전에 주의할 점</h4>
+							<h4 style="color: #990085;">응급상황 &amp; 안전에 주의할 점</h4>
 						</div>
 						<p class="t_txt">
 							<strong><span style="color: #acacac;">·</span></strong> 카시트는 신생아
@@ -277,7 +277,7 @@ tr {
 							침대나 소파 같은 곳에 눕혀두면 안됩니다.
 						</p>
 						<p class="t_txt">
-							<span style="color: #980000;">다음의 증상이 있으면 소아청소년과 의사의 진료를
+							<span style="color: #990085;">다음의 증상이 있으면 소아청소년과 의사의 진료를
 								받는 것이 안전합니다.</span><br> <strong><span
 								style="color: #acacac;">·</span></strong> 열이 38도 이상일 때 <br> <strong><span
 								style="color: #acacac;">·</span></strong> 기침을 할 때, 토하거나 설사를 할 때<br>

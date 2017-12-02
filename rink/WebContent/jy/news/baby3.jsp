@@ -191,7 +191,7 @@ tr {
 						접종수첩은 평생 보관해야 합니다. 접종수첩 분실에 대비해 수시로 카메라로 내용을 찍어두세요.
 					</p> -->
 					<p class="t_txt">
-						<span style="color: #980000;">다음의 경우 소아청소년과 의사의 진료를 받는 것이
+						<span style="color: #990085;">다음의 경우 소아청소년과 의사의 진료를 받는 것이
 							좋습니다. </span><br> <strong><span style="color: #acacac;">·</span></strong>
 						웃지 않거나 눈을 맞추지 못하거나 물건을 따라서 보지 못하거나 소리에 반응이 없는 경우<br> <strong><span
 							style="color: #acacac;">·</span></strong> 고개나 몸에 힘이 없어 늘어지는 경우<br> <strong><span
@@ -200,7 +200,7 @@ tr {
 							style="color: #acacac;">·</span></strong> 몸무게가 잘 늘지 않는 경우
 					</p>
 					<div class="t_lv_tit">
-						<h4 style="color: #980000;">응급상황 &amp; 안전에 주의할 점</h4>
+						<h4 style="color: #990085;">응급상황 &amp; 안전에 주의할 점</h4>
 					</div>
 					<p class="t_txt">
 						<strong><span style="color: #acacac;">·</span></strong> 카시트는 반드시
@@ -220,7 +220,7 @@ tr {
 						의사의 처방에 따라서 사용하는 것이 매우 중요합니다.
 					</p>
 					<p class="t_txt">
-						<span style="color: #980000;">다음의 증상이 있으면 소아청소년과 의사의 진료를 받는
+						<span style="color: #990085;">다음의 증상이 있으면 소아청소년과 의사의 진료를 받는
 							것이 안전합니다.</span> <br> <strong><span
 							style="color: #acacac;">·</span></strong> 열이 38도 이상일 때<br> <strong><span
 							style="color: #acacac;">·</span></strong> 기침을 할 때<br> <strong><span

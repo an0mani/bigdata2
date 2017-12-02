@@ -47,7 +47,7 @@
 							<div class="6u$ 12u$(xsmall)">
 								<input type="date" name="date" id="date"
 									value="${set.wdate }"
-									style="font-family: 'a°í·¡¾ß³îÀÚ'; color: black;" />
+									style="font-family: 'a°í·¡¾ß³îÀÚ'; color: black; border:1px solid #A6A6A6; border-width:3px 3px 3px 3px;" />
 							</div>
 							<div class="6u$ 12u$(xsmall)">
 								<input type="file" name="file" id="file" placeholder="file"
@@ -83,7 +83,7 @@
 							</div>
 							<div class="6u$ 12u$(xsmall)">
 								<input type="date" name="date" id="date"
-									style="font-family: 'a°í·¡¾ß³îÀÚ'; color: black;" />
+									style="font-family: 'a°í·¡¾ß³îÀÚ'; color: black; border:1px solid #A6A6A6; border-width:3px 3px 3px 3px;" />
 							</div>
 							<div class="6u$ 12u$(xsmall)">
 								<input type="file" name="file" id="file" placeholder="file"

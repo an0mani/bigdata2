@@ -197,7 +197,7 @@ tr {
 						처방전도 핸드폰으로 찍어두세요. 혹시 다른 병원에 갈 때 그 처방전을 보여주는 것이 좋습니다.
 					</p> -->
 					<p class="t_txt">
-						<span style="color: #980000;">다음의 경우는 소아청소년과 의사의 진료를 받는 것이
+						<span style="color: #990085;">다음의 경우는 소아청소년과 의사의 진료를 받는 것이
 							좋습니다.</span> <br> <strong><span style="color: #acacac;">·</span></strong>
 						뒤집지 못할 때<br> <strong><span style="color: #acacac;">·</span></strong>
 						도와주는데도 앉을 수 없을 때<br> <strong><span
@@ -206,7 +206,7 @@ tr {
 							style="color: #acacac;">·</span></strong> 열이 날 때
 					</p>
 					<div class="t_lv_tit">
-						<h4 style="color: #980000;">응급상황 &amp; 안전에 주의할 점</h4>
+						<h4 style="color: #990085;">응급상황 &amp; 안전에 주의할 점</h4>
 					</div>
 					<p class="t_txt">
 						<strong><span style="color: #acacac;">·</span></strong> 카시트는 반드시
