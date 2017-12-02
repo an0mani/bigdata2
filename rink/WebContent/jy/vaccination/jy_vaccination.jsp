@@ -10,10 +10,19 @@
    color: black;
    font-size: 50px;
 }
-
+#header1{
+	background-image: url('../Notice/back_image/main2.png') !important;
+	}
+	.inner{
+	background-image: url('../Notice/back_image/childnotice6.jpg') !important;
+	color:black;
+	}
 #top {
-   background-image: url('images/center.png') !important;
+   background-image: url('../Notice/back_image/main1.png') !important;
    font-family: 'a고래야놀자' !important;
+   background-repeat:no-repeat;
+   background-position: right top;
+   background-attachment: fixed;
 }
 
 #tag {
@@ -48,8 +57,7 @@ tr {
    <header id="header1">
    <div class="inner1" style="margin-top: 40px">
 
-      <a href="#" class="image avatar"><img src="back_image/baby.jpg"
-         alt="" /></a>
+      <a href="#" class="image avatar" style = "margin-right: 70px;"><img src="back_image/baby.jpg" alt="" style = "width:250px; height:250px;"/></a>
       <p align="center" style="font-size: 41px; font-weight: bold; color: black;">${Login_name }의 Mom</p>
       <input type="button" name="menu" value="목  록"
          onclick="location.href='jy_messageboard.jsp'"
