@@ -6,7 +6,7 @@
 <head>
 <style type="text/css">
 #top {
-	background-image: url("sunflower4.jpg");
+	background-image: url("../Notice/back_image/back.png");
 	background-repeat: inherit;
 	background-size: cover;
 	font-family: 'a고래야놀자';
