@@ -10,13 +10,14 @@ public class text {
    public static void main(String[] args) {
       
       Process ps = null;
-      String[] cmd = new String[] {"py", "C:/Users/User/Desktop/text.py", "print"};
+      String[] cmd = new String[] {"py", "C:\\Users\\User\\Desktop\\text.py", "dir"};
       String str = null;
       ArrayList<String> list = new ArrayList<>();
       try {
          
          System.out.println("Start");
          ps = new ProcessBuilder(cmd).start();
+         
          
          BufferedReader stdOut = new BufferedReader(new InputStreamReader(ps.getInputStream()));
          
