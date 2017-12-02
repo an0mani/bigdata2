@@ -21,11 +21,20 @@
 .pic {
 	height: 60% !important;
 }
-
-#top {
-	background-image: url(images/center.png) !important;
+	#header1{
+	background-image: url('../Diary/back_image/main2.png') !important;
+	}
+	.inner{
+	background-image: url('../Diary/back_image/childnotice6.jpg') !important;
+	color:black;
+	}
+	#top {
+	background-image: url('../Diary/back_image/main1.png') !important;
 	font-family: 'a°í·¡¾ß³îÀÚ' !important;
-}
+	background-repeat:no-repeat;
+  	background-position: right top;
+   	background-attachment: fixed;
+   }
 
 #tag {
 	margin-top: 40%;
@@ -57,8 +66,7 @@ tr {
 		<header id="header1">
 		<div class="inner1">
 
-			<a href="#" class="image avatar" style="margin-right: 40px;"><img
-				src="back_image/baby.jpg" alt="" /></a>
+			<a href="#" class="image avatar" style = "margin-right: 70px;"><img src="back_image/baby.jpg" alt="" style = "width:250px; height:250px;"/></a>
 			<p align="center">??¸¾</p>
 			<input type="button" name="menu" value="ÂÊÁö¾²±â"
 				onclick="location.href='jy_fromwriting.jsp'"
