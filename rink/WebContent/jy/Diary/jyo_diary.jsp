@@ -1,3 +1,5 @@
+<%@page import="java.util.ArrayList"%>
+<%@page import="com.DAO.DiaryVO"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
 	pageEncoding="EUC-KR"%>
 <%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix="c" %>
@@ -61,9 +63,15 @@
 					<a href="#" class="image avatar" style="margin-right: 100px;"> <img
 					src="back_image/baby.jpg" alt=""
 					style="width: 200px; height: 200px;"></a>
-					<p align="center" style="font-size: 35px; color: #000000;">??맘</p>
+					<p align="center" style="font-size: 35px; color: #000000;">${Login_name }맘</p>
 						<input type = "button" name = "write" value = "글쓰기" onclick="location.href='jyo_writing.jsp'" style="width: 50px; height: 50px; min-width: 6em !important; font-size: 15px; text-align: center; color: black !important; margin-right: 0px; font-family: 'a고래야놀자'">	
-						<input type = "button" name = "menu" value = "목  록" onclick="location.href='jyo_diary.jsp'" style="width: 50px; height: 50px; min-width: 6em !important; font-size: 15px; text-align: center; color: black !important; margin-right: 0px; font-family: 'a고래야놀자'">					
+						<input type = "button" name = "menu" value = "목  록" onclick="location.href='jyo_diary.jsp'" style="width: 50px; height: 50px; min-width: 6em !important; font-size: 15px; text-align: center; color: black !important; margin-right: 0px; font-family: 'a고래야놀자'"><hr>
+						<input type = "button" name = "menu" value = "공지사항"  onclick="location.href='../Notice/Notice.jsp'"style="width: 50px; height: 50px; min-width: 6em !important; font-size: 15px; text-align: center; color: black !important; margin-right: 0px; font-family: 'a고래야놀자'">
+						<input type = "button" name = "notice" value = "어린이집" onclick="location.href='../DaycareCenter/jy_DaycareCenter.jsp'" style="width: 50px; height: 50px; min-width: 6em !important; font-size: 15px; text-align: center; color: black !important; margin-right: 0px; font-family: 'a고래야놀자'">
+						<input type = "button" name = "button1" value = "육아팁" onclick="location.href='../news/news.jsp'" style="width: 50px; height: 50px; min-width: 6em !important; font-size: 15px; text-align: center; color: black !important; margin-right: 0px; font-family: 'a고래야놀자'">
+						<input type = "button" name = "button2" value = "질병순위" onclick="location.href='../dicrease/dicrease.jsp'" style="width: 50px; height: 50px; min-width: 6em !important; font-size: 15px; text-align: center; color: black !important; margin-right: 0px; font-family: 'a고래야놀자'">
+						<input type = "button" name = "button3" value = "예방접종" onclick="location.href='../vaccination/jy_vaccination.jsp'" style="width: 50px; height: 50px; min-width: 6em !important; font-size: 15px; text-align: center; color: black !important; margin-right: 0px; font-family: 'a고래야놀자'">
+      <p style="color: black;" >${sessionScope.month} 주사를 맞아야합니다. 자세한 내용은 예방접종 메뉴를 참고해주세요</p>					
 						</form>
 					<!-- <h1><strong>I am Strata</strong>, a super simple<br />
 					responsive site template freebie<br />
@@ -107,104 +115,172 @@
 	<!-- Main -->
 	<div id="main" style="margin-left: 380px;padding-top: 0px;padding-bottom: 50px;padding-left: 50px;padding-right: 0px;border-bottom-width: 100px;">
 
-		<!-- One -->
-		<section id="one">
-			<!-- <header class="major">
-				<h2>To Baby From Mom.</h2>
-			</header>
-			<p>Accumsan orci faucibus id eu lorem semper. Eu ac iaculis ac nunc nisi lorem vulputate lorem neque cubilia ac in adipiscing in curae lobortis tortor primis integer massa adipiscing id nisi accumsan pellentesque commodo blandit enim arcu non at amet id arcu magna. Accumsan orci faucibus id eu lorem semper nunc nisi lorem vulputate lorem neque cubilia.</p>
-				<ul class="actions">
-					<li><a href="writing.jsp" class="button">Message Writing</a></li>
-					<li><a href="#" class="button">Logout</a></li>
-				</ul> -->
-		</section>
-
-		<!-- Two -->
-		<section id="two" style = "border-top-width: 0px; margin-top: 0px; padding-top: 50px;">
-		<h2>육아일기</h2>
-		<div class="row">
-			<c:choose>
+		<%
+         ServletContext context = getServletContext();
+         String saveDir = context.getRealPath("mupload");
+         request.setAttribute("save", saveDir);
+         System.out.println(saveDir);
+      %>
+      <!-- Two -->
+      <section id="two"
+         style="border-top-width: 0px; margin-top: 0px; padding-top: 50px;">
+      <h2>육아일기</h2>
+      <div class="row">
+         <%            
+            ArrayList<DiaryVO> vo = (ArrayList<DiaryVO>) session.getAttribute("list");
+            request.setAttribute("totalPage", vo.size() % 9 == 0 ? vo.size() / 9 : vo.size() / 9 + 1);
+            request.setAttribute("last", vo.size() % 9);
+            request.setAttribute("vosize", vo.size());
+            String kind = (String)session.getAttribute("kind");
+            System.out.println(kind);
+         %>
+        
+         <c:choose>
    
-   				<c:when test="${not empty sessionScope.list}">
-       			<c:forEach items = "${sessionScope.list}" var="list" >
-            	<article class="6u 12u$(xsmall) work-item"> <a href="../../dupload/${list.file}" class="image fit thumb" style= " max-width :300px; max-height:300px;">
-            	<img src="../../dupload/${list.file}" alt="" style=" width: 300px;height: 300px;"/></a>
+            <c:when test="${not empty sessionScope.list}">
+                     <c:set var="list" value="${sessionScope.list}" scope="request"></c:set>
+               <c:choose>
+               <c:when test="${(empty param.page) or param.page==0} ">
+               <c:choose>
+               <c:when test="${last ==  1}">
+               <article class="6u 12u$(xsmall) work-item"> <a
+                        href="../../dupload/${list[0].file}" class="image fit thumb"
+                        style="max-width: 300px; max-height: 300px;"><img
+                        src="../../dupload/${list[0].file}" alt=""
+                        style="width: 300px; height: 300px;" /></a>
+
+                     <h3 style="font-size: 0px;">${list[0].text}</h3>
+                     <h2>${list[0].title}</h2>
+                     <p>
+                     <h3>${list[0].num}.
+                        ${list[0].date}<a
+                           href='../../DiarynumService?num=${list[0].num }'> 수정</a><a
+                           href='../../DiaryDeleteService?num=${list[0].num}'> 삭제</a>
+                     </h3>
+                     </p>
+                     </article>
+               </c:when>
+               <c:otherwise>
+               
+               <c:forEach begin="0" end="${last-1}" var="i">
+                     
+                     <article class="6u 12u$(xsmall) work-item"> <a
+                        href="../../dupload/${list[i].file}" class="image fit thumb"
+                        style="max-width: 300px; max-height: 300px;"><img
+                        src="../../dupload/${list[i].file}" alt=""
+                        style="width: 300px; height: 300px;" /></a>
+
+                     <h3 style="font-size: 0px;">${list[i].text}</h3>
+                     <h2>${list[i].title}</h2>
+                     <p>
+                     <h3>${list[i].num}.
+                        ${list[i].date}<a
+                           href='../../DiarynumService?num=${list[i].num }'> 수정</a><a
+                           href='../../DiaryDeleteService?num=${list[i].num}'> 삭제</a>
+                     </h3>
+                     </p>
+                     </article>
+                  </c:forEach>
+               </c:otherwise>
+               </c:choose>
+               </c:when>
+               <c:otherwise>
+               <c:choose>
+               <c:when test="${param.page != totalPage-1}">
+               
+               <c:forEach begin="${param.page*9}" end="${param.page*9+8}" var="i">
+                     
+                     <article class="6u 12u$(xsmall) work-item"> <a
+                        href="../../dupload/${list[i].file}" class="image fit thumb"
+                        style="max-width: 300px; max-height: 300px;"><img
+                        src="../../dupload/${list[i].file}" alt=""
+                        style="width: 300px; height: 300px;" /></a>
+
+                     <h3 style="font-size: 0px;">${list[i].text}</h3>
+                     <h2>${list[i].title}</h2>
+                     <p>
+                     <h3>${list[i].num}.
+                        ${list[i].date}<a
+                           href='../../DiarynumService?num=${list[i].num }'> 수정</a><a
+                           href='../../DiaryDeleteService?num=${list[i].num}'> 삭제</a>
+                     </h3>
+                     </p>
+                     </article>
+                  </c:forEach>
+               </c:when>
+               <c:when test="${param.page == totalPage-1}">
+               <c:choose>
+               <c:when test="${last != 1}">
+               <c:forEach begin="${param.page*9}" end="${param.page*9+last-1}" var="i">
+                     
+                     <article class="6u 12u$(xsmall) work-item"> <a
+                        href="../../dupload/${list[i].file}" class="image fit thumb"
+                        style="max-width: 300px; max-height: 300px;"><img
+                        src="../../dupload/${list[i].file}" alt=""
+                        style="width: 300px; height: 300px;" /></a>
+
+                     <h3 style="font-size: 0px;">${list[i].text}</h3>
+                     <h2>${list[i].title}</h2>
+                     <p>
+                     <h3>${list[i].num}.
+                        ${list[i].date}<a
+                           href='../../DiarynumService?num=${list[i].num}'> 수정</a><a
+                           href='../../DiaryDeleteService?num=${list[i].num}'> 삭제</a>
+                     </h3>
+                     </p>
+                     </article>
+                  </c:forEach>
+                  </c:when>
+                  <c:otherwise>
+                  
+                     
+                     <article class="6u 12u$(xsmall) work-item"> <a
+                        href="../../dupload/${list[param.page*9].file}" class="image fit thumb"
+                        style="max-width: 300px; max-height: 300px;"><img
+                        src="../../dupload/${list[param.page*9].file}" alt=""
+                        style="width: 300px; height: 300px;" /></a>
+
+                     <h3 style="font-size: 0px;">${list[param.page*9].text}</h3>
+                     <h2>${list[param.page*9].title}</h2>
+                     <p>
+                     <h3>${list[param.page*9].num}.
+                        ${list[param.page*9].date}<a
+                           href='../../DiarynumService?num=${list[param.page*9].num }'> 수정</a><a
+                           href='../../DiaryDeleteService?num=${list[param.page*9].num}'> 삭제</a>
+                     </h3>
+                     </p>
+                     </article>
+                  
+                  </c:otherwise>
+                  </c:choose>
+               </c:when>
+               </c:choose>
+               </c:otherwise>
+               </c:choose>
+               </c:when>
+               </c:choose>
+           
+      </div>
+      <div style="text-align: center;padding-right: 25%;"> 
+         <c:choose>
+         <c:when test="${vosize==0 }">
          
-         
-        		  <h3 style="font-size: 0px;">${list.text}</h3>
-         <h2>${list.title}</h2>
-         <p><h3>${list.num}. ${list.date}<a href='../../DiarynumService?num=${list.num }'> 수정</a><a href='../../DiaryDeleteService?num=${list.num}'> 삭제</a></h3></p>
-        </article>
-      			</c:forEach>
-  				</c:when>
+         </c:when>
+         <c:when test="${vosize<9 and vosize != 0 }">
+         <a href="jyo_diary.jsp?page=0" style="color: black;text-align: center;">1</a>
+         </c:when>
+         <c:otherwise>
+         <c:forEach begin="0" end="${totalPage-1}" var="i">
+            <div>
+               <a href="jyo_diary.jsp?page=${i}" style="color: black; text-align: center;"> ${i+1}</a>
+            </div>
 
-   			</c:choose>    
-		</div>	
-
-   
-   
-			<!-- <article class="6u 12u$(xsmall) work-item"> <a
-				href="images/fulls/baby.jpg" class="image fit thumb"><img
-				src="images/thumbs/baby.jpg" alt="" /></a>
-			<h3>Magna sed consequat tempus</h3>
-			<p>Lorem ipsum dolor sit amet nisl sed nullam feugiat.</p>
-			</article>
-			<article class="6u 12u$(xsmall) work-item"> <a
-				href="images/fulls/baby.jpg" class="image fit thumb"><img
-				src="images/thumbs/baby.jpg" alt="" /></a>
-			<h3>Magna sed consequat tempus</h3>
-			<p>Lorem ipsum dolor sit amet nisl sed nullam feugiat.</p>
-			</article>
-			<article class="6u$ 12u$(xsmall) work-item"> <a
-				href="images/fulls/baby.jpg" class="image fit thumb"><img
-				src="images/thumbs/baby.jpg" alt="" /></a>
-			<h3>Quam neque phasellus</h3>
-			<p>Lorem ipsum dolor sit amet nisl sed nullam feugiat.</p>
-			</article>
-			<article class="6u 12u$(xsmall) work-item"> <a
-				href="images/fulls/baby.jpg" class="image fit thumb"><img
-				src="images/thumbs/baby.jpg" alt="" /></a>
-			<h3>Magna sed consequat tempus</h3>
-			<p>Lorem ipsum dolor sit amet nisl sed nullam feugiat.</p>
-			</article>
-			<article class="6u 12u$(xsmall) work-item"> <a
-				href="images/fulls/baby.jpg" class="image fit thumb"><img
-				src="images/thumbs/baby.jpg" alt="" /></a>
-			<h3>Magna sed consequat tempus</h3>
-			<p>Lorem ipsum dolor sit amet nisl sed nullam feugiat.</p>
-			</article>
-			<article class="6u$ 12u$(xsmall) work-item"> <a
-				href="images/fulls/baby.jpg" class="image fit thumb"><img
-				src="images/thumbs/baby.jpg" alt="" /></a>
-			<h3>Ultricies lacinia interdum</h3>
-			<p>Lorem ipsum dolor sit amet nisl sed nullam feugiat.</p>
-			</article>
-			<article class="6u 12u$(xsmall) work-item"> <a
-				href="images/fulls/baby.jpg" class="image fit thumb"><img
-				src="images/thumbs/baby.jpg" alt="" /></a>
-			<h3>Tortor metus commodo</h3>
-			<p>Lorem ipsum dolor sit amet nisl sed nullam feugiat.</p>
-			</article>
-			<article class="6u 12u$(xsmall) work-item"> <a
-				href="images/fulls/baby.jpg" class="image fit thumb"><img
-				src="images/thumbs/baby.jpg" alt="" /></a>
-			<h3>Nunc enim commodo aliquet</h3>
-			<p>Lorem ipsum dolor sit amet nisl sed nullam feugiat.</p>
-			</article>
-			<article class="6u$ 12u$(xsmall) work-item"> <a
-				href="images/fulls/baby.jpg" class="image fit thumb"><img
-				src="images/thumbs/baby.jpg" alt="" /></a>
-			<h3>Quam neque phasellus</h3>
-			<p>Lorem ipsum dolor sit amet nisl sed nullam feugiat.</p>
-			</article>
-			
-		
-			
- -->		
-		<ul class="actions">
-			<!-- <li><a href="#" class="button">Full Portfolio</a></li> -->
-		</ul>
-		</section>
+         </c:forEach>
+         </c:otherwise>
+         </c:choose>
+      
+</div> 
+      </section>
 
 		<!-- Three -->
 		<!-- <section id="three">

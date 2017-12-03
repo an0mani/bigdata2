@@ -46,14 +46,14 @@
 	<header id="header1">
 				<div class="inner1" style="margin-top: 40px">
 				
-					<a href="#" class="image avatar" style = "margin-right: 70px;"><img src="back_image/baby.jpg" alt="" style = "width:250px; height:250px;"/></a>
-					<p align="center">??맘</p>
-						<input type = "button" name = "menu" value = "목  록" onclick="location.href='jy_messageboard.jsp'" style="width: 50px; height: 50px; min-width: 6em !important; font-size: 15px; text-align: center; color: black !important; margin-right: 0px; font-family: 'a고래야놀자'">
-						<input type = "button" name = "notice" value = "공지사항" onclick="location.href='jy_messageboard.jsp'" style="width: 50px; height: 50px; min-width: 6em !important; font-size: 15px; text-align: center; color: black !important; margin-right: 0px; font-family: 'a고래야놀자'">
-						<input type = "button" name = "button1" value = "버튼1" onclick="location.href='jy_messageboard.jsp'" style="width: 50px; height: 50px; min-width: 6em !important; font-size: 15px; text-align: center; color: black !important; margin-right: 0px; font-family: 'a고래야놀자'">
-						<input type = "button" name = "button2" value = "버튼2" onclick="location.href='jy_messageboard.jsp'" style="width: 50px; height: 50px; min-width: 6em !important; font-size: 15px; text-align: center; color: black !important; margin-right: 0px; font-family: 'a고래야놀자'">
-						<input type = "button" name = "button3" value = "버튼3" onclick="location.href='jy_messageboard.jsp'" style="width: 50px; height: 50px; min-width: 6em !important; font-size: 15px; text-align: center; color: black !important; margin-right: 0px; font-family: 'a고래야놀자'">
-						<input type = "button" name = "button4" value = "버튼4" onclick="location.href='jy_messageboard.jsp'" style="width: 50px; height: 50px; min-width: 6em !important; font-size: 15px; text-align: center; color: black !important; margin-right: 0px; font-family: 'a고래야놀자'">
+					<a href="#" class="image avatar" style = "margin-right: 70px;"><img src="back_image/baby.jpg" alt="" style = "width:200px; height:200px;"/></a>
+					<p align="center" style="font-size: 41px; font-weight: bold; color: black;">${Login_name }맘</p>
+						<input type = "button" name = "menu" value = "공지사항"  onclick="location.href='../Notice/Notice.jsp'"style="width: 50px; height: 50px; min-width: 6em !important; font-size: 15px; text-align: center; color: black !important; margin-right: 0px; font-family: 'a고래야놀자'">
+						<input type = "button" name = "notice" value = "어린이집" onclick="location.href='../DaycareCenter/jy_DaycareCenter.jsp'" style="width: 50px; height: 50px; min-width: 6em !important; font-size: 15px; text-align: center; color: black !important; margin-right: 0px; font-family: 'a고래야놀자'">
+						<input type = "button" name = "button1" value = "육아팁" onclick="location.href='../news/news.jsp'" style="width: 50px; height: 50px; min-width: 6em !important; font-size: 15px; text-align: center; color: black !important; margin-right: 0px; font-family: 'a고래야놀자'">
+						<input type = "button" name = "button2" value = "질병순위" onclick="location.href='../dicrease/dicrease.jsp'" style="width: 50px; height: 50px; min-width: 6em !important; font-size: 15px; text-align: center; color: black !important; margin-right: 0px; font-family: 'a고래야놀자'">
+						<input type = "button" name = "button3" value = "예방접종" onclick="location.href='../vaccination/jy_vaccination.jsp'" style="width: 50px; height: 50px; min-width: 6em !important; font-size: 15px; text-align: center; color: black !important; margin-right: 0px; font-family: 'a고래야놀자'">
+						
 					<p style="color: black;" >${sessionScope.month} 주사를 맞아야합니다. 자세한 내용은 예방접종 메뉴를 참고해주세요</p>
 					<!-- <h1><strong>I am Strata</strong>, a super simple<br />
 					responsive site template freebie<br />
@@ -113,27 +113,32 @@
 		<div class="row">
 		<div style="height: 500px;width: 100%;"><iframe src="http://olapopendata.hira.or.kr/analysis/desktop/poc2.jsp#report_id=b235b0f3-24cb47fe&amp;PARAM1=" frameborder="0" width="100%" height="100%" class="olapViewFrame"></iframe></div>
 		
-			<h1>질병순위Top5</h1>
-			<h1 align = "center">1.감기</h1>
-			<h2>감기는 어린이 뿐만 아니라 어른들도 자주 발생하죠. 약 200여 종 이상의 바이러스에 의해 발생하는 호흡기계의 감염 증상이랍니다. 주로 바이러스로 말미암아 걸리는 호흡계통의 병으로 보통 코가 막히고 열이 나며 두통 증상이 있습니다. 사람에게 나타나는 가장 흔한 급성 질환 중 하나인데요. 재채기, 코막힘, 콧물, 인후통, 기침, 미열, 두통 및 근육통과 같은 증상이 나타나지만 대개는 특별한 치료 없이도 저절로 치유됩니다.</h2>
-			<h2>[예방법]</h2>
-			<h2>① 손을 자주 씻어 손에 묻어 있을 수 있는 감기 바이러스를 없애고<br>② 손으로 눈이나 코, 입 등을 비비거나 만지지 않도록 합니다.<br>③ 또한 수건 등의 일상 용품을 다른사람들과 함께 쓰지 않는것이 좋습니다.<br>④ 기침을 할때에는 손으로 가리지 않고 머리를 아래로 숙여서 바닥을 향하도록 합니다.<br>⑤ 어린이는 성인에 비해 면역력이 낮아 감기 바이러스에 감염될 확률이 높으므로 인원이 너무 많은 곳은 피하도록 합니다.</h2><br>
-			<h1 align = "center">2.인두 / 편도선염</h1>
-			<h2>인두/편도선에 염증이 생겨 빨갛게 붓는 병을 말하는데요. 인두/편도선염은 세균이나 바이러스의 감염 등에 의해서 인두점막 및 편도선에 염증이 생기며 피로, 대기의 건조, 위장장애, 만성부비강염이나 먼지, 유독가스의 흡입 등으로 일어납니다. 증세는 갑자기 나타나는데, 인두의 이물감이나 건조감 외에 온몸이 나른하고 식욕이 떨어지며 발열을 수반하기도 합니다.</h2>
-			<h2>[예방법]</h2>
-			<h2>① 평소에 구강위생을 유지하고 손을 자주 씻는 습관을 갖도록 합니다.<br>② 충분한 수분섭취 및 휴식과 위생관리가 중요합니다.<br>③ 희석한 과산화소수 또는 가온한 생리식염수가 입안의 청결을 유지하는 데 도움이 됩니다.<br>④ 음식물을 삼키기 힘든 경우 죽과 같은 부드러운 음식을 먹습니다.</h2><br>
-			<h1 align = "center">3.식중독 및 장염</h1>
-			<h2>식중독은 섭취한 음식물의 독성 물질 때문에 발생하는 일련의 증후군을 말하는데요. 장염의 경우 대부분 음식 섭취와 관련이 있기 때문에 식중독과 따로 구분하기는 어렵답니다. 물질에 따라 잠복기와 증상의 정도가 다르게 나타나게 되는데, 일반적으로 음식물 섭취 후 72시간 이내에 구토, 설사, 복통, 발열 등의 증상을 나타냅니다.</h2>
-			<h2>[예방법]</h2>
-			<h2>① 음식물을 조리하거나 보관 또는 저장을 해야 할 때는 반드시 손을 씻고난 다음에 합니다.<br>② 가열 조리식품은 중심부 온도를 74℃ 이상으로 1분 이상 가열하여 익혀 먹어야 합니다.<br>③ 4℃ 에서 60℃의 온도는 식중독을 일으키는 균의 성장 가능성이 높은 온도 구간이므로 뜨거운 음식은 60℃ 이상으로 보관하고 찬 음식은 4℃ 이하로 냉장보관하여 관리하도록 합니다.</h2>
-			<h1 align = "center">4.소아천식</h1>
-			<h2>어린아이의 기관지염과 천식의 합병증입니다.알레르기가 원인이 되어 생기는 것으로, 콧물과 기침이 나고 숨을 쉴 때 목에서 '가르랑'거리는 소리가 납니다. 소아에서 폐 속 기관지가 예민해져 만성 기침, 쌕색거림, 가슴 답답함 등의 증상이 나타나는 호흡기 질환으로 특히 기침이 주 증상으로 천식 치료에 반응이 좋은 경우에는 천식양 기관지염이라고도 합니다.기본적으로 소아 천식은 발생 기전 및 유발 인자 등에서 성인의 천식과 비슷하지만 진단 방법 및 예후에 있어서 차이가 납니다. 병인에 알레르기성 염증 반응이 관여한다고 알려져 있으며, 유전적 요인과 환경적 요인 모두의 영향을 받습니다.</h2>
-			<h2>[예방법]</h2>
-			<h2>① 천식은 원인 물질을 회피하고 악화 요인에 노출을 최소화하는 것이 필요합니다.<br>② 원인 알레르기 물질을 알고 있는 경우 노출을 최소화할 수 있는 생활 환경을 유지하는 것이 좋습니다.<br>③ 집 먼지 진드기의 경우 위생적인 관리가 필수적입니다.<br>④ 꽃가루 및 황사 같은 악화 요인은 인터넷 등에서 실시간 화분지수 및황사 예보를 확인해 가급적 피하는 것이 좋습니다.</h2><br>
-			<h1 align = "center">5.알레르기성 비염</h1>
-			<h2>연속적인 재채기, 계속 흘러 내리는 맑은 콧물, 코막힘, 가려움증 등의 증상을 보이는 코 점막의 질환입니다. 연속적으로 일어나는 발작적인 재채기, 맑은 콧물, 코막힘 등의 세 가지 주요 증상을 특징으로 하며, 이 세 가지 증상 중 두 가지 이상의 증상을 가지고 있을 때 알레르기 비염을 의심할 수 있습니다. 일반적으로 나타나는 특징적인 증상 이외에도 코 주위 가려움이나 두통, 후각 감퇴 등의 증상이 동반될 수 있으며 합병증으로 중이염, 부비동염, 인후두염이 동반될 수 있으니 주의해야 합니다.</h2>
-			<h2>[예방법]</h2>
-			<h2>① 일반적인 예방법으로는 먼지와 온도의 변화, 담배 연기나 매연, 화장품, 스트레스 등을 피하고 주변을 청결하게 해주는 방법이 있습니다.<br>② 꽃가루가 많은 계절에는 창문을 닫고 외출할 때에는 마스크를 착용합니다.<br>③ 집 먼지 진드기의 경우 침대, 이불, 베개, 담요 등 먼지가 쉽게 끼거나 방출되는 물건은 지퍼가 달린 커버를 사용하고, 커버는 삶도록 합니다. 특수 필터가 장착된 진공청소기를 이용한 실내 청소도 도움이 됩니다.</h2>
+		 <h1>자주걸리는 질병 리스트</h1><br>
+         <h1 align = "center" style="color: red;">1.감기</h1><br>
+         <img src="back_image/20.jpg" style="width: 500px;height:500px;margin-top: 10px;"><br>
+         <h2 color = "black">감기는 어린이 뿐만 아니라 어른들도 자주 발생하죠. 약 200여 종 이상의 바이러스에 의해 발생하는 호흡기계의 감염 증상이랍니다. 주로 바이러스로 말미암아 걸리는 호흡계통의 병으로 보통 코가 막히고 열이 나며 두통 증상이 있습니다. 사람에게 나타나는 가장 흔한 급성 질환 중 하나인데요. 재채기, 코막힘, 콧물, 인후통, 기침, 미열, 두통 및 근육통과 같은 증상이 나타나지만 대개는 특별한 치료 없이도 저절로 치유됩니다.</h2>
+         <h2 style = "color:blue;">[예방법]</h2>
+         <h2>① 손을 자주 씻어 손에 묻어 있을 수 있는 감기 바이러스를 없애고<br>② 손으로 눈이나 코, 입 등을 비비거나 만지지 않도록 합니다.<br>③ 또한 수건 등의 일상 용품을 다른사람들과 함께 쓰지 않는것이 좋습니다.<br>④ 기침을 할때에는 손으로 가리지 않고 머리를 아래로 숙여서 바닥을 향하도록 합니다.<br>⑤ 어린이는 성인에 비해 면역력이 낮아 감기 바이러스에 감염될 확률이 높으므로 인원이 너무 많은 곳은 피하도록 합니다.</h2><br>
+         <h1 align = "center" style="color: red;">2.인두 / 편도선염</h1><br>
+         <img src="back_image/21.jpg" style="width: 500px; height:500px;"><br>
+         <h2>인두/편도선에 염증이 생겨 빨갛게 붓는 병을 말하는데요. 인두/편도선염은 세균이나 바이러스의 감염 등에 의해서 인두점막 및 편도선에 염증이 생기며 피로, 대기의 건조, 위장장애, 만성부비강염이나 먼지, 유독가스의 흡입 등으로 일어납니다. 증세는 갑자기 나타나는데, 인두의 이물감이나 건조감 외에 온몸이 나른하고 식욕이 떨어지며 발열을 수반하기도 합니다.</h2><br>
+         <h2 style = "color:blue;">[예방법]</h2><br>
+         <h2>① 평소에 구강위생을 유지하고 손을 자주 씻는 습관을 갖도록 합니다.<br>② 충분한 수분섭취 및 휴식과 위생관리가 중요합니다.<br>③ 희석한 과산화소수 또는 가온한 생리식염수가 입안의 청결을 유지하는 데 도움이 됩니다.<br>④ 음식물을 삼키기 힘든 경우 죽과 같은 부드러운 음식을 먹습니다.</h2><br>
+         <h1 align = "center" style="color: red;">3.식중독 및 장염</h1><br>
+         <img src="back_image/22.jpg" style="width: 500px; height:500px;"><br>
+         <h2>식중독은 섭취한 음식물의 독성 물질 때문에 발생하는 일련의 증후군을 말하는데요. 장염의 경우 대부분 음식 섭취와 관련이 있기 때문에 식중독과 따로 구분하기는 어렵답니다. 물질에 따라 잠복기와 증상의 정도가 다르게 나타나게 되는데, 일반적으로 음식물 섭취 후 72시간 이내에 구토, 설사, 복통, 발열 등의 증상을 나타냅니다.</h2>
+         <h2 style = "color:blue;">[예방법]</h2>
+         <h2>① 음식물을 조리하거나 보관 또는 저장을 해야 할 때는 반드시 손을 씻고난 다음에 합니다.<br>② 가열 조리식품은 중심부 온도를 74℃ 이상으로 1분 이상 가열하여 익혀 먹어야 합니다.<br>③ 4℃ 에서 60℃의 온도는 식중독을 일으키는 균의 성장 가능성이 높은 온도 구간이므로 뜨거운 음식은 60℃ 이상으로 보관하고 찬 음식은 4℃ 이하로 냉장보관하여 관리하도록 합니다.</h2>
+         <h1 align = "center" style="color: red;">4.소아천식</h1><br>
+         <img src="back_image/23.PNG" style="width: 500px; height:500px;"><br>
+         <h2>어린아이의 기관지염과 천식의 합병증입니다.알레르기가 원인이 되어 생기는 것으로, 콧물과 기침이 나고 숨을 쉴 때 목에서 '가르랑'거리는 소리가 납니다. 소아에서 폐 속 기관지가 예민해져 만성 기침, 쌕색거림, 가슴 답답함 등의 증상이 나타나는 호흡기 질환으로 특히 기침이 주 증상으로 천식 치료에 반응이 좋은 경우에는 천식양 기관지염이라고도 합니다.기본적으로 소아 천식은 발생 기전 및 유발 인자 등에서 성인의 천식과 비슷하지만 진단 방법 및 예후에 있어서 차이가 납니다. 병인에 알레르기성 염증 반응이 관여한다고 알려져 있으며, 유전적 요인과 환경적 요인 모두의 영향을 받습니다.</h2>
+         <h2 style = "color:blue;">[예방법]</h2>
+         <h2>① 천식은 원인 물질을 회피하고 악화 요인에 노출을 최소화하는 것이 필요합니다.<br>② 원인 알레르기 물질을 알고 있는 경우 노출을 최소화할 수 있는 생활 환경을 유지하는 것이 좋습니다.<br>③ 집 먼지 진드기의 경우 위생적인 관리가 필수적입니다.<br>④ 꽃가루 및 황사 같은 악화 요인은 인터넷 등에서 실시간 화분지수 및황사 예보를 확인해 가급적 피하는 것이 좋습니다.</h2><br>
+         <h1 align = "center" style="color: red;">5.알레르기성 비염</h1><br>
+         <img src="back_image/24.jpg" style="width: 500px; height:500px;"><br>
+         <h2>연속적인 재채기, 계속 흘러 내리는 맑은 콧물, 코막힘, 가려움증 등의 증상을 보이는 코 점막의 질환입니다. 연속적으로 일어나는 발작적인 재채기, 맑은 콧물, 코막힘 등의 세 가지 주요 증상을 특징으로 하며, 이 세 가지 증상 중 두 가지 이상의 증상을 가지고 있을 때 알레르기 비염을 의심할 수 있습니다. 일반적으로 나타나는 특징적인 증상 이외에도 코 주위 가려움이나 두통, 후각 감퇴 등의 증상이 동반될 수 있으며 합병증으로 중이염, 부비동염, 인후두염이 동반될 수 있으니 주의해야 합니다.</h2>
+         <h2 style = "color:blue;">[예방법]</h2>
+         <h2>① 일반적인 예방법으로는 먼지와 온도의 변화, 담배 연기나 매연, 화장품, 스트레스 등을 피하고 주변을 청결하게 해주는 방법이 있습니다.<br>② 꽃가루가 많은 계절에는 창문을 닫고 외출할 때에는 마스크를 착용합니다.<br>③ 집 먼지 진드기의 경우 침대, 이불, 베개, 담요 등 먼지가 쉽게 끼거나 방출되는 물건은 지퍼가 달린 커버를 사용하고, 커버는 삶도록 합니다. 특수 필터가 장착된 진공청소기를 이용한 실내 청소도 도움이 됩니다.</h2>
 			</article>
 			<!-- <article class="6u 12u$(xsmall) work-item"> <a
 				href="images/fulls/baby.jpg" class="image fit thumb"><img

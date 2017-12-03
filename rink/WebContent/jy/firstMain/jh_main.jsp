@@ -1,3 +1,4 @@
+<%@page import="com.DAO.sendMail"%>
 <%@page import="java.util.Calendar"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
 	pageEncoding="EUC-KR"%>
@@ -42,8 +43,8 @@ article {
 }
 
 #art_pic img {
-	width: 70px;
-	height: 70px;
+	width: 150px;
+	height: 150px;
 }
 
 .carousel {
@@ -157,7 +158,7 @@ a#login_pop:hover, a#join_pop:hover {
 .popup {
 	width: 35%;
 	height: 55%;
-	background-image: url("../baby_picture/heartTree.png");
+	background-image: url("../baby_picture/main3.png");
 	background-repeat: no-repeat;
 	background-size: cover;
 	border: 3px solid #fff;
@@ -277,6 +278,9 @@ a#login_pop:hover, a#join_pop:hover {
 </head>
 <body>
 
+	
+	<%session.setAttribute("selectArea", "gs"); %>
+
 	<div id="page-wrapper">
 		<!-- Header -->
 		<div id="header">
@@ -286,7 +290,7 @@ a#login_pop:hover, a#join_pop:hover {
 				<header>
 				<h1>
 					<div id="mainfont">
-						<a href="index.html" id="logo">아이에게 엄마가</a>
+						<a href="jh_main.jsp" id="logo">아이에게 엄마가</a>
 					</div>
 				</h1>
 				<hr />
@@ -303,14 +307,14 @@ a#login_pop:hover, a#join_pop:hover {
 						<br>
 					</c:when>
 					<c:otherwise>
-						<div style="margin-right: 10%;" >
+						<div style="margin-right: 10%;">
 							<a href="#banner" class="scrolly" onclick="scrollTest()"
-								style="color: black; font-weight: bold; font-size: 41px; font-family: 'a고래야놀자'; "><input id="startBtn" type="button" value= "${Login_name }엄마의 육아일기 시작!" style="border-radius: 100%; font-family: 'a고래야놀자'; font-weight: bold; font-size: 31px; "></a>
+								style="color: black; font-weight: bold; font-size: 41px; font-family: 'a고래야놀자';"><input
+								id="startBtn" type="button" value="${Login_name }엄마의 육아일기 시작!" class=""
+								style="border-radius: 100%; font-family: 'a고래야놀자'; font-weight: bold; font-size: 31px;"></a>
 						</div>
 					</c:otherwise>
 				</c:choose>
-
-
 
 				<!-- Menu //class="button circled scrolly"으로 창 이동-->
 				<!-- Login버튼 부분 팝업-->
@@ -356,22 +360,29 @@ a#login_pop:hover, a#join_pop:hover {
 						<div style="font-weight: bold; font-size: 26px;">
 							비 밀 번 호 :<br>
 							<c:choose>
+
 								<c:when test="">
+
 									<input type="password" id="password" name="Login_pw"
-										placeholder="password" style="width: 30%;" />
+										placeholder="password" style="width: 30% !important;" />
+
 								</c:when>
 								<c:otherwise>
-									<input type="text" id="password" name="Login_pw"
+
+									<input type="password" id="password" name="Login_pw"
 										value="${search_pw }" style="width: 30%;" />
 								</c:otherwise>
+
 							</c:choose>
+
+
 						</div>
 						<a href="#check_form" style="font-size: 26px;">아이디 / 비밀번호 찾기</a>
 						<div style="text-align: center;">
 
 
 							<input type="submit" value="로 그 인"
-								style="border-radius: 100%; font-family: 'a각설탕'; margin-right: 301px; font-size: 26px;" />
+								style="border-radius: 100%;font-family: 'a각설탕';margin-right: 500px;font-size: 26px;margin-top: 10px;" />
 							<a class="close" href="#close"></a>
 						</div>
 					</div>
@@ -386,10 +397,10 @@ a#login_pop:hover, a#join_pop:hover {
 						<br>
 						<p style="font-weight: bold; font-size: 26px;">핸드폰 번호를 입력해주세요!</p>
 						<div style="font-weight: bold; font-size: 26px;">
-							핸드폰 번호 :<br> <input type="text" name="searchId_phone"
+							핸드폰 번호 :<br> <input type="text" name="searchId_phone" id = "id"
 								placeholder="phone-number" style="width: 30%; font-size: 19px;" />
 						</div>
-						<input type="submit" value="찾 기" onclick="showAlert()"
+						<input type="submit" value="찾 기" onclick="sendMail();showAlert();"
 							style="border-radius: 100%; font-family: 'a각설탕'; margin-right: 260px" /></a>
 					</div>
 				</form>
@@ -403,25 +414,31 @@ a#login_pop:hover, a#join_pop:hover {
 
 
 				<!-- Join버튼 부분 팝업-->
-				<form action="../../JoinCheck" method="post">
+				<form method="post" name="f" onsubmit="return showJoin();"
+					action="../../JoinCheck">
 					<a href="#x" class="overlay" id="join_form"></a>
 					<div class="popup"
-						style="width: 39%; height: 70%; text-align: left;">
+						style="width: 39%; height: 75%; text-align: left;">
 						<h2>회원가입</h2>
 						<p>소중한 정보를 입력해주세요!!!</p>
 						<div>
 							아이디 입력: &nbsp<input type="text" id="id" name="id"
-								placeholder="영문,숫자 6~10자 입력" required
-								style="width: 30%; font-size: 19px;"> <input
+								placeholder="영문,숫자 6~10자 입력"
+								style="width: 30%; font-size: 19px;" maxlength="40"> <input
 								type="button" id="checkId" onclick="idcheck()"
 								style="height: 30px; width: 70px;" value="중복확인"> <br>
 							<span id="result" style="font-weight: bold; color: red;"></span>
 						</div>
 
 						<div>
-							비밀번호 입력:<input type="password" name="password" id="pass"
-								placeholder="암호는 소중히!" size="30px"
+							비밀번호 입력:<input type="password" name="password" id="password"
+								placeholder="password" size="30px"
 								style="width: 30%; font-size: 19px;" />
+						</div>
+						<div style="color: red;">
+							비밀번호 확인:<input type="password" name="password1" id="password1"
+								placeholder="confirm password" size="30px"
+								style="width: 30%; font-size: 19px;" maxlength="10" />
 						</div>
 						<div id="sexFont">
 							애기 이름 : <input type="text" id="firstname" name="babyName"
@@ -434,7 +451,7 @@ a#login_pop:hover, a#join_pop:hover {
 								placeholder="'-'없이 입력해주세요" style="width: 30%; font-size: 19px;" />
 						</div>
 						<div>
-							혈 액 형 :&nbsp&nbsp <input type="text" name="blood" id="lastname"
+							혈 액 형 :&nbsp&nbsp <input type="text" name="blood" id="blood"
 								placeholder="알파벳만" size="30px"
 								style="width: 30%; font-size: 19px;" />
 						</div>
@@ -455,8 +472,7 @@ a#login_pop:hover, a#join_pop:hover {
 						</div>
 						<div>
 							<a href="index.jsp">&nbsp&nbsp&nbsp <input type="submit"
-								value="회원가입" onclick="showJoin()"
-								style="border-radius: 100%; font-family: 'a각설탕';"></a>&nbsp
+								value="회원가입" style="border-radius: 100%; font-family: 'a각설탕';"></a>&nbsp
 							or &nbsp <a href="#login_form" id="login_pop"><input
 								type="reset" value="초기화"
 								style="border-radius: 100%; font-family: 'a각설탕';"></a> <a
@@ -465,15 +481,108 @@ a#login_pop:hover, a#join_pop:hover {
 					</div>
 				</form>
 				<script type="text/javascript">
-            
-               function showJoin(){
-                  
-                //  alert("가입을 축하드립니다!");
-                  
-               }
+			
+				
+				
+					function sendMail(id){
+						var idStr = $("#id").val();
+						 $.ajax({
+		            	       url:"../../sendService?id="+idStr,
+		            	       success:function(data){
+		            	          if(data == "success"){
+		            	             alert("*** 메일을 확인해 주세요.")
+		            	          }else if(data =="fail"){
+		            	             alert("*** 잘못된 아이디 입니다.")
+		            	          }
+		            	       }
+		            	      });
+					}
+				     function idcheck(){
+		            	   var idStr = $("#id").val();
+		            	   
+		            	   $.ajax({
+		            	       url:"../../CheckId?id="+idStr,
+		            	       success:function(data){
+		            	          if(data == "success"){
+		            	             $("#result").text("*** 사용가능한 아이디입니다.")
+		            	          }else if(data =="fail"){
+		            	             $("#result").text("*** 중복된 아이디입니다.")
+		            	          }
+		            	       }
+		            	      });
+				     }
+				
+				 function showJoin(){
+	            	  
+	                   if (f.id.value == "") {
+	                       alert("아이디를 입력하지 않았습니다.")
+	                       f.id.focus()
+	                       return false;
+	                   }
+	                   
+	                  /*  //공백,특수문자 자동 체크
+	                   for (i = 0; i < document.f.id.value.length; i++) {
+	                       ch = document.f.id.value.charAt(i)
+	                       if (!(ch >= '0' && ch <= '9') && !(ch >= 'a' && ch <= 'z')&&!(ch >= 'A' && ch <= 'Z')) {
+	                           alert("아이디는 대소문자, 숫자만 입력가능합니다.")
+	                           document.f.id.focus()
+	                           document.f.id.select()
+	                           return false;
+	                       }
+	                   }
+	                   
+	                   //아이디 길이 체크 (6~10자)
+	                   if (document.f.id.value.length<4 || document.f.id.value.length>20) {
+	                       alert("아이디를 4~12자까지 입력해주세요.")
+	                       document.f.id.focus()
+	                       document.f.id.select()
+	                       return false;
+	                   } */
+	                  
+	                   //비밀번호 입력여부 체크
+	                   if (document.f.password.value == "") {
+	                       alert("비밀번호를 입력하지 않았습니다.")
+	                       document.f.password.focus();
+	                       document.f.password.select();
+	                       return false;
+	                   }
+	                   
+	                 //비밀번호 길이 체크(6~10자 까지 허용)
+	                 if ((document.f.password.value.length<6) || (document.f.password.value.length>10)) {
+	                       alert("비밀번호를 6~10자까지 입력해주세요.")
+	                       document.f.my_pwd.focus()
+	                       return false;
+	                   }
+	                
+	                //아이디와 비밀번호 같은지 체크
+	                if (f.password.value == f.id.value) {
+	                     alert("아이디와 비밀번호가 같습니다.")
+	                     document.f.password.focus()
+	                     return false;
+	                 }
+	                   
+	               	//비밀번호와 비밀번호 확인 일치여부 체크
+	                 if (document.f.password.value != document.f.password1.value) {
+	                       alert("비밀번호가 일치하지 않습니다")
+	                       document.f.password1.value = ""
+	                       document.f.password1.focus()
+	                       return false;
+	                   }
+	             	//혈액형 영어만 입력
+	                 for (i = 0; i < document.f.blood.value.length; i++) {
+	                       ch = document.f.blood.value.charAt(i)
+	                       if (!(ch >= 'A' && ch <= 'Z')) {
+	                           alert("혈액형은 대문자 영어만 입력해주세요")
+	                           document.f.blood.focus()
+	                           document.f.blood.select()
+	                           return false;
+	                       }
+	                   }
+	             	}
                
                function idcheck(){
             	   var idStr = $("#id").val();
+            	   
             	   $.ajax({
             	       url:"../../CheckId?id="+idStr,
             	       success:function(data){
@@ -484,6 +593,7 @@ a#login_pop:hover, a#join_pop:hover {
             	          }
             	       }
             	      });
+            	   
             	}
             </script>
 
@@ -496,15 +606,14 @@ a#login_pop:hover, a#join_pop:hover {
 			<ul>
 				<li><a href="jh_main.jsp"><img src="images/sun.png">Home<img
 						src="images/sun.png"></a></li>
-				<li><a href="../../ym_SelectService"><img src="images/sun.png">아기 용품 공간<img
-						src="images/sun.png"></a>
-					</li>
+				<li><a href="../../ym_SelectService"><img
+						src="images/sun.png">아기 용품 공간<img src="images/sun.png"></a>
+				</li>
 
-				<li><a href="../../DiarySelectService"><img src="images/sun.png">나만의
-						육아일기<img src="images/sun.png"></a></li>
-				<li><a href="../../SelectService"><img src="images/sun.png">이야기 해요<img
-						src="images/sun.png"></a>
-					</li>
+				<li><a href="../../DiarySelectService"><img
+						src="images/sun.png">나만의 육아일기<img src="images/sun.png"></a></li>
+				<li><a href="../../SelectService"><img src="images/sun.png">이야기
+						해요<img src="images/sun.png"></a></li>
 				<li><a href="../BabyInfo/jy_BabyInfo.jsp"><img
 						src="images/sun.png">나의 아기정보<img src="images/sun.png"></a></li>
 			</ul>
@@ -514,58 +623,7 @@ a#login_pop:hover, a#join_pop:hover {
 
 		<!-- Banner -->
 		<section>
-		<% String bir = (String)session.getAttribute("Login_birth"); 
-			String[] birth = bir.split("-");
-			
-				int year = Integer.parseInt(birth[0]);
-				int month = Integer.parseInt(birth[1]);
-				
-				Calendar cal = Calendar.getInstance();
-			    int thisyear = cal.get(Calendar.YEAR) ;
-			    int thismonth = cal.get(Calendar.MONTH);
-				
-			    int months = (thisyear - year)*12 + (thismonth - month);
-			    
-			    if(months >= 144){
-			    	session.setAttribute("vaccin", "Y_TWELVE");
-			    }else if (months >= 132){
-			    	session.setAttribute("vaccin", "Y_ELEVEN");
-			    }else if (months >= 72){
-			    	session.setAttribute("vaccin", "Y_SIX");
-			    
-			    }else if (months >= 48){
-			    	session.setAttribute("vaccin", "Y_FOUR");
-			    
-			    }else if (months >= 36){
-			    	session.setAttribute("vaccin", "M_THIRTYSIX");
-			    
-			    }else if (months >= 24){
-			    	
-			    	session.setAttribute("vaccin", "M_TWENTYFOUR");
-			    }else if (months >= 18){
-			    	session.setAttribute("vaccin", "M_EIGHTEEN");
-			    
-			    }else if (months >= 15){
-			    	
-			    	session.setAttribute("vaccin", "M_FIFTEEN");
-			    }else if (months >= 12){
-			    	
-			    	session.setAttribute("vaccin", "M_TWELVE");
-			    }else if (months >= 6){
-			    	
-			    	session.setAttribute("vaccin", "M_SIX");
-			    }else if (months >= 4){
-			    	session.setAttribute("vaccin", "M_FOUR");
-			    
-			    }else if (months >= 2){
-			    	session.setAttribute("vaccin", "M_TWO");
-			    
-			    }else if (months == 1){
-			    	session.setAttribute("vaccin", "M_ONE");
-			    }else if (months == 0){
-			    	session.setAttribute("vaccin", "M_ZERO");
-			    }
-			%>
+
 		<div id="banner"
 			style="padding-top: 0px; display: none; position: relative;">
 			<header> <img class="mySlides"
@@ -584,7 +642,9 @@ a#login_pop:hover, a#join_pop:hover {
 		<script src="//code.jquery.com/jquery.min.js">
 
 		   
-		</script> <script>
+		</script> 
+		
+		<script>
 					
 					   var imgs = document.querySelectorAll("img.mySlides");
 					   var imgs2 = document.querySelectorAll("img.mySlides2");
@@ -635,25 +695,27 @@ a#login_pop:hover, a#join_pop:hover {
 
 					   
 					   
-					</script> </header></section>
-
+					</script> </header>
+					
+					</section>
 
 
 		<!-- Carousel -->
 		<div id="backImg">
 			<section class="carousel">
+			
 			<div class="reel">
 
 				<article> <a href="#" class="image featured"></a> <header>
 				<h2>
-					<a href="../Notice/Notice.jsp">공지 사항</a>
+					<a href="../../NoticeSelectService">공지 사항</a>
 				</h2>
 				</header>
 				<p>날씨, 운세, 공지사항 확인하는 공간</p>
 				</article>
 
-				<article id="art_pic"> <a href="#" class="image featured"><img
-					src="images/sun_icon1.png" alt="" /></a> </article>
+				<article id="art_pic"> <a href="#" class="image featured"  style = "margin-bottom: 0px";><img
+					src="images/flower11.jpg" alt="" /></a> </article>
 
 				<article> <a href="#" class="image featured"></a> <header>
 				<h2>
@@ -663,20 +725,20 @@ a#login_pop:hover, a#join_pop:hover {
 				<p>각 지역의 어린이집 평점 Top10</p>
 				</article>
 
-				<article id="art_pic"> <a href="#" class="image featured"><img
-					src="images/sun_icon1.png" alt="" /></a> </article>
+				<article id="art_pic"> <a href="#" class="image featured"  style = "margin-bottom: 0px";><img
+					src="images/flower11.jpg" alt="" /></a> </article>
 
 				<article> <a href="#" class="image featured"></a> <header>
-				
+
 				<h2>
-					<a href="../news/news.jsp">육아 News</a>
+					<a href="../news/news.jsp">육아 Tip</a>
 				</h2>
 				</header>
 				<p>육아에 필요한 정보, Hot한 Issue</p>
 				</article>
 
-				<article id="art_pic"> <a href="#" class="image featured"><img
-					src="images/sun_icon1.png" alt="" /></a> </article>
+				<article id="art_pic"> <a href="#" class="image featured" style = "margin-bottom: 0px";><img
+					src="images/flower11.jpg" alt="" /></a> </article>
 
 				<article> <a href="#" class="image featured"></a> <header>
 				<h2>
@@ -686,8 +748,8 @@ a#login_pop:hover, a#join_pop:hover {
 				<p>영*유아들이 잘 걸리는 질병을 알고 미리 예방하자!</p>
 				</article>
 
-				<article id="art_pic"> <a href="#" class="image featured"><img
-					src="images/sun_icon1.png" alt="" /></a> </article>
+				<article id="art_pic"> <a href="#" class="image featured" style = "margin-bottom: 0px";>
+				<img src="images/flower11.jpg" alt="" /></a> </article>
 
 				<article> <a href="#" class="image featured"></a> <header>
 				<h2>
@@ -697,250 +759,6 @@ a#login_pop:hover, a#join_pop:hover {
 				<p>각 시기에 맞아야 하는 예방접종 리스트</p>
 				</article>
 
-
-				<!--  
-		<!-- Main --
-		<div class="wrapper style2">
-
-			<article id="main" class="container special">
-				<a href="#" class="image featured"><img src="images/pic06.jpg"
-					alt="" /></a>
-				<header>
-					<h2>
-						<a href="#">Sed massa imperdiet magnis</a>
-					</h2>
-					<p>Sociis aenean eu aenean mollis mollis facilisis primis
-						ornare penatibus aenean. Cursus ac enim pulvinar curabitur morbi
-						convallis. Lectus malesuada sed fermentum dolore amet.</p>
-				</header>
-				<p>Commodo id natoque malesuada sollicitudin elit suscipit.
-					Curae suspendisse mauris posuere accumsan massa posuere lacus
-					convallis tellus interdum. Amet nullam fringilla nibh nulla
-					convallis ut venenatis purus sit arcu sociis. Nunc fermentum
-					adipiscing tempor cursus nascetur adipiscing adipiscing. Primis
-					aliquam mus lacinia lobortis phasellus suscipit. Fermentum lobortis
-					non tristique ante proin sociis accumsan lobortis. Auctor etiam
-					porttitor phasellus tempus cubilia ultrices tempor sagittis. Nisl
-					fermentum consequat integer interdum integer purus sapien. Nibh
-					eleifend nulla nascetur pharetra commodo mi augue interdum tellus.
-					Ornare cursus augue feugiat sodales velit lorem. Semper elementum
-					ullamcorper lacinia natoque aenean scelerisque.</p>
-				<footer>
-					<a href="#" class="button">Continue Reading</a>
-				</footer>
-			</article>
-
-		</div>
-
-		<!-- Features --
-		<div class="wrapper style1">
-
-			<section id="features" class="container special">
-				<header>
-					<h2>Morbi ullamcorper et varius leo lacus</h2>
-					<p>Ipsum volutpat consectetur orci metus consequat imperdiet
-						duis integer semper magna.</p>
-				</header>
-				<div class="row">
-					<article class="4u 12u(mobile) special">
-						<a href="#" class="image featured"><img src="images/pic07.jpg"
-							alt="" /></a>
-						<header>
-							<h3>
-								<a href="#">Gravida aliquam penatibus</a>
-							</h3>
-						</header>
-						<p>Amet nullam fringilla nibh nulla convallis tique ante proin
-							sociis accumsan lobortis. Auctor etiam porttitor phasellus tempus
-							cubilia ultrices tempor sagittis. Nisl fermentum consequat
-							integer interdum.</p>
-					</article>
-					<article class="4u 12u(mobile) special">
-						<a href="#" class="image featured"><img src="images/pic08.jpg"
-							alt="" /></a>
-						<header>
-							<h3>
-								<a href="#">Sed quis rhoncus placerat</a>
-							</h3>
-						</header>
-						<p>Amet nullam fringilla nibh nulla convallis tique ante proin
-							sociis accumsan lobortis. Auctor etiam porttitor phasellus tempus
-							cubilia ultrices tempor sagittis. Nisl fermentum consequat
-							integer interdum.</p>
-					</article>
-					<article class="4u 12u(mobile) special">
-						<a href="#" class="image featured"><img src="images/pic09.jpg"
-							alt="" /></a>
-						<header>
-							<h3>
-								<a href="#">Magna laoreet et aliquam</a>
-							</h3>
-						</header>
-						<p>Amet nullam fringilla nibh nulla convallis tique ante proin
-							sociis accumsan lobortis. Auctor etiam porttitor phasellus tempus
-							cubilia ultrices tempor sagittis. Nisl fermentum consequat
-							integer interdum.</p>
-					</article>
-				</div>
-			</section>
-
-		</div>
-
-		<!-- Footer --
-		<div id="footer">
-			<div class="container">
-				<div class="row">
-
-					<!-- Tweets --
-					<section class="4u 12u(mobile)">
-						<header>
-							<h2 class="icon fa-twitter circled">
-								<span class="label">Tweets</span>
-							</h2>
-						</header>
-						<ul class="divided">
-							<li>
-								<article class="tweet">
-									Amet nullam fringilla nibh nulla convallis tique ante sociis
-									accumsan. <span class="timestamp">5 minutes ago</span>
-								</article>
-							</li>
-							<li>
-								<article class="tweet">
-									Hendrerit rutrum quisque. <span class="timestamp">30
-										minutes ago</span>
-								</article>
-							</li>
-							<li>
-								<article class="tweet">
-									Curabitur donec nulla massa laoreet nibh. Lorem praesent
-									montes. <span class="timestamp">3 hours ago</span>
-								</article>
-							</li>
-							<li>
-								<article class="tweet">
-									Lacus natoque cras rhoncus curae dignissim ultricies. Convallis
-									orci aliquet. <span class="timestamp">5 hours ago</span>
-								</article>
-							</li>
-						</ul>
-					</section>
-
-					<!-- Posts --
-					<section class="4u 12u(mobile)">
-						<header>
-							<h2 class="icon fa-file circled">
-								<span class="label">Posts</span>
-							</h2>
-						</header>
-						<ul class="divided">
-							<li>
-								<article class="post stub">
-									<header>
-										<h3>
-											<a href="#">Nisl fermentum integer</a>
-										</h3>
-									</header>
-									<span class="timestamp">3 hours ago</span>
-								</article>
-							</li>
-							<li>
-								<article class="post stub">
-									<header>
-										<h3>
-											<a href="#">Phasellus portitor lorem</a>
-										</h3>
-									</header>
-									<span class="timestamp">6 hours ago</span>
-								</article>
-							</li>
-							<li>
-								<article class="post stub">
-									<header>
-										<h3>
-											<a href="#">Magna tempus consequat</a>
-										</h3>
-									</header>
-									<span class="timestamp">Yesterday</span>
-								</article>
-							</li>
-							<li>
-								<article class="post stub">
-									<header>
-										<h3>
-											<a href="#">Feugiat lorem ipsum</a>
-										</h3>
-									</header>
-									<span class="timestamp">2 days ago</span>
-								</article>
-							</li>
-						</ul>
-					</section>
-
-					<!-- Photos --
-					<section class="4u 12u(mobile)">
-						<header>
-							<h2 class="icon fa-camera circled">
-								<span class="label">Photos</span>
-							</h2>
-						</header>
-						<div class="row 25%">
-							<div class="6u">
-								<a href="#" class="image fit"><img src="images/pic10.jpg"
-									alt="" /></a>
-							</div>
-							<div class="6u$">
-								<a href="#" class="image fit"><img src="images/pic11.jpg"
-									alt="" /></a>
-							</div>
-							<div class="6u">
-								<a href="#" class="image fit"><img src="images/pic12.jpg"
-									alt="" /></a>
-							</div>
-							<div class="6u$">
-								<a href="#" class="image fit"><img src="images/pic13.jpg"
-									alt="" /></a>
-							</div>
-							<div class="6u">
-								<a href="#" class="image fit"><img src="images/pic14.jpg"
-									alt="" /></a>
-							</div>
-							<div class="6u$">
-								<a href="#" class="image fit"><img src="images/pic15.jpg"
-									alt="" /></a>
-							</div>
-						</div>
-					</section>
-
-				</div>
-				<hr />
-				<div class="row">
-					<div class="12u">
-
-						<!-- Contact --
-						<section class="contact">
-							<header>
-								<h3>Nisl turpis nascetur interdum?</h3>
-							</header>
-							<p>Urna nisl non quis interdum mus ornare ridiculus egestas
-								ridiculus lobortis vivamus tempor aliquet.</p>
-							<ul class="icons">
-								<li><a href="#" class="icon fa-twitter"><span
-										class="label">Twitter</span></a></li>
-								<li><a href="#" class="icon fa-facebook"><span
-										class="label">Facebook</span></a></li>
-								<li><a href="#" class="icon fa-instagram"><span
-										class="label">Instagram</span></a></li>
-								<li><a href="#" class="icon fa-pinterest"><span
-										class="label">Pinterest</span></a></li>
-								<li><a href="#" class="icon fa-dribbble"><span
-										class="label">Dribbble</span></a></li>
-								<li><a href="#" class="icon fa-linkedin"><span
-										class="label">Linkedin</span></a></li>
-							</ul>
-						</section>
--->
-				<!-- Copyright -->
 			</div>
 		</div>
 		</section>

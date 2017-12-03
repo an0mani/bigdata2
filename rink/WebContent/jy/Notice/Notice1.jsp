@@ -117,7 +117,7 @@ tr {
 		
 		<section id="two"
 			style="border-top-width: 0px; margin-top: 0px; padding-top: 50px; width: 1300px;">
-		<h1>공지사항</h1>
+		<h1 style="color:red;font-size: 80px">공지사항</h1>
 
 			
 			<div class="row"
@@ -127,23 +127,26 @@ tr {
 				<c:choose>
 
 					<c:when test="${not empty sessionScope.list}">
+						<tr style="font-size: 35px;font-weight: bold;" height="40px">
+								<td align="left" width="10%" >번호</td>
+								
+								<td align="center" width="20%">제목</td>
+								<td align="center" width="35%">내용</td>
+         						
+         						
+								<td align="center" width="35%">날짜</td>
+							</tr>
 						<c:forEach items="${sessionScope.list}" var="list">
+						
 							<%-- <article class="6u 12u$(xsmall) work-item"> <a href="../upload/${list.file}" class="image fit thumb" style= " max-width :300px; max-height:300px;">
             	<img src="../upload/${list.file}" alt="" style=" width: 300px;height: 300px;"/></a> --%>
 
 
-							<tr style="font-size: 2em";>
-								<td align="left" width="10%">${list.num }</td>
-								
-								<td align="center" width="60%"><article class="6u 12u$(xsmall) work-item">
-								<a href="back_image/childnotice4.jpg" class="image fit thumb" style= " max-width :1px; max-height:1px;"> 
-            					<img src="back_image/white.png" alt="" style=" width: 1px; height: 0px;"/><div style="position: relative;"></a>${list.title}<h3 style="font-size: 0px">${list.text}</h3></div>
-            					<div style="position: relative; left:10px; top: 60px;">
-            					</div>
-         						</article></td>
-         						
-         						
-								<td align="right" width="30%">${list.date}</td>
+							<tr valign="middle" >
+								<td align="left" width="5%" style="font-size: 25px;">${list.num}</td>
+								<td align="center" width="35%" style="font-size: 25px">${list.title}</td>
+								<td align="center" width="35%" style="font-size: 25px">${list.text}</td>
+								<td align="center" width="25%" style="font-size: 25px">${list.date}</td>
 							</tr>
 
 							<%-- <h3>${list.text}</h3>

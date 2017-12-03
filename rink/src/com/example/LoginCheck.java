@@ -3,6 +3,7 @@ package com.example;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
+import java.util.Calendar;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -51,7 +52,61 @@ public class LoginCheck extends HttpServlet {
 				session.setAttribute("Login_height", list.get(0).getHeight());
 				session.setAttribute("Login_birth", list.get(0).getBirthday());
 				
-				response.sendRedirect("jy/firstMain/LoginSuccess.jsp");
+				
+				
+				
+				String bir = (String)session.getAttribute("Login_birth"); 
+					String[] birth = bir.split("-");
+					
+						int year = Integer.parseInt(birth[0]);
+						int month = Integer.parseInt(birth[1]);
+						
+						Calendar cal = Calendar.getInstance();
+					    int thisyear = cal.get(Calendar.YEAR) ;
+					    int thismonth = cal.get(Calendar.MONTH);
+						
+					    int months = (thisyear - year)*12 + (thismonth - month);
+					    
+					    if(months >= 144){
+					    	session.setAttribute("vaccin", "Y_TWELVE");
+					    }else if (months >= 132){
+					    	session.setAttribute("vaccin", "Y_ELEVEN");
+					    }else if (months >= 72){
+					    	session.setAttribute("vaccin", "Y_SIX");
+					    
+					    }else if (months >= 48){
+					    	session.setAttribute("vaccin", "Y_FOUR");
+					    
+					    }else if (months >= 36){
+					    	session.setAttribute("vaccin", "M_THIRTYSIX");
+					    
+					    }else if (months >= 24){
+					    	
+					    	session.setAttribute("vaccin", "M_TWENTYFOUR");
+					    }else if (months >= 18){
+					    	session.setAttribute("vaccin", "M_EIGHTEEN");
+					    
+					    }else if (months >= 15){
+					    	
+					    	session.setAttribute("vaccin", "M_FIFTEEN");
+					    }else if (months >= 12){
+					    	
+					    	session.setAttribute("vaccin", "M_TWELVE");
+					    }else if (months >= 6){
+					    	
+					    	session.setAttribute("vaccin", "M_SIX");
+					    }else if (months >= 4){
+					    	session.setAttribute("vaccin", "M_FOUR");
+					    
+					    }else if (months >= 2){
+					    	session.setAttribute("vaccin", "M_TWO");
+					    
+					    }else if (months == 1){
+					    	session.setAttribute("vaccin", "M_ONE");
+					    }else if (months == 0){
+					    	session.setAttribute("vaccin", "M_ZERO");
+					    }
+					    response.sendRedirect("jy/firstMain/LoginSuccess.jsp");
 				
 			}
 			

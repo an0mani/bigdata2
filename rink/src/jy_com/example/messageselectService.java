@@ -24,11 +24,11 @@ public class messageselectService extends HttpServlet {
 		// DB에 저장된 File정보를 모두 검색해서 jsp로 전송
 		HttpSession session = request.getSession();
 
-		String name = (String) session.getAttribute("id");
-
+		String name = (String)session.getAttribute("id");
+		System.out.println(name);
 		jy_managerDAO dao = jy_managerDAO.getInstance();
 
-		ArrayList<jy_managerVO> list;
+		ArrayList<jy_managerVO> list =null;
 		
 		try {
 			list = dao.managerSelect(name);

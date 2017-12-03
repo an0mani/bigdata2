@@ -2,37 +2,67 @@
 <%@page import="com.eatGPS.eatGPSVO"%>
 
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-   pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 
 <html>
 <head>
+<style>
+select {
+	width: 260px;
+	height: 50px;
+	padding-left: 10px;
+	font-size: 18px;
+	color: #006fff;
+	border: 3px solid #006fff;
+	border-radius: 15px
+}
+
+#button1 {
+	color: black !important;
+	background: #2e8ce3;
+	padding: 7px 30px 7px 30px;
+	font-size: 15px;
+	font-weight: bold;
+	color: #000000;
+	text-align: center;
+	border: solid 1px #73c8f0;
+	background: -moz-linear-gradient(0%, 100%, 90deg, #2e8ce3, #ffffff);
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#ffffff),
+		to(#2e8ce3));
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-bottom-color: #196ebb;
+	text-shadow: 0 -1px 0 #196ebb;
+}
+</style>
 <meta charset="utf-8">
 <title>수유실 표시하기</title>
 
 </head>
 <body>
 
-   <div>
-   <form method="post" action="../../eatGPSService">
-   
+	<div>
+		<form method="post" action="../../eatGPSService">
 
-	
-		<select name = "area">
-			<option value="gs">광주 수유실 위치 표시</option>
-			
-		</select> <input type="submit" value="검색" >
-	</form>
+
+
+			<select name="area">
+				<option value="gs">광주 수유실 위치 표시</option>
+
+			</select> <input type="submit" value="검색" id="button1">
+		</form>
 	</div>
-   </div>
-	
+	</div>
 
 
-   <div id="map" style="width: 100%; height: 1000px;"></div>
-   <script type="text/javascript"
-      src="//dapi.kakao.com/v2/maps/sdk.js?appkey=0351a47886aeab5672a46c979aadfb78"></script>
-   <script>
+
+	<div id="map" style="width: 100%; height: 1000px;"></div>
+	<script type="text/javascript"
+		src="//dapi.kakao.com/v2/maps/sdk.js?appkey=0351a47886aeab5672a46c979aadfb78"></script>
+	<script>
       var mapContainer = document.getElementById('map'), // 지도를 표시할 div  
       mapOption = {
          center : new daum.maps.LatLng(35.15420004, 126.8847805), // 지도의 중심좌표
@@ -47,13 +77,13 @@
           var positions =[
             <%ArrayList<eatGPSVO> list = (ArrayList<eatGPSVO>) session.getAttribute("eatGPS");
 
-         if (list != null) {
-            for (int i = 0; i < list.size(); i++) {
+			if (list != null) {
+				for (int i = 0; i < list.size(); i++) {
 
-               String name = list.get(i).getName();
-               String address = list.get(i).getAddress();
-               String latitude = list.get(i).getLatitude();
-               String longtude = list.get(i).getLongitude();%>
+					String name = list.get(i).getName();
+					String address = list.get(i).getAddress();
+					String latitude = list.get(i).getLatitude();
+					String longtude = list.get(i).getLongitude();%>
             
              
              {
@@ -66,8 +96,8 @@
          
           
             <%}
-            
-         }%>
+
+			}%>
          ]
          
        

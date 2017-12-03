@@ -52,18 +52,19 @@ tr {
 <link rel="stylesheet" href="assets/css/main2.css" />
 </head>
 <body id="top" style="margin-left: 100px;">
-	<!-- Header -->
-	<!-- Menu -->
+ 	<div id="wrapper">
+<!-- 	
+	Menu
 	<div id="wrapper">
 
-		<!-- Header -->
+		Header
 		<header id="header"
 			style="padding-top: 0px;padding-bottom: 0px;height: 0px;width: 1800px;">
 		<div class="inner">
 
-			<!-- Logo -->
+			Logo
 
-			<!-- Nav -->
+			Nav
 			<nav>
 			<ul>
 				<li><a href="#menu">Menu</a></li>
@@ -84,8 +85,7 @@ tr {
 		</nav>
 
 	</div>
-	<!-- Logo -->
-
+-->
 	<!-- Main -->
 	<div id="main"
 		style="margin-left: 0px; padding-top: 0px; padding-bottom: 50px; padding-left: 50px; padding-right: 0px; border-bottom-width: 100px;">

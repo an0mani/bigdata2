@@ -63,20 +63,29 @@ tr {
 </head>
 <body id="top" class="homepage">
 	<div id="back">
-		<header id="header1">
+		<header id="header1" style = "text-align:center;">
 		<div class="inner1">
 
-			<a href="#" class="image avatar" style = "margin-right: 70px;"><img src="back_image/baby.jpg" alt="" style = "width:250px; height:250px;"/></a>
-			<p align="center">??맘</p>
+			<a href="#" class="image avatar" style = "margin-right: 70px;"><img src="back_image/baby.jpg" alt="" style = "width:200px; height:200px;"/></a>
+			<p align="center" style="font-size: 41px; font-weight: bold; color: black;">${Login_name }맘</p>
 			<input type="button" name="menu" value="쪽지쓰기"
 				onclick="location.href='jy_fromwriting.jsp'"
 				style="width: 50px; height: 50px; min-width: 6em !important; font-size: 15px; text-align: center; color: black !important; margin-right: 0px; font-family: 'a고래야놀자'">
-			<input type="button" name="menu" value="목      록"
+			<!-- <input type="button" name="menu" value="목      록"
 				onclick="location.href='jy_managerboard.jsp'"
-				style="width: 50px; height: 50px; min-width: 6em !important; font-size: 15px; text-align: center; color: black !important; margin-right: 0px; font-family: 'a고래야놀자'">
+				style="width: 50px; height: 50px; min-width: 6em !important; font-size: 15px; text-align: center; color: black !important; margin-right: 0px; font-family: 'a고래야놀자'"> --><hr>
 			<!-- <h1><strong>I am Strata</strong>, a super simple<br />
 					responsive site template freebie<br />
 					crafted by <a href="http://html5up.net">HTML5 UP</a>.</h1> -->
+					<input type = "button" name = "menu" value = "공지사항"  onclick="location.href='../Notice/Notice.jsp'"style="width: 50px; height: 50px; min-width: 6em !important; font-size: 15px; text-align: center; color: black !important; margin-right: 0px; font-family: 'a고래야놀자'">
+						<input type = "button" name = "notice" value = "어린이집" onclick="location.href='../DaycareCenter/jy_DaycareCenter.jsp'" style="width: 50px; height: 50px; min-width: 6em !important; font-size: 15px; text-align: center; color: black !important; margin-right: 0px; font-family: 'a고래야놀자'">
+						<input type = "button" name = "button1" value = "육아팁" onclick="location.href='../news/news.jsp'" style="width: 50px; height: 50px; min-width: 6em !important; font-size: 15px; text-align: center; color: black !important; margin-right: 0px; font-family: 'a고래야놀자'">
+						<input type = "button" name = "button2" value = "질병순위" onclick="location.href='../dicrease/dicrease.jsp'" style="width: 50px; height: 50px; min-width: 6em !important; font-size: 15px; text-align: center; color: black !important; margin-right: 0px; font-family: 'a고래야놀자'">
+						<input type = "button" name = "button3" value = "예방접종" onclick="location.href='../vaccination/jy_vaccination.jsp'" style="width: 50px; height: 50px; min-width: 6em !important; font-size: 15px; text-align: center; color: black !important; margin-right: 0px; font-family: 'a고래야놀자'">
+		<!-- <h1><strong>I am Strata</strong>, a super simple<br />
+					responsive site template freebie<br />
+					crafted by <a href="http://html5up.net">HTML5 UP</a>.</h1> -->
+					<p style="color: black;" >${sessionScope.month} 주사를 맞아야합니다. 자세한 내용은 예방접종 메뉴를 참고해주세요</p>
 		</div>
 		</header>
 	</div>
@@ -142,7 +151,9 @@ tr {
 		<section id="two"
 			style="border-top-width: 0px; margin-top: 0px; padding-top: 50px; margin-left: 150px;">
 		<h2>쪽지함</h2>
+		
 		<div class="row">
+		
 			<%
 				ArrayList<jy_managerVO> vo = (ArrayList<jy_managerVO>) session.getAttribute("list");
 
@@ -150,12 +161,14 @@ tr {
 					vo.get(i).getNum();
 				}
 			%>
+			
 			<table border='1' style="width: 1100px; text-align: center;">
 				<c:choose>
 					<c:when test="${not empty sessionScope.list}">
 						<c:forEach items="${sessionScope.list}" var="list">
 							<tr>
 								<td>${list.num }</td>
+								<td>${list.id }</td>
 								<td>${list.title }</td>
 								<td>${list.text }</td>
 								<td><a href='../../jy_messagedeleteService?num=${list.num}'> 삭제</a></td>

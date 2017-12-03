@@ -147,174 +147,170 @@ tr {
 				</ul>
 		</section> -->
 
-		<%
-			ServletContext context = getServletContext();
-			String saveDir = context.getRealPath("supload");
-			request.setAttribute("save", saveDir);
-			System.out.print(saveDir);
-		%>
-		<!-- Two -->
-		
-		<section id="two"
-			style="border-top-width: 0px; margin-top: 0px; padding-top: 0px;">
-		<iframe width = "1535px" height = "970px" frameborder="0" border="0" scrolling="auto" bgcolor=#EEEEEE bordercolor="#FF000000" marginwidth="0" marginheight="0" name="main_frame" id="main_frame">
-		<!-- <h2>중고품 판매</h2> -->
-		<div class="row">
-			<%				
-				ArrayList<ym_FileVO> vo = (ArrayList<ym_FileVO>) session.getAttribute("list");
-				request.setAttribute("totalPage", vo.size() % 9 == 0 ? vo.size() / 9 : vo.size() / 9 + 1);
-				request.setAttribute("last", vo.size() % 9);
-				request.setAttribute("vosize", vo.size());
-			%>
-			
-			<c:choose>
-	
-				<c:when test="${not empty sessionScope.list}">
-							<c:set var="list" value="${sessionScope.list}" scope="request"></c:set>
-					<c:choose>
-					<c:when test="${(empty param.page) or param.page==0} ">
-					<c:choose>
-					<c:when test="${last ==  1}">
-					<article class="6u 12u$(xsmall) work-item"> <a
-								href="../../supload/${list[0].filename}" class="image fit thumb"
-								style="max-width: 300px; max-height: 300px;"><img
-								src="../../supload/${list[0].filename}" alt=""
-								style="width: 300px; height: 300px;" /></a>
+	 <%
+         ServletContext context = getServletContext();
+         String saveDir = context.getRealPath("supload");
+         request.setAttribute("save", saveDir);
+         System.out.print(saveDir);
+      %>
+      <!-- Two -->
+      <section id="two"
+         style="border-top-width: 0px; margin-top: 0px; padding-top: 50px;">
+      <h2>중고품 판매</h2>
+      <div class="row">
+         <%            
+            ArrayList<ym_FileVO> vo = (ArrayList<ym_FileVO>) session.getAttribute("list");
+            request.setAttribute("totalPage", vo.size() % 9 == 0 ? vo.size() / 9 : vo.size() / 9 + 1);
+            request.setAttribute("last", vo.size() % 9);
+            request.setAttribute("vosize", vo.size());
+         %>
+        
+         <c:choose>
+   
+            <c:when test="${not empty sessionScope.list}">
+                     <c:set var="list" value="${sessionScope.list}" scope="request"></c:set>
+               <c:choose>
+               <c:when test="${(empty param.page) or param.page==0} ">
+               <c:choose>
+               <c:when test="${last ==  1}">
+               <article class="6u 12u$(xsmall) work-item"> <a
+                        href="../../supload/${list[0].filename}" class="image fit thumb"
+                        style="max-width: 300px; max-height: 300px;"><img
+                        src="../../supload/${list[0].filename}" alt=""
+                        style="width: 300px; height: 300px;" /></a>
 
-							<h3 style="font-size: 0px;">${list[0].text}</h3>
-							<h2>${list[0].title}</h2>
-							<p>
-							<h3>${list[0].num}.
-								${list[0].wdate}<a
-									href='../../ym_numService?num=${list[0].num }'> 수정</a><a
-									href='../../ym_deleteService?num=${list[0].num}'> 삭제</a>
-							</h3>
-							</p>
-							</article>
-					</c:when>
-					<c:otherwise>
-					
-					<c:forEach begin="0" end="${last-1}" var="i">
-							
-							<article class="6u 12u$(xsmall) work-item"> <a
-								href="../../supload/${list[i].filename}" class="image fit thumb"
-								style="max-width: 300px; max-height: 300px;"><img
-								src="../../supload/${list[i].filename}" alt=""
-								style="width: 300px; height: 300px;" /></a>
+                     <h3 style="font-size: 0px;">${list[0].text}</h3>
+                     <h2>${list[0].title}</h2>
+                     <p>
+                     <h3>${list[0].num}.
+                        ${list[0].wdate}<a
+                           href='../../ym_numService?num=${list[0].num }'> 수정</a><a
+                           href='../../ym_deleteService?num=${list[0].num}'> 삭제</a>
+                     </h3>
+                     </p>
+                     </article>
+               </c:when>
+               <c:otherwise>
+               
+               <c:forEach begin="0" end="${last-1}" var="i">
+                     
+                     <article class="6u 12u$(xsmall) work-item"> <a
+                        href="../../supload/${list[i].filename}" class="image fit thumb"
+                        style="max-width: 300px; max-height: 300px;"><img
+                        src="../../supload/${list[i].filename}" alt=""
+                        style="width: 300px; height: 300px;" /></a>
 
-							<h3 style="font-size: 0px;">${list[i].text}</h3>
-							<h2>${list[i].title}</h2>
-							<p>
-							<h3>${list[i].num}.
-								${list[i].wdate}<a
-									href='../../ym_numService?num=${list[i].num }'> 수정</a><a
-									href='../../ym_deleteService?num=${list[i].num}'> 삭제</a>
-							</h3>
-							</p>
-							</article>
-						</c:forEach>
-					</c:otherwise>
-					</c:choose>
-					</c:when>
-					<c:otherwise>
-					<c:choose>
-					<c:when test="${param.page != totalPage-1}">
-					
-					<c:forEach begin="${param.page*9}" end="${param.page*9+8}" var="i">
-							
-							<article class="6u 12u$(xsmall) work-item"> <a
-								href="../../supload/${list[i].filename}" class="image fit thumb"
-								style="max-width: 300px; max-height: 300px;"><img
-								src="../../supload/${list[i].filename}" alt=""
-								style="width: 300px; height: 300px;" /></a>
+                     <h3 style="font-size: 0px;">${list[i].text}</h3>
+                     <h2>${list[i].title}</h2>
+                     <p>
+                     <h3>${list[i].num}.
+                        ${list[i].wdate}<a
+                           href='../../ym_numService?num=${list[i].num }'> 수정</a><a
+                           href='../../ym_deleteService?num=${list[i].num}'> 삭제</a>
+                     </h3>
+                     </p>
+                     </article>
+                  </c:forEach>
+               </c:otherwise>
+               </c:choose>
+               </c:when>
+               <c:otherwise>
+               <c:choose>
+               <c:when test="${param.page != totalPage-1}">
+               
+               <c:forEach begin="${param.page*9}" end="${param.page*9+8}" var="i">
+                     
+                     <article class="6u 12u$(xsmall) work-item"> <a
+                        href="../../supload/${list[i].filename}" class="image fit thumb"
+                        style="max-width: 300px; max-height: 300px;"><img
+                        src="../../supload/${list[i].filename}" alt=""
+                        style="width: 300px; height: 300px;" /></a>
 
-							<h3 style="font-size: 0px;">${list[i].text}</h3>
-							<h2>${list[i].title}</h2>
-							<p>
-							<h3>${list[i].num}.
-								${list[i].wdate}<a
-									href='../../ym_numService?num=${list[i].num }'> 수정</a><a
-									href='../../ym_deleteService?num=${list[i].num}'> 삭제</a>
-							</h3>
-							</p>
-							</article>
-						</c:forEach>
-					</c:when>
-					<c:when test="${param.page == totalPage-1}">
-					<c:choose>
-					<c:when test="${last != 1}">
-					<c:forEach begin="${param.page*9}" end="${param.page*9+last-1}" var="i">
-							
-							<article class="6u 12u$(xsmall) work-item"> <a
-								href="../../supload/${list[i].filename}" class="image fit thumb"
-								style="max-width: 300px; max-height: 300px;"><img
-								src="../../supload/${list[i].filename}" alt=""
-								style="width: 300px; height: 300px;" /></a>
+                     <h3 style="font-size: 0px;">${list[i].text}</h3>
+                     <h2>${list[i].title}</h2>
+                     <p>
+                     <h3>${list[i].num}.
+                        ${list[i].wdate}<a
+                           href='../../ym_numService?num=${list[i].num }'> 수정</a><a
+                           href='../../ym_deleteService?num=${list[i].num}'> 삭제</a>
+                     </h3>
+                     </p>
+                     </article>
+                  </c:forEach>
+               </c:when>
+               <c:when test="${param.page == totalPage-1}">
+               <c:choose>
+               <c:when test="${last != 1}">
+               <c:forEach begin="${param.page*9}" end="${param.page*9+last-1}" var="i">
+                     
+                     <article class="6u 12u$(xsmall) work-item"> <a
+                        href="../../supload/${list[i].filename}" class="image fit thumb"
+                        style="max-width: 300px; max-height: 300px;"><img
+                        src="../../supload/${list[i].filename}" alt=""
+                        style="width: 300px; height: 300px;" /></a>
 
-							<h3 style="font-size: 0px;">${list[i].text}</h3>
-							<h2>${list[i].title}</h2>
-							<p>
-							<h3>${list[i].num}.
-								${list[i].wdate}<a
-									href='../../ym_numService?num=${list[i].num}'> 수정</a><a
-									href='../../ym_deleteService?num=${list[i].num}'> 삭제</a>
-							</h3>
-							</p>
-							</article>
-						</c:forEach>
-						</c:when>
-						<c:otherwise>
-						
-							
-							<article class="6u 12u$(xsmall) work-item"> <a
-								href="../../supload/${list[param.page*9].filename}" class="image fit thumb"
-								style="max-width: 300px; max-height: 300px;"><img
-								src="../../supload/${list[param.page*9].filename}" alt=""
-								style="width: 300px; height: 300px;" /></a>
+                     <h3 style="font-size: 0px;">${list[i].text}</h3>
+                     <h2>${list[i].title}</h2>
+                     <p>
+                     <h3>${list[i].num}.
+                        ${list[i].wdate}<a
+                           href='../../ym_numService?num=${list[i].num}'> 수정</a><a
+                           href='../../ym_deleteService?num=${list[i].num}'> 삭제</a>
+                     </h3>
+                     </p>
+                     </article>
+                  </c:forEach>
+                  </c:when>
+                  <c:otherwise>
+                  
+                     
+                     <article class="6u 12u$(xsmall) work-item"> <a
+                        href="../../supload/${list[param.page*9].filename}" class="image fit thumb"
+                        style="max-width: 300px; max-height: 300px;"><img
+                        src="../../supload/${list[param.page*9].filename}" alt=""
+                        style="width: 300px; height: 300px;" /></a>
 
-							<h3 style="font-size: 0px;">${list[param.page*9].text}</h3>
-							<h2>${list[param.page*9].title}</h2>
-							<p>
-							<h3>${list[param.page*9].num}.
-								${list[param.page*9].wdate}<a
-									href='../../ym_numService?num=${list[param.page*9].num }'> 수정</a><a
-									href='../../ym_deleteService?num=${list[param.page*9].num}'> 삭제</a>
-							</h3>
-							</p>
-							</article>
-						
-						</c:otherwise>
-						</c:choose>
-					</c:when>
-					</c:choose>
-					</c:otherwise>
-					</c:choose>
-					</c:when>
-					</c:choose>
-					
-			<c:choose>
-			<c:when test="${vosize==0 }">
-			
-			</c:when>
-			<c:when test="${vosize<9 and vosize != 0 }">
-			<a href="ym_messageboard.jsp?page=0"> 1</a>
-			</c:when>
-			<c:otherwise>
-			<c:forEach begin="0" end="${totalPage-1}" var="i">
-				<div>
-					<a href="ym_messageboard.jsp?page=${i}"> ${i+1}</a>
-				</div>
+                     <h3 style="font-size: 0px;">${list[param.page*9].text}</h3>
+                     <h2>${list[param.page*9].title}</h2>
+                     <p>
+                     <h3>${list[param.page*9].num}.
+                        ${list[param.page*9].wdate}<a
+                           href='../../ym_numService?num=${list[param.page*9].num }'> 수정</a><a
+                           href='../../ym_deleteService?num=${list[param.page*9].num}'> 삭제</a>
+                     </h3>
+                     </p>
+                     </article>
+                  <
+                  </c:otherwise>
+                  </c:choose>
+               </c:when>
+               </c:choose>
+               </c:otherwise>
+               </c:choose>
+               </c:when>
+               </c:choose>
+               
+         <c:choose>
+         <c:when test="${vosize==0 }">
+         
+         </c:when>
+         <c:when test="${vosize<9 and vosize != 0 }">
+         <a href="ym_messageboard.jsp?page=0"> 1</a>
+         </c:when>
+         <c:otherwise>
+         <c:forEach begin="0" end="${totalPage-1}" var="i">
+            <div>
+               <a href="ym_messageboard.jsp?page=${i}"> ${i+1}</a>
+            </div>
 
-			</c:forEach>
-			</c:otherwise>
-			</c:choose>
-		
-		</iframe>
-		</div>
-		<ul class="actions">
-			<!-- <li><a href="#" class="button">Full Portfolio</a></li> -->
-		</ul>
-		</section>
+         </c:forEach>
+         </c:otherwise>
+         </c:choose>
+      
+
+      </div>
+      
+      </section>
 
 		<!-- Three -->
 		<!-- <section id="three">

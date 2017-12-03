@@ -23,6 +23,7 @@ public class fortune {
          
          while((str = stdOut.readLine()) != null) {
             System.out.println("Content Output");
+            System.out.println(str);
             list.add(str);
             
             // 파일 실행 시 파일 안에 print함수 >> 출력을 해야 함
@@ -33,6 +34,7 @@ public class fortune {
         for (int i = 0; i < list.size(); i++) {
 			System.out.println(list.get(i));
 		}
+        System.out.println(str);
          System.out.println("END");
       } catch (IOException e) {
          e.printStackTrace();

@@ -22,7 +22,7 @@ public class rankService extends HttpServlet {
 		String area = request.getParameter("area");
 		request.setCharacterEncoding("euc-kr");
 		response.setCharacterEncoding("text/html;euc-kr");
-		
+		session.setAttribute("selectArea", area);
 		ArrayList<rankVO> list;
 		try {
 			

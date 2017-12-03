@@ -10,7 +10,7 @@ public class article {
    public static void main(String[] args) {
       
       Process ps = null;
-      String[] cmd = new String[] {"py", "C:Users/User/Desktop/title.py", "print"};
+      String[] cmd = new String[] {"py", "C:/Users/User/git/bigdata2/rink/src/Info/test.py", "print"};
       String str = null;
       ArrayList<String> list = new ArrayList<>();
       try {

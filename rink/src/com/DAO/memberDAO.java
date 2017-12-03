@@ -171,5 +171,24 @@ public class memberDAO {
 		return cnt;
 
 	}
+	public ArrayList<String> searchIDPW(String id) throws Exception { // 중복확인
+
+		Class.forName(className);
+		conn = DriverManager.getConnection(url, dbid, dbpw);
+		pst = conn.prepareStatement("select * from baby_member where m_id=?");
+		ArrayList<String> search = new ArrayList<String>();
+		
+		pst.setString(1, id);
+
+		ResultSet rs = pst.executeQuery();
+
+		while(rs.next()) {
+			search.add(rs.getString(1));
+			search.add(rs.getString(2));
+		}
+
+		return search;
+
+	}
 
 }

@@ -57,11 +57,14 @@ tr {
    <header id="header1">
    <div class="inner1" style="margin-top: 40px">
 
-      <a href="#" class="image avatar" style = "margin-right: 70px;"><img src="back_image/baby.jpg" alt="" style = "width:250px; height:250px;"/></a>
-      <p align="center" style="font-size: 41px; font-weight: bold; color: black;">${Login_name }의 Mom</p>
-      <input type="button" name="menu" value="목  록"
-         onclick="location.href='jy_messageboard.jsp'"
-         style="width: 50px; height: 50px; min-width: 6em !important; font-size: 15px; text-align: center; color: black !important; margin-right: 0px; font-family: 'a고래야놀자'; margin-right: 36px;">
+      <a href="#" class="image avatar" style = "margin-right: 70px;"><img src="back_image/baby.jpg" alt="" style = "width:200px; height:200px;"/></a>
+      <p align="center" style="font-size: 41px; font-weight: bold; color: black;">${Login_name }맘</p>
+
+         <input type = "button" name = "menu" value = "공지사항"  onclick="location.href='../Notice/Notice.jsp'"style="width: 50px; height: 50px; min-width: 6em !important; font-size: 15px; text-align: center; color: black !important; margin-right: 0px; font-family: 'a고래야놀자'">
+						<input type = "button" name = "notice" value = "어린이집" onclick="location.href='../DaycareCenter/jy_DaycareCenter.jsp'" style="width: 50px; height: 50px; min-width: 6em !important; font-size: 15px; text-align: center; color: black !important; margin-right: 0px; font-family: 'a고래야놀자'">
+						<input type = "button" name = "button1" value = "육아팁" onclick="location.href='../news/news.jsp'" style="width: 50px; height: 50px; min-width: 6em !important; font-size: 15px; text-align: center; color: black !important; margin-right: 0px; font-family: 'a고래야놀자'">
+						<input type = "button" name = "button2" value = "질병순위" onclick="location.href='../dicrease/dicrease.jsp'" style="width: 50px; height: 50px; min-width: 6em !important; font-size: 15px; text-align: center; color: black !important; margin-right: 0px; font-family: 'a고래야놀자'">
+						<input type = "button" name = "button3" value = "예방접종" onclick="location.href='../vaccination/jy_vaccination.jsp'" style="width: 50px; height: 50px; min-width: 6em !important; font-size: 15px; text-align: center; color: black !important; margin-right: 0px; font-family: 'a고래야놀자'">
       <!-- <h1><strong>I am Strata</strong>, a super simple<br />
 
                               <!-- <h1><strong>I am Strata</strong>, a super simple<br />
@@ -93,11 +96,12 @@ tr {
       <nav id="menu">
       <h2>Menu</h2>
       <ul>
-         <li><a href="../firstMain/jh_main.jsp">Home</a></li>
-         <li><a href="../usedArticle/ym_messageboard.jsp">아기 용품 공간</a></li>
-         <li><a href="../Diary/jyo_diary.jsp">나만의 육아일기</a></li>
-         <li><a href="../MessageBoard/jy_messageboard.jsp">이야기해요</a></li>
-         <li><a href="../BabyInfo/jy_BabyInfo.jsp">나의 아기정보</a></li>
+      	<li><a href="../firstMain/jh_main.jsp">Home</a></li>
+		<li><a href="../../ym_SelectService">아기 용품 공간</a></li>
+		<li><a href="../../DiarySelectService">나만의 육아일기</a></li>
+		<li><a href="../../SelectService">이야기해요</a></li>
+		<li><a href="../BabyInfo/jy_BabyInfo.jsp">나의 아기정보</a></li>
+		<li><a href="../MessageBoard/logout.jsp">로그아웃</a></li>        
       </ul>
       </nav>
 

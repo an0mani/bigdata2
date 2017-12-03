@@ -28,8 +28,8 @@ public class SearchInfo extends HttpServlet {
 			String search_pw = array[1];
 			
 			HttpSession session = request.getSession();
-			session.setAttribute("search_id", search_id);
-			session.setAttribute("search_pw", search_pw);
+			/*session.setAttribute("search_id", search_id);
+			session.setAttribute("search_pw", search_pw);*/
 			response.sendRedirect("jy/firstMain/jh_main.jsp");
 			
 		} catch (Exception e) {

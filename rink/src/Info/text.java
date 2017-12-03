@@ -10,7 +10,7 @@ public class text {
    public static void main(String[] args) {
       
       Process ps = null;
-      String[] cmd = new String[] {"py", "C:\\Users\\User\\Desktop\\text.py", "dir"};
+      String[] cmd = new String[] {"py", "C:/Users/User/Desktop/text.py", "print"};
       String str = null;
       ArrayList<String> list = new ArrayList<>();
       try {

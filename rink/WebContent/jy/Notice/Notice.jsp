@@ -70,27 +70,37 @@ tr {
 <link rel="stylesheet" href="assets/css/main2.css" />
 </head>
 <body id="top">
-	<header id="header1">
+	<header id="header1" style = "padding:0em 4em;">
 	<div class="inner1" style="margin-top: 40px">
 
-		<a href="#" class="image avatar" style = "margin-right: 70px;"><img src="back_image/baby.jpg" alt="" style = "width:250px; height:250px;"/></a>
-		<p align="center">${Login_name }의 Mom</p>
+		<a href="#" class="image avatar" style = "margin-right: 70px;"><img src="back_image/baby.jpg" alt="" style = "width:200px; height:200px;"/></a>
+		 <p align="center" style="font-size: 41px; font-weight: bold; color: black;">${Login_name }맘</p>
 		<input type="button" name="write" value="글쓰기"
 			onclick="location.href='writing.jsp'"
 			style="width: 50px; height: 50px; min-width: 6em !important; font-size: 15px; text-align: center; color: black !important; margin-right: 0px; font-family: 'a고래야놀자'">
 		<input type="button" name="menu" value="목  록"
 			onclick="location.href='Notice.jsp'"
-			style="width: 50px; height: 50px; min-width: 6em !important; font-size: 15px; text-align: center; color: black !important; margin-right: 0px; font-family: 'a고래야놀자'">
+			style="width: 50px; height: 50px; min-width: 6em !important; font-size: 15px; text-align: center; color: black !important; margin-right: 0px; font-family: 'a고래야놀자'"><hr>
+			
+			
 		<!-- <h1><strong>I am Strata</strong>, a super simple<br />					
 					<!-- <h1><strong>I am Strata</strong>, a super simple<br />
 					responsive site template freebie<br />
 					crafted by <a href="http://html5up.net">HTML5 UP</a>.</h1> -->
 		
-		<p style="color: black;" >${sessionScope.month} 주사를 맞아야합니다. 자세한 내용은 예방접종 메뉴를 참고해주세요</p>
 		
-		<input type="button" value='별자리' onclick = "changeIframeUrl('writing.jsp')"></input>
-		<input type="button" value='날씨' onclick = "changeIframeUrl('README.txt')"></input>
-		<input type="button" value='공지사항' onclick = "changeIframeUrl('Notice1.jsp')"></input>
+		
+		<input type="button" value='별자리' onclick = "changeIframeUrl('fortune.jsp')" style="width: 50px; height: 50px; min-width: 6em !important; font-size: 15px; text-align: center; color: black !important; margin-right: 0px; font-family: 'a고래야놀자'"></input>
+		<input type="button" value='날씨' onclick = "changeIframeUrl('weather.jsp')" style="width: 50px; height: 50px; min-width: 6em !important; font-size: 15px; text-align: center; color: black !important; margin-right: 0px; font-family: 'a고래야놀자'"></input>
+		
+		<input type="button" value='공지사항' onclick = "changeIframeUrl('Notice1.jsp')" style="width: 50px; height: 50px; min-width: 6em !important; font-size: 15px; text-align: center; color: black !important; margin-right: 0px; font-family: 'a고래야놀자'"></input><hr>
+		
+		
+						<input type = "button" name = "notice" value = "어린이집" onclick="location.href='../DaycareCenter/jy_DaycareCenter.jsp'" style="width: 50px; height: 50px; min-width: 6em !important; font-size: 15px; text-align: center; color: black !important; margin-right: 0px; font-family: 'a고래야놀자'">
+						<input type = "button" name = "button1" value = "육아팁" onclick="location.href='../news/news.jsp'" style="width: 50px; height: 50px; min-width: 6em !important; font-size: 15px; text-align: center; color: black !important; margin-right: 0px; font-family: 'a고래야놀자'">
+						<input type = "button" name = "button2" value = "질병순위" onclick="location.href='../dicrease/dicrease.jsp'" style="width: 50px; height: 50px; min-width: 6em !important; font-size: 15px; text-align: center; color: black !important; margin-right: 0px; font-family: 'a고래야놀자'">
+						<input type = "button" name = "button3" value = "예방접종" onclick="location.href='../vaccination/jy_vaccination.jsp'" style="width: 50px; height: 50px; min-width: 6em !important; font-size: 15px; text-align: center; color: black !important; margin-right: 0px; font-family: 'a고래야놀자'">
+		<p style="color: black;" >${sessionScope.month} 주사를 맞아야합니다. 자세한 내용은 예방접종 메뉴를 참고해주세요</p>
 		
 		
 		
@@ -118,7 +128,7 @@ tr {
 		<nav id="menu">
 		<h2>Menu</h2>
 		<ul>
-				<li><a href="../firstMain/jh_main.jsp">Home</a></li>
+			<li><a href="../firstMain/jh_main.jsp">Home</a></li>
 			<li><a href="../../ym_SelectService">아기 용품 공간</a></li>
 			<li><a href="../../DiarySelectService">나만의 육아일기</a></li>
 			<li><a href="../../SelectService">이야기해요</a></li>

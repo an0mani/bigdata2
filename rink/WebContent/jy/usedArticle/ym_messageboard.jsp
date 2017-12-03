@@ -1,32 +1,19 @@
-<%@page import="java.util.Calendar"%>
 <%@page import="ym_com.DAO.ym_FileVO"%>
 <%@page import="java.util.ArrayList"%>
-<%@ page language="java" contentType="text/html; charset=EUC-KR" pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+   pageEncoding="EUC-KR"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html style = "height: 0px;">
+<html>
 <head>
-
 <script type="text/javascript">
 function changeIframeUrl(url) { 
-   document.getElementById("main_frame").src = url;
-   document.getElementById("main_frame1").src = url;
-   
+	document.getElementById("main_frame").src = url;
+	document.getElementById("main_frame1").src = url;
+	
 }
 </script>
 <style type="text/css">
-.inner{
-   background-image: url(back_image/childnotice6.jpg) !important;
-   color:black;
-   text-align: left;
-}
-#header1{
-   background-image: url(back_image/main2.png) !important;
-}
-.number{
-   text-align: left;
-   color : black;
-   }
 .poptrox-popup {
    width: 85% !important;
    height: 85% !important;
@@ -43,7 +30,10 @@ function changeIframeUrl(url) {
 }
 
 #top {
-   background-image: url(back_image/main1.png) !important;
+   background-image: url(images/backgroundsakura2.png) !important;
+      background-repeat:no-repeat;
+   background-position: right top;
+   background-attachment: fixed;
    font-family: 'a고래야놀자' !important;
 }
 
@@ -52,7 +42,7 @@ function changeIframeUrl(url) {
 }
 
 #back {
-   background-image: url(images/test.png) !important;
+   background-image: url(images/main2.png) !important;
 }
 
 tr {
@@ -63,6 +53,11 @@ tr {
 #two {
    width: 115%;
 }
+
+	.inner{
+	background-image: url(back_image/childnotice6.jpg) !important;
+	color : black;
+	}
 </style>
 <title>to baby from mom, message board</title>
 <meta charset="utf-8" />
@@ -72,38 +67,48 @@ tr {
 <link rel="stylesheet" href="assets/css/main.css" />
 <link rel="stylesheet" href="assets/css/main2.css" />
 </head>
-<body id="top" class="homepage" style="text-align: center;">
-
+<body id="top" class="homepage">
    <div id="back">
-      <header id="header1">
+      <header id="header1" style = "padding: 2em 4em;">
       <div class="inner1">
 
-         <a href="#" class="image avatar" style = "margin-right: 70px;"> <img src="back_image/baby.jpg" alt="" style = "width:250px; height:250px;"/></a>
-         <p align="center">${Login_name }의 Mom</p>
+         <a href="#" class="image avatar" style = "margin-right: 70px;"> <img src="back_image/baby.jpg" alt="" style = "width:200px; height:200px;"/></a>
+         <p align="center" style="font-size: 35px; color: #000000;">${Login_name }맘</p>
          <input type="button" name="write" value="글쓰기"
             onclick="location.href='ym_writing.jsp'"
             style="width: 50px; height: 50px; min-width: 6em !important; font-size: 15px; text-align: center; color: black !important; margin-right: 0px; font-family: 'a고래야놀자'">
          <input type="button" name="menu" value="목  록"
             onclick="location.href='ym_messageboard.jsp'"
             style="width: 50px; height: 50px; min-width: 6em !important; font-size: 15px; text-align: center; color: black !important; margin-right: 0px; font-family: 'a고래야놀자'">
+         <input type="button" name="menu" value="쪽지함"
+            onclick="location.href='../../messageselectService'"
+            style="width: 50px; height: 50px; min-width: 6em !important; font-size: 15px; text-align: center; color: black !important; margin-right: 0px; font-family: 'a고래야놀자'">
          <!-- <h1><strong>I am Strata</strong>, a super simple<br />
                responsive site template freebie<br />
                crafted by <a href="http://html5up.net">HTML5 UP</a>.</h1> -->
-      <input type="button" value='유모차' onclick = "changeIframeUrl('babywalker.jsp')"></input>
-      <input type="button" value='보행기' onclick = "changeIframeUrl('stroller.jsp')"></input>
-      <input type="button" value='아기침대' onclick = "changeIframeUrl('babybed.jsp')"></input>
-      <input type="button" value='기타' onclick = "changeIframeUrl('etc.jsp')"></input>
+      <a href="../../ym_SelectService?kind=1"><input type="button" value='유모차' style="width: 50px; height: 50px; min-width: 6em !important; font-size: 15px; text-align: center; color: black !important; margin-right: 0px; font-family: 'a고래야놀자'" ></input><%session.setAttribute("kind", "유모차"); %></a>
+      <a href="../../ym_SelectService?kind=2"><input type="button" value="보행기" style="width: 50px; height: 50px; min-width: 6em !important; font-size: 15px; text-align: center; color: black !important; margin-right: 0px; font-family: 'a고래야놀자'" ></input><%session.setAttribute("kind", "보행기"); %></a>
+      <a href="../../ym_SelectService?kind=3"><input type="button" value='아기침대' style="width: 50px; height: 50px; min-width: 6em !important; font-size: 15px; text-align: center; color: black !important; margin-right: 0px; font-family: 'a고래야놀자'" ></input><%session.setAttribute("kind", "아기침대"); %></a>
+      <a href="../../ym_SelectService?kind=4"><input type="button" value='기타' style="width: 50px; height: 50px; min-width: 6em !important; font-size: 15px; text-align: center; color: black !important; margin-right: 0px; font-family: 'a고래야놀자'" ></input><%session.setAttribute("kind", "기타"); %></a><hr>
+      
+       <input type = "button" name = "menu" value = "공지사항"  onclick="location.href='../Notice/Notice.jsp'"style="width: 50px; height: 50px; min-width: 6em !important; font-size: 15px; text-align: center; color: black !important; margin-right: 0px; font-family: 'a고래야놀자'">
+						<input type = "button" name = "notice" value = "어린이집" onclick="location.href='../DaycareCenter/jy_DaycareCenter.jsp'" style="width: 50px; height: 50px; min-width: 6em !important; font-size: 15px; text-align: center; color: black !important; margin-right: 0px; font-family: 'a고래야놀자'">
+						<input type = "button" name = "button1" value = "육아팁" onclick="location.href='../news/news.jsp'" style="width: 50px; height: 50px; min-width: 6em !important; font-size: 15px; text-align: center; color: black !important; margin-right: 0px; font-family: 'a고래야놀자'">
+						<input type = "button" name = "button2" value = "질병순위" onclick="location.href='../dicrease/dicrease.jsp'" style="width: 50px; height: 50px; min-width: 6em !important; font-size: 15px; text-align: center; color: black !important; margin-right: 0px; font-family: 'a고래야놀자'">
+						<input type = "button" name = "button3" value = "예방접종" onclick="location.href='../vaccination/jy_vaccination.jsp'" style="width: 50px; height: 50px; min-width: 6em !important; font-size: 15px; text-align: center; color: black !important; margin-right: 0px; font-family: 'a고래야놀자'">
       <p style="color: black;" >${sessionScope.month} 주사를 맞아야합니다. 자세한 내용은 예방접종 메뉴를 참고해주세요</p>
+      
+      
       </div>
+ 
       </header>
    </div>
    <!-- Header -->
    <!-- Menu -->
    <div id="wrapper">
 
-
       <!-- Header -->
-      <header id="header" style = "padding-top: 0px; padding-bottom: 0px;">
+      <header id="header">
       <div class="inner">
 
          <!-- Logo -->
@@ -121,9 +126,9 @@ tr {
       <h2>Menu</h2>
       <ul>
          <li><a href="../firstMain/jh_main.jsp">Home</a></li>
-         <li><a href="../../ym_SelectService">아기 용품 공간</a></li>
-         <li><a href="../../DiarySelectService">나만의 육아일기</a></li>
-         <li><a href="../../SelectService">이야기해요</a></li>
+         <li><a href="../../ym_SelectService?page=0">아기 용품 공간</a></li>
+         <li><a href="../../DiarySelectService?page=0">나만의 육아일기</a></li>
+         <li><a href="../../SelectService?page=0">이야기해요</a></li>
          <li><a href="../BabyInfo/jy_BabyInfo.jsp">나의 아기정보</a></li>
          <li><a href="../MessageBoard/logout.jsp">로그아웃</a></li>
       </ul>
@@ -135,43 +140,27 @@ tr {
    <!-- Main -->
 
    <div id="main"
-      style="margin-left: 384px;margin-right: 100px;padding-top: 0px;padding-bottom: 0px;padding-left: 0px;padding-right: 0px;border-bottom-width: 100px;">
-
-      <!-- One -->
-      <!--    <section id="one">
-         <header class="major">
-            <h2>To Baby From Mom.</h2>
-         </header>
-         <p>Accumsan orci faucibus id eu lorem semper. Eu ac iaculis ac nunc nisi lorem vulputate lorem neque cubilia ac in adipiscing in curae lobortis tortor primis integer massa adipiscing id nisi accumsan pellentesque commodo blandit enim arcu non at amet id arcu magna. Accumsan orci faucibus id eu lorem semper nunc nisi lorem vulputate lorem neque cubilia.</p>
-            <ul class="actions">
-               <li><a href="writing.jsp" class="button">Message Writing</a></li>
-               <li><a href="#" class="button">Logout</a></li>
-            </ul>
-      </section> -->
-
-
-      <%
+      style="margin-left: 400px; margin-right: 100px; padding-top: 20px; padding-bottom: 20px; padding-left: 50px; padding-right: 0px; border-bottom-width: 100px;">
+ <%
          ServletContext context = getServletContext();
          String saveDir = context.getRealPath("supload");
          request.setAttribute("save", saveDir);
-         System.out.print(saveDir);
+         System.out.println(saveDir);
       %>
       <!-- Two -->
-      
       <section id="two"
-         style="border-top-width: 0px; margin-top: 0px; padding-top: 0px;">
-      <iframe width = "1535px" height = "970px" frameborder="0" border="0" scrolling="auto" bgcolor=#EEEEEE bordercolor="#FF000000" marginwidth="0" marginheight="0" name="main_frame" id="main_frame">
-      <!-- <h2>중고품 판매</h2> -->
+         style="border-top-width: 0px; margin-top: 0px; padding-top: 50px;">
+      <h2>중고품판매</h2>
       <div class="row">
          <%            
             ArrayList<ym_FileVO> vo = (ArrayList<ym_FileVO>) session.getAttribute("list");
-
-
             request.setAttribute("totalPage", vo.size() % 9 == 0 ? vo.size() / 9 : vo.size() / 9 + 1);
             request.setAttribute("last", vo.size() % 9);
             request.setAttribute("vosize", vo.size());
+            String kind = (String)session.getAttribute("kind");
+            System.out.println(kind);
          %>
-         
+        
          <c:choose>
    
             <c:when test="${not empty sessionScope.list}">
@@ -296,31 +285,29 @@ tr {
                </c:choose>
                </c:when>
                </c:choose>
-               
+           
+      </div>
+      <div style="text-align: center;padding-right: 25%;"> 
          <c:choose>
          <c:when test="${vosize==0 }">
          
          </c:when>
          <c:when test="${vosize<9 and vosize != 0 }">
-         <a href="ym_messageboard.jsp?page=0"> 1</a>
+         <a href="ym_messageboard.jsp?page=0" style="color: black;text-align: center;">1</a>
          </c:when>
          <c:otherwise>
          <c:forEach begin="0" end="${totalPage-1}" var="i">
-            <div>
-               <a href="ym_messageboard.jsp?page=${i}"> ${i+1}</a>
-            </div>
+            
+               <a href="ym_messageboard.jsp?page=${i}" style="color: black; text-align: center;"> ${i+1}</a>
+            
 
          </c:forEach>
          </c:otherwise>
          </c:choose>
       
-      </iframe>
-      </div>
-      <ul class="actions">
-         <!-- <li><a href="#" class="button">Full Portfolio</a></li> -->
-      </ul>
+</div> 
       </section>
-
+  
       <!-- Three -->
       <!-- <section id="three">
                   <h2>Get In Touch</h2>

@@ -45,14 +45,15 @@ public class ym_FileDAO {
 		if(conn!=null) conn.close();
 	}
 	
-	public int uploadFile(String id,String title,String text,String filename) throws Exception {
+	public int uploadFile(String id,String title,String text,String filename,String kind) throws Exception {
 		getConnection();
 		
-		pst = conn.prepareStatement("insert into baby_sellboard values(?,file_num.nextval,?,?,to_char(sysdate,'YYYY-MM-DD'),?)");
+		pst = conn.prepareStatement("insert into baby_sellboard values(?,file_num.nextval,?,?,to_char(sysdate,'YYYY-MM-DD'),?,?)");
 		pst.setString(1, id);
 		pst.setString(2, title);
 		pst.setString(3, text);
 		pst.setString(4, filename);
+		pst.setString(5, kind);
 		
 		cnt = pst.executeUpdate();
 		
@@ -61,15 +62,17 @@ public class ym_FileDAO {
 		return cnt;
 	}
 
-	public ArrayList<ym_FileVO> selectAll() throws Exception {
+	public ArrayList<ym_FileVO> selectAll(String kind) throws Exception {
 		getConnection();
 
-		pst = conn.prepareStatement("select * from baby_sellboard order by m_num desc");
+		pst = conn.prepareStatement("select * from baby_sellboard where kind = ? order by m_num desc");
+		pst.setString(1, kind);
 		rs = pst.executeQuery();
-		ArrayList<ym_FileVO> list = new ArrayList<>();
 		
+		ArrayList<ym_FileVO> list = new ArrayList<>();
 		while(rs.next()) {
-		list.add(new ym_FileVO(rs.getString(1), rs.getInt(2), rs.getString(3), rs.getString(4), rs.getString(5), rs.getString(6)));
+			System.out.println(rs.getString(1)+rs.getInt(2)+rs.getString(3)+rs.getString(4)+rs.getString(5)+rs.getString(6)+rs.getString(7));
+		list.add(new ym_FileVO(rs.getString(1), rs.getInt(2), rs.getString(3), rs.getString(4), rs.getString(5), rs.getString(6), rs.getString(7)));
 		}
 		close();
 		return list;
@@ -86,7 +89,7 @@ public class ym_FileDAO {
 	      ArrayList<ym_FileVO> list = new ArrayList<>();
 	      
 	      while(rs.next()) {
-	         list.add(new ym_FileVO(rs.getString(1), rs.getInt(2), rs.getString(3), rs.getString(4), rs.getString(5), rs.getString(6)));
+	         list.add(new ym_FileVO(rs.getString(1), rs.getInt(2), rs.getString(3), rs.getString(4), rs.getString(5), rs.getString(6),rs.getString(7)));
 	      }
 	      
 	      close();

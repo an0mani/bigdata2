@@ -61,7 +61,7 @@ public class NoticeDAO {
    public ArrayList<NoticeVO> selectAll() throws Exception {
       getConnection();
 
-      pst = conn.prepareStatement("select * from baby_notice order by mnum desc");
+      pst = conn.prepareStatement("select * from baby_notice order by m_num desc");
       rs = pst.executeQuery();
       ArrayList<NoticeVO> list = new ArrayList<>();
       
@@ -75,7 +75,7 @@ public class NoticeDAO {
    public ArrayList<NoticeVO> SelectOne(int num) throws Exception {
       getConnection();
 
-      pst = conn.prepareStatement("select * from baby_notice where num = ?");
+      pst = conn.prepareStatement("select * from baby_notice where m_num = ?");
       pst.setInt(1, num);
       rs = pst.executeQuery();
       ArrayList<NoticeVO> list = new ArrayList<>();
@@ -91,7 +91,7 @@ public class NoticeDAO {
 		
 		getConnection();
 		
-		pst = conn.prepareStatement("delete from baby_notice where mnum = ?");
+		pst = conn.prepareStatement("delete from baby_notice where m_num = ?");
 		pst.setInt(1, num);
 		
 		int cnt = pst.executeUpdate();

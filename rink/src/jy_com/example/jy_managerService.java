@@ -21,11 +21,12 @@ public class jy_managerService extends HttpServlet {
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		request.setCharacterEncoding("euc-kr");
-		
+		response.setCharacterEncoding("text/html;euc-kr");
+		HttpSession session = request.getSession();
 		String name = request.getParameter("name");
 		String title = request.getParameter("title");
 		String text = request.getParameter("text");
-		
+		String id = (String) session.getAttribute("id");
 		System.out.println(name);
 		System.out.println(title);
 		System.out.println(text);
@@ -34,9 +35,10 @@ public class jy_managerService extends HttpServlet {
 		try {
 			
 			jy_managerDAO dao = new jy_managerDAO();
-			int cnt = dao.managermessage(name, title, text);
-			
+			int cnt = dao.managermessage(id,name, title, text );
+			System.out.println(cnt);
 			if (cnt > 0) {
+				
 				response.sendRedirect("messageselectService");
 			}
 			

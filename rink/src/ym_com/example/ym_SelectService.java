@@ -20,19 +20,24 @@ public class ym_SelectService extends HttpServlet {
 		//DB에 저장된 File정보를 모두 검색해서 jsp로 전송
 		ym_FileDAO dao = ym_FileDAO.getInstance();
 		HttpSession session = request.getSession();
-
+		request.setCharacterEncoding("euc-kr");
+		response.setCharacterEncoding("text/html;euc-kr");
+		
+				String kind = request.getParameter("kind");
+				System.out.println(kind);
+				session.setAttribute("kind", kind);
 				
 		ArrayList<ym_FileVO> list;
 		try {
 			
-			list = dao.selectAll();
+			list = dao.selectAll(kind);
 			
 			if(list != null) {
 			session.setAttribute("list", list);
 			}
 
 
-			response.sendRedirect("vaccinService");
+			response.sendRedirect("jy/usedArticle/ym_messageboard.jsp?page=0");
 
 			
 		} catch (Exception e) {

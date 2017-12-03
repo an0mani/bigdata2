@@ -7,15 +7,7 @@ public class ym_FileVO {
 	private String text;
 	private String wdate;
 	private String filename;
-	public ym_FileVO(String id, int num, String title, String text, String wdate, String filename) {
-		super();
-		this.id = id;
-		this.num = num;
-		this.title = title;
-		this.text = text;
-		this.wdate = wdate;
-		this.filename = filename;
-	}
+	private String kind;
 	public String getId() {
 		return id;
 	}
@@ -52,7 +44,20 @@ public class ym_FileVO {
 	public void setFilename(String filename) {
 		this.filename = filename;
 	}
-	
-	
+	public String getKind() {
+		return kind;
+	}
+	public void setKind(String kind) {
+		this.kind = kind;
+	}
+	public ym_FileVO(String id, int num, String title, String text, String wdate, String filename, String kind) {
+		this.id = id;
+		this.num = num;
+		this.title = title;
+		this.text = text;
+		this.wdate = wdate;
+		this.filename = filename;
+		this.kind = kind;
+	}
 	
 }

@@ -33,7 +33,7 @@
 	
 		<div class="8u 12u$(small)">
 	
-			<table>
+			
 	
 				<form method="post" action="../../jy_managerService">
 	
@@ -63,7 +63,7 @@
 						
 					</div>
 				</form>
-			</table>
+			
 			
 			</div>
 		</div>

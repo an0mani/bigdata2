@@ -7,6 +7,19 @@ create table stroller(
    
 );
 
+select * from BABY_MEMBER
+
+drop table baby_notice
+
+create table baby_notice(
+    m_num number,
+    title varchar2(50),
+    text varchar2(1000),
+    wdate varchar2(10)
+     );
+
+select * from baby_notice
+ 
 drop table stroller;
 
 insert into stroller values('≥Û«˘±§¡÷¿Ø≈Îºæ≈Õ','±§¡÷±§ø™Ω√ ±§ªÍ±∏ Ω≈∞°µø 1052',35.1847826, 126.81827699999997);

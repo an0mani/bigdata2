@@ -17,6 +17,11 @@ th, td {
 	border-bottom: 1px solid #444444;
 	padding: 10px;
 }
+
+.inner {
+	background-image: url('images/childnotice6.jpg') !important;
+	color: black;
+}
 </style>
 <title>to baby from mom, message board</title>
 <meta charset="utf-8" />

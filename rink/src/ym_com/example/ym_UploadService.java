@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.apache.catalina.Session;
 import org.apache.tomcat.util.http.fileupload.servlet.ServletFileUpload;
@@ -35,13 +36,17 @@ public class ym_UploadService extends HttpServlet {
 			String text = multi.getParameter("text");
 			
 			String file = multi.getFilesystemName("file");
+			String kind = multi.getParameter("kind");
+			HttpSession session = request.getSession();
+			session.setAttribute("kind", kind);
 			System.out.println(id);
 			System.out.println(title);
 			System.out.println(text);
 			
 			System.out.println(file);
+			System.out.println(kind);
 			try {
-				int cnt = dao.uploadFile(id, title, text, file);
+				int cnt = dao.uploadFile(id, title, text, file,kind);
 				String moveUrl = "";
 				if(cnt>0) {
 					System.out.println("저장완료");

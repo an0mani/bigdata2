@@ -10,7 +10,7 @@
 	<script type="text/javascript">
 		alert("로그인 성공! 환영합니다.")
 
-		location.href = "jh_main.jsp";
+		location.href = "../../vaccinService";
 	</script>
 
 
