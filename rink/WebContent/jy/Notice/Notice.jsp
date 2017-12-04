@@ -73,8 +73,10 @@ tr {
 	<header id="header1" style = "padding:0em 4em;">
 	<div class="inner1" style="margin-top: 40px">
 
+
 		<a href="#" class="image avatar" style = "margin-right: 70px;"><img src="back_image/baby.jpg" alt="" style = "width:200px; height:200px;"/></a>
 		 <p align="center" style="font-size: 41px; font-weight: bold; color: black;">${Login_name }¸¾</p>
+
 		<input type="button" name="write" value="±Û¾²±â"
 			onclick="location.href='writing.jsp'"
 			style="width: 50px; height: 50px; min-width: 6em !important; font-size: 15px; text-align: center; color: black !important; margin-right: 0px; font-family: 'a°í·¡¾ß³îÀÚ'">

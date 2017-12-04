@@ -113,6 +113,7 @@
 		<div class="row">
 		<div style="height: 500px;width: 100%;"><iframe src="http://olapopendata.hira.or.kr/analysis/desktop/poc2.jsp#report_id=b235b0f3-24cb47fe&amp;PARAM1=" frameborder="0" width="100%" height="100%" class="olapViewFrame"></iframe></div>
 		
+
 		 <h1>자주걸리는 질병 리스트</h1><br>
          <h1 align = "center" style="color: red;">1.감기</h1><br>
          <img src="back_image/20.jpg" style="width: 500px;height:500px;margin-top: 10px;"><br>
@@ -139,6 +140,7 @@
          <h2>연속적인 재채기, 계속 흘러 내리는 맑은 콧물, 코막힘, 가려움증 등의 증상을 보이는 코 점막의 질환입니다. 연속적으로 일어나는 발작적인 재채기, 맑은 콧물, 코막힘 등의 세 가지 주요 증상을 특징으로 하며, 이 세 가지 증상 중 두 가지 이상의 증상을 가지고 있을 때 알레르기 비염을 의심할 수 있습니다. 일반적으로 나타나는 특징적인 증상 이외에도 코 주위 가려움이나 두통, 후각 감퇴 등의 증상이 동반될 수 있으며 합병증으로 중이염, 부비동염, 인후두염이 동반될 수 있으니 주의해야 합니다.</h2>
          <h2 style = "color:blue;">[예방법]</h2>
          <h2>① 일반적인 예방법으로는 먼지와 온도의 변화, 담배 연기나 매연, 화장품, 스트레스 등을 피하고 주변을 청결하게 해주는 방법이 있습니다.<br>② 꽃가루가 많은 계절에는 창문을 닫고 외출할 때에는 마스크를 착용합니다.<br>③ 집 먼지 진드기의 경우 침대, 이불, 베개, 담요 등 먼지가 쉽게 끼거나 방출되는 물건은 지퍼가 달린 커버를 사용하고, 커버는 삶도록 합니다. 특수 필터가 장착된 진공청소기를 이용한 실내 청소도 도움이 됩니다.</h2>
+
 			</article>
 			<!-- <article class="6u 12u$(xsmall) work-item"> <a
 				href="images/fulls/baby.jpg" class="image fit thumb"><img
