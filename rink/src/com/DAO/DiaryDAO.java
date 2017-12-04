@@ -62,10 +62,11 @@ public class DiaryDAO {
       return cnt;
    }
 
-   public ArrayList<DiaryVO> selectAll() throws Exception {
+   public ArrayList<DiaryVO> selectAll(String id) throws Exception {
       getConnection();
 
-      pst = conn.prepareStatement("select * from baby_diary order by m_num desc");
+      pst = conn.prepareStatement("select * from baby_diary where m_id =? order by m_num desc");
+      pst.setString(1, id);
       rs = pst.executeQuery();
       ArrayList<DiaryVO> list = new ArrayList<>();
       

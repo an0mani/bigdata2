@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.apache.tomcat.util.http.fileupload.servlet.ServletFileUpload;
 
@@ -39,8 +40,9 @@ public class messageboard extends HttpServlet {
 			multi = new MultipartRequest(request, saveDir, maxSize, encoding, new DefaultFileRenamePolicy());
 			System.out.println("파일전송 form 입니다.");
 			FileDAO dao = new FileDAO();
+			HttpSession session = request.getSession();
 			
-			String name = multi.getParameter("name");
+			String name = (String) session.getAttribute("id");
 			String title = multi.getParameter("title");
 			String message = multi.getParameter("message");
 			String date = multi.getParameter("date");

@@ -28,9 +28,9 @@ public class numService extends HttpServlet {
 		FileDAO dao = new FileDAO();
 		
 		ArrayList<FileVO> list = new ArrayList<>();
-		
+		String id = (String) session.getAttribute("id");
 		try {
-			list = dao.SelectOne(num);
+			list = dao.SelectOne(num,id);
 			
 			if (list != null) {
 				session.setAttribute("set", list);

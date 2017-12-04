@@ -20,11 +20,11 @@ public class DiarySelectService extends HttpServlet {
       //DB에 저장된 File정보를 모두 검색해서 jsp로 전송
 	  DiaryDAO dao = DiaryDAO.getInstance();
       HttpSession session = request.getSession();
-
+      String id = (String)session.getAttribute("id");
             
       ArrayList<DiaryVO> list;
       try {    	 
-         list = dao.selectAll();
+         list = dao.selectAll(id);
          
          if(list != null) {
          session.setAttribute("list", list);

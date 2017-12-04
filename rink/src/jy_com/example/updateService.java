@@ -72,7 +72,7 @@ public class updateService extends HttpServlet {
 			FileDAO dao = new FileDAO();
 			ArrayList<FileVO> list = (ArrayList<FileVO>) session.getAttribute("set");		
 			
-			String name = multi.getParameter("name");
+			String name = (String) session.getAttribute("id");
 			String title = multi.getParameter("title");
 			String message = multi.getParameter("message");
 			String date = multi.getParameter("date");

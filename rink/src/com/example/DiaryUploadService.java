@@ -9,6 +9,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.apache.tomcat.util.http.fileupload.servlet.ServletFileUpload;
 
@@ -32,8 +33,9 @@ public class DiaryUploadService extends HttpServlet {
 		if(isMulti) {
 			multi = new MultipartRequest(request, saveDir, maxSize, encoding, new DefaultFileRenamePolicy());
 			DiaryDAO dao = DiaryDAO.getInstance();
-
-			String id = multi.getParameter("id");
+			HttpSession session = request.getSession();
+			
+			String id = (String) session.getAttribute("id");
 			String title = multi.getParameter("title");
 			String text = multi.getParameter("message");
 			String date = multi.getParameter("date");

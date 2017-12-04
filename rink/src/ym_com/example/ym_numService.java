@@ -24,13 +24,13 @@ public class ym_numService extends HttpServlet {
 		int num = Integer.parseInt(request.getParameter("num"));
 		
 		HttpSession session = request.getSession();
-		
+		String id = (String)session.getAttribute("id");
 		ym_FileDAO dao = new ym_FileDAO();
 		
 		ArrayList<ym_FileVO> list = new ArrayList<>();
 		
 		try {
-			list = dao.SelectOne(num);
+			list = dao.SelectOne(num,id);
 			
 			if (list != null) {
 				session.setAttribute("set", list);

@@ -87,12 +87,13 @@ public class NoticeDAO {
       return list;
       
    }
-   public int messageDelete(int num) throws Exception {
+   public int messageDelete(int num,String id) throws Exception {
 		
 		getConnection();
 		
 		pst = conn.prepareStatement("delete from baby_notice where m_num = ?");
 		pst.setInt(1, num);
+		
 		
 		int cnt = pst.executeUpdate();
 		

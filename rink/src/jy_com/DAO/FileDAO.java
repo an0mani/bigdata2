@@ -74,11 +74,12 @@ public class FileDAO {
       return list;
    }
 
-   public ArrayList<FileVO> SelectOne(int num) throws Exception {
+   public ArrayList<FileVO> SelectOne(int num,String id) throws Exception {
       getConnection();
 
-      pst = conn.prepareStatement("select * from baby_messageboard where m_num = ?");
+      pst = conn.prepareStatement("select * from baby_messageboard where m_num = ? and m_id = ?");
       pst.setInt(1, num);
+      pst.setString(2, id);
       
       rs = pst.executeQuery();
       
@@ -94,12 +95,13 @@ public class FileDAO {
       
    }
    
-	public int messageDelete(int num) throws Exception {
+	public int messageDelete(int num,String id) throws Exception {
 		
 		getConnection();
 		
-		pst = conn.prepareStatement("delete from baby_messageboard where m_num = ?");
+		pst = conn.prepareStatement("delete from baby_messageboard where m_num = ? and m_id = ?");
 		pst.setInt(1, num);
+		pst.setString(2, id);
 		
 		int cnt = pst.executeUpdate();
 		

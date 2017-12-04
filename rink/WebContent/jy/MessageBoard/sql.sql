@@ -30,10 +30,10 @@ select * from BABY_MESSAGEBOARD
 );
 
 create table baby_notice(
-    num number,
+    m_num number,
     title varchar2(30),
     text varchar2(1000),
-    wdate varchar(10)
+    wdate varchar2(20)
 );
 
 create table baby_member(
@@ -51,6 +51,7 @@ create table baby_member(
 drop table baby_messageboard;
 drop table baby_sellboard;
 drop table baby_diary;
+drop table baby_notice;
 
  create table baby_messageboard(
     m_id varchar2(50),
@@ -78,6 +79,14 @@ create table baby_diary(
     wdate varchar2(10),
     filename varchar2(50)
 );
+
+select * from baby_notice;
+
+select * from baby_messageboard;
+
+select * from baby_diary;
+
+delete baby_messageboard where title ='우리애기';
 
 create sequence messageboard_num
 start with 1

@@ -71,7 +71,7 @@ public class ym_updateService extends HttpServlet {
 			HttpSession session = request.getSession();
 			ArrayList<ym_FileVO> list = (ArrayList<ym_FileVO>) session.getAttribute("set");
 			
-			String name = multi.getParameter("name");
+			String name = (String) session.getAttribute("id");
 			String title = multi.getParameter("title");
 			String message = multi.getParameter("message");
 			String date = multi.getParameter("date");

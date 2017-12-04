@@ -30,14 +30,15 @@ public class ym_UploadService extends HttpServlet {
 		if(isMulti) {
 			MultipartRequest multi = new MultipartRequest(request, saveDir,maxSize,encoding,new DefaultFileRenamePolicy() );//(request,saveDir 저장위치,maxSize 크기,encoding 한글처리되게 인코딩,new DefaultFileRenamePolicy() 동일한 이름일경우 파일이름 중복안되게 변경
 			ym_FileDAO dao = ym_FileDAO.getInstance();
+			HttpSession session = request.getSession();
 			
-			String id = multi.getParameter("id");
+			String id = (String) session.getAttribute("id");
 			String title = multi.getParameter("title");
 			String text = multi.getParameter("text");
 			
 			String file = multi.getFilesystemName("file");
 			String kind = multi.getParameter("kind");
-			HttpSession session = request.getSession();
+			
 			session.setAttribute("kind", kind);
 			System.out.println(id);
 			System.out.println(title);

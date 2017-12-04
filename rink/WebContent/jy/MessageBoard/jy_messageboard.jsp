@@ -155,7 +155,7 @@ tr {
             <c:when test="${not empty sessionScope.list}">
                      <c:set var="list" value="${sessionScope.list}" scope="request"></c:set>
                <c:choose>
-               <c:when test="${param.page >0 }">
+               <c:when test="${param.page > 0}">
                <c:choose>
                <c:when test="${param.page != totalPage-1}">
                

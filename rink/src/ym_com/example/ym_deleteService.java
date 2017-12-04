@@ -7,6 +7,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import javax.websocket.Session;
 
 import jy_com.DAO.FileDAO;
@@ -19,11 +20,13 @@ public class ym_deleteService extends HttpServlet {
 		
 		int num = Integer.parseInt(request.getParameter("num"));
 		System.out.println(num);
+		HttpSession session = request.getSession();
+		String id = (String) session.getAttribute("id");
 		
 		try {
 			ym_FileDAO dao = new ym_FileDAO();
 			
-			int cnt = dao.messageDelete(num);
+			int cnt = dao.messageDelete(num,id);
 			
 			if (cnt > 0) {
 				response.sendRedirect("ym_SelectService");
